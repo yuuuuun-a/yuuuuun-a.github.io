@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="print-color-adjust" content="exact">
+    <meta name="color-scheme" content="light">
+    <!-- 프린트 최적화 메타 태그 -->
+    <meta name="print-margin" content="0">
+    <meta name="print-scaling" content="shrink-to-fit">
+    <title>Monthly Test</title>
+
+    <script src="../js/common.js"></script>
+    <script src="../js/swiper-bundle.min@11.2.10.js"></script>
+    <link rel="stylesheet" href="../css/swiper-bundle.min@11.2.10.css" />
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/monthly.css">
+
+    <script>
+        // ===== 더미 데이터 (Step 1 / Book 1) =====
+        const book_no = 1;
+        const monthlyTestList = [{"order_no":1,"example_text":null,"example_answer":null},{"order_no":2,"example_text":null,"example_answer":null},{"order_no":3,"example_text":null,"example_answer":null},{"order_no":4,"example_text":null,"example_answer":null},{"order_no":5,"example_text":"c_t","example_answer":"a"},{"order_no":6,"example_text":"og","example_answer":"d"},{"order_no":7,"example_text":"fi","example_answer":"sh"},{"order_no":8,"example_text":null,"example_answer":null},{"order_no":9,"example_text":null,"example_answer":null},{"order_no":10,"example_text":null,"example_answer":null}];
+        const monthlyAnswer = { book_no: 1, answers: '2/1/3/1/1/2/1/1/2/1' };
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <div class="monthly-header"> 
+                <button type="button" class="btn-close" aria-label="나가기" onclick="exitModal()">
+                    <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+                    </svg>
+                </button>
+                <div class="header-left">
+                    <div class="character-section">
+                        <img src="../img/test/icon/step1.png" alt="character">
+                        <div class="step-book">Book1</div>
+                    </div>
+                    <div class="title">Monthly Test</div>
+                </div>
+                <ol class="ol-q-num pagination">
+                    <!-- index complete correct wrong -->
+                    <li class="num index" onclick="moveSlide(0)">
+                        <div class="bg">1</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(1)">
+                        <div class="bg">2</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(2)">
+                        <div class="bg">3</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(3)">
+                        <div class="bg">4</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(4)">
+                        <div class="bg">5</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(5)">
+                        <div class="bg">6</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(6)">
+                        <div class="bg">7</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(7)">
+                        <div class="bg">8</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(8)">
+                        <div class="bg">9</div>
+                    </li>
+                    <li class="num" onclick="moveSlide(9)">
+                        <div class="bg">10</div>
+                    </li>
+                </ol>
+
+                <button type="button" class="print-btn" onclick="printTest()" aria-label="인쇄하기" style="visibility: hidden;">
+                    <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 18.4004C45.9882 18.4004 47.5996 20.0118 47.5996 22V28.4004H50C53.0991 28.4004 55.5996 30.9009 55.5996 34V42C55.5996 43.9882 53.9882 45.5996 52 45.5996H47.5996V50C47.5996 51.9882 45.9882 53.5996 44 53.5996H28C26.0118 53.5996 24.4004 51.9882 24.4004 50V45.5996H20C18.0118 45.5996 16.4004 43.9882 16.4004 42V34C16.4004 30.9009 18.9009 28.4004 22 28.4004H24.4004V22C24.4004 20.0118 26.0118 18.4004 28 18.4004H44ZM47.9951 50.2061C47.9901 50.3044 47.9797 50.4017 47.9678 50.498C47.98 50.3994 47.9902 50.2999 47.9951 50.1992V50.2061ZM29 41.5996C28.2268 41.5996 27.5996 42.2268 27.5996 43V49C27.5996 49.7732 28.2268 50.4004 29 50.4004H43C43.7732 50.4004 44.4004 49.7732 44.4004 49V43C44.4004 42.2268 43.7732 41.5996 43 41.5996H29ZM28.7988 49.9795L28.8975 49.9951C28.8305 49.9883 28.7655 49.9745 28.7031 49.9551C28.7344 49.9648 28.7663 49.9729 28.7988 49.9795ZM28.6885 49.9502C28.6647 49.9424 28.6411 49.9343 28.6182 49.9248C28.6411 49.9343 28.6647 49.9424 28.6885 49.9502ZM28.5811 49.9072C28.5636 49.8991 28.5462 49.8909 28.5293 49.8818C28.5462 49.8909 28.5636 49.8991 28.5811 49.9072ZM28.5078 49.8691C28.4886 49.8582 28.4696 49.8471 28.4512 49.835C28.4696 49.8471 28.4886 49.8582 28.5078 49.8691ZM28.4209 49.8145C28.4036 49.8022 28.3865 49.7897 28.3701 49.7764C28.3865 49.7897 28.4036 49.8022 28.4209 49.8145ZM28.3545 49.7627C28.3367 49.7476 28.3194 49.7321 28.3027 49.7158C28.3194 49.7321 28.3367 49.7476 28.3545 49.7627ZM28.2207 49.626C28.2074 49.6095 28.1948 49.5925 28.1826 49.5752C28.1948 49.5925 28.2074 49.6095 28.2207 49.626ZM28.1182 49.4717C28.109 49.4545 28.101 49.4367 28.0928 49.4189C28.101 49.4367 28.109 49.4545 28.1182 49.4717ZM28.0205 49.2012C28.0166 49.1819 28.0136 49.1623 28.0107 49.1426C28.0136 49.1623 28.0166 49.1819 28.0205 49.2012ZM22 31.5996C20.6791 31.5996 19.5996 32.6791 19.5996 34V41C19.5996 41.7732 20.2268 42.4004 21 42.4004H23C23.7732 42.4004 24.4004 41.7732 24.4004 41V39C24.4004 38.6686 24.6686 38.4004 25 38.4004H47C47.3314 38.4004 47.5996 38.6686 47.5996 39V41C47.5996 41.7732 48.2268 42.4004 49 42.4004H51C51.7732 42.4004 52.4004 41.7732 52.4004 41V34C52.4004 32.6791 51.3209 31.5996 50 31.5996H22ZM47.9883 38.8564C47.995 38.9034 48 38.9512 48 39C48 38.9512 47.995 38.9034 47.9883 38.8564ZM48 33.4004C48.8791 33.4004 49.5996 34.1209 49.5996 35C49.5996 35.8791 48.8791 36.5996 48 36.5996C47.1209 36.5996 46.4004 35.8791 46.4004 35C46.4004 34.1209 47.1209 33.4004 48 33.4004ZM29 21.5996C28.2268 21.5996 27.5996 22.2268 27.5996 23V27C27.5996 27.7732 28.2268 28.4004 29 28.4004H43C43.7732 28.4004 44.4004 27.7732 44.4004 27V23C44.4004 22.2268 43.7732 21.5996 43 21.5996H29ZM28.7988 27.9795L28.8975 27.9951C28.8356 27.9888 28.7757 27.976 28.7178 27.959C28.7444 27.9668 28.7713 27.9739 28.7988 27.9795ZM43.2812 27.959C43.2362 27.9722 43.19 27.9815 43.1426 27.9883C43.19 27.9815 43.2363 27.9722 43.2812 27.959ZM43.3691 27.9287C43.364 27.9308 43.3587 27.9326 43.3535 27.9346C43.3587 27.9326 43.364 27.9308 43.3691 27.9287ZM43.4717 27.8809C43.4545 27.8901 43.4367 27.898 43.4189 27.9062C43.4367 27.898 43.4545 27.8901 43.4717 27.8809ZM28.5762 27.9053C28.5685 27.9017 28.5613 27.8973 28.5537 27.8936C28.5613 27.8973 28.5685 27.9017 28.5762 27.9053ZM43.5449 27.8369C43.5258 27.8494 43.5063 27.8609 43.4863 27.8721C43.5063 27.8609 43.5258 27.8494 43.5449 27.8369ZM28.4268 27.8193C28.4203 27.8148 28.4145 27.8094 28.4082 27.8047C28.4145 27.8094 28.4203 27.8148 28.4268 27.8193ZM43.6299 27.7754C43.613 27.7892 43.5959 27.8028 43.5781 27.8154C43.5959 27.8028 43.613 27.7892 43.6299 27.7754ZM43.6963 27.7158C43.6784 27.7332 43.6598 27.7496 43.6406 27.7656C43.6598 27.7496 43.6784 27.7332 43.6963 27.7158ZM43.7627 27.6445C43.7476 27.6623 43.7321 27.6796 43.7158 27.6963C43.7321 27.6796 43.7476 27.6623 43.7627 27.6445ZM43.8145 27.5781C43.8022 27.5954 43.7897 27.6125 43.7764 27.6289C43.7897 27.6125 43.8022 27.5954 43.8145 27.5781ZM28.1943 27.5908C28.1897 27.5845 28.1842 27.5787 28.1797 27.5723C28.1842 27.5787 28.1897 27.5845 28.1943 27.5908ZM28.1055 27.4453C28.1017 27.4378 28.0973 27.4305 28.0938 27.4229C28.0973 27.4305 28.1017 27.4378 28.1055 27.4453ZM43.9551 27.2939C43.9644 27.2635 43.973 27.2327 43.9795 27.2012L43.9951 27.1025C43.9884 27.1686 43.974 27.2323 43.9551 27.2939ZM28.0049 27.1025C28.0111 27.1639 28.0232 27.2237 28.04 27.2812C28.0232 27.2236 28.0111 27.1639 28.0049 27.1025ZM47.9619 21.4521C47.9776 21.5669 47.9893 21.6831 47.9951 21.8008C47.9893 21.6831 47.9776 21.5669 47.9619 21.4521ZM28.2832 49.6963C28.2658 49.6784 28.2494 49.6598 28.2334 49.6406C28.2494 49.6598 28.2658 49.6784 28.2832 49.6963ZM28.1621 49.5449C28.1497 49.5258 28.1381 49.5063 28.127 49.4863C28.1381 49.5063 28.1497 49.5259 28.1621 49.5449ZM47.9053 38.5762C47.9134 38.5936 47.9215 38.611 47.9287 38.6289C47.9215 38.611 47.9134 38.5936 47.9053 38.5762ZM43.9092 27.416C43.9009 27.4341 43.8911 27.4513 43.8818 27.4688C43.8911 27.4513 43.9009 27.4341 43.9092 27.416ZM43.9512 27.3076C43.9431 27.3324 43.9347 27.3569 43.9248 27.3809C43.9347 27.3569 43.9432 27.3324 43.9512 27.3076Z" fill="white"/>
+                    </svg>
+                </button>
+                <div class="score-area"  style="display: none;">
+                        <strong>Test Score</strong>
+                <div id="score_wrap" class="score-wrap">
+                    <div class="score">
+                        <span id="my_score" class="my-score">0</span>
+                        <span class="total-score">/ 10</span>
+                    </div>
+                </div>
+                </div>
+                
+                <div id="info_box" class="info-box" style="display: none;">
+                    <time class="date">2026-10-14</time>
+                    <div class="user-info">
+                        <span class="user-school">Gangnam</span>
+                        <span class="user-class">Rainbow</span>
+                        <span class="user-name">Emma</span>
+                    </div>
+                </div>
+            </div>
+            <div class="question-swiper-area">
+                <div class="monthly-contents question-swiper">
+                    <ul class="monthly-ul swiper-wrapper">
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_1" type="button" class="play-btn" onclick="playQ(1)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">1.</span>
+                                        <span>Listen and choose the right picture.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content vertical">
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question1" id="question_1_0" value="1">
+                                        <label class="question-label" for="question_1_0">
+                                            <div class="question-num">1</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/131_dog.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question1" id="question_1_1" value="2">
+                                        <label class="question-label" for="question_1_1">
+                                            <div class="question-num">2</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/131_cat.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question1" id="question_1_2" value="3">
+                                        <label class="question-label" for="question_1_2">
+                                            <div class="question-num">3</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_2" type="button" class="play-btn" onclick="playQ(2)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">2.</span>
+                                        <span>Listen and choose the right picture.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content vertical">
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question2" id="question_2_0" value="1">
+                                        <label class="question-label" for="question_2_0">
+                                            <div class="question-num">1</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_bunny.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question2" id="question_2_1" value="2">
+                                        <label class="question-label" for="question_2_1">
+                                            <div class="question-num">2</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_butterfly.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question2" id="question_2_2" value="3">
+                                        <label class="question-label" for="question_2_2">
+                                            <div class="question-num">3</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_snail.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_3" type="button" class="play-btn" onclick="playQ(3)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">3.</span>
+                                        <span>Listen and choose the right word.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content vertical">
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question3" id="question_3_0" value="1">
+                                        <label class="question-label" for="question_3_0">
+                                            <div class="question-num">1</div>
+                                            <div class="question-text">red</div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question3" id="question_3_1" value="2">
+                                        <label class="question-label" for="question_3_1">
+                                            <div class="question-num">2</div>
+                                            <div class="question-text">blue</div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question3" id="question_3_2" value="3">
+                                        <label class="question-label" for="question_3_2">
+                                            <div class="question-num">3</div>
+                                            <div class="question-text">green</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_4" type="button" class="play-btn" onclick="playQ(4)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">4.</span>
+                                        <span>Listen and choose the right word.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question4" id="question_4_0" value="1">
+                                        <label class="question-label" for="question_4_0">
+                                            <div class="question-num">1</div>
+                                            <div class="question-text">boat</div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question4" id="question_4_1" value="2">
+                                        <label class="question-label" for="question_4_1">
+                                            <div class="question-num">2</div>
+                                            <div class="question-text">bear</div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question4" id="question_4_2" value="3">
+                                        <label class="question-label" for="question_4_2">
+                                            <div class="question-num">3</div>
+                                            <div class="question-text">ball</div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question4" id="question_4_3" value="4">
+                                        <label class="question-label" for="question_4_3">
+                                            <div class="question-num">4</div>
+                                            <div class="question-text">box</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_5" type="button" class="play-btn" onclick="playQ(5)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">5.</span>
+                                        <span>Look and choose the missing letter.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item txt-select">
+                                        <div class="question-img">
+                                            <img src="/demos/yeamoonsa/s3/game/wordhunt/img/131_cat.png" alt="">
+                                        </div>
+                                        <div class="example">
+                                            <div class="text-split" id="split_5"></div>
+                                        </div>
+                                        <div class="input-wrap">
+                                            <input type="radio" class="question-radio" name="question5" id="question_5_0" value="1">
+                                            <label class="question-label" for="question_5_0">
+                                                <div class="question-num">a</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question5" id="question_5_1" value="2">
+                                            <label class="question-label" for="question_5_1">
+                                                <div class="question-num">e</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question5" id="question_5_2" value="3">
+                                            <label class="question-label" for="question_5_2">
+                                                <div class="question-num">o</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_6" type="button" class="play-btn" onclick="playQ(6)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">6.</span>
+                                        <span>Look and choose the first letter.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item txt-select">
+                                        <div class="question-img">
+                                            <img src="/demos/yeamoonsa/s3/game/wordhunt/img/131_dog.png" alt="">
+                                        </div>
+                                        <div class="input-wrap">
+                                            <input type="radio" class="question-radio" name="question6" id="question_6_0" value="1">
+                                            <label class="question-label" for="question_6_0">
+                                                <div class="question-num">b</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question6" id="question_6_1" value="2">
+                                            <label class="question-label" for="question_6_1">
+                                                <div class="question-num">d</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question6" id="question_6_2" value="3">
+                                            <label class="question-label" for="question_6_2">
+                                                <div class="question-num">p</div>
+                                            </label>
+                                        </div>
+                                        <div class="example">
+                                            <div class="empty">
+                                                <span class="answer">d</span>
+                                            </div>
+                                            <div class="text">
+                                                <span>og</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_7" type="button" class="play-btn" onclick="playQ(7)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">7.</span>
+                                        <span>Look and choose the last sound.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item txt-select">
+                                        <div class="question-img">
+                                            <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                        </div>
+                                        <div class="example">
+                                            <div class="text">
+                                                <span>fi</span>
+                                            </div>
+                                            <div class="empty">
+                                                <span class="answer">sh</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-wrap">
+                                            <input type="radio" class="question-radio" name="question7" id="question_7_0" value="1">
+                                            <label class="question-label" for="question_7_0">
+                                                <div class="question-num">sh</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question7" id="question_7_1" value="2">
+                                            <label class="question-label" for="question_7_1">
+                                                <div class="question-num">ch</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question7" id="question_7_2" value="3">
+                                            <label class="question-label" for="question_7_2">
+                                                <div class="question-num">th</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_8" type="button" class="play-btn" onclick="playQ(8)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">8.</span>
+                                        <span>Look and choose the right answer.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item2">
+                                        <div class="question-img">
+                                            <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                        </div>
+                                        <div class="question-sen-wrap">
+                                            <div class="question-sen">
+                                                <span class="txt">Is it a frog?</span>
+                                            </div>
+                                            <input type="radio" class="question-radio" name="question8" id="question_8_0" value="1">
+                                            <label class="question-label" for="question_8_0">
+                                                <div class="question-num">1</div>
+                                                <div class="question-text">Yes, it is.</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question8" id="question_8_1" value="2">
+                                            <label class="question-label" for="question_8_1">
+                                                <div class="question-num">2</div>
+                                                <div class="question-text">No, it isn't.</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_9" type="button" class="play-btn" onclick="playQ(9)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">9.</span>
+                                        <span>Look and choose the right answer.</span>
+                                    </span>
+                                </div>
+                                <div class="question-content">
+                                    <div class="question-item2">
+                                        <div class="question-img">
+                                            <img src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                        </div>
+                                        <div class="question-sen-wrap">
+                                            <div class="question-sen">
+                                                <span class="txt">Can it run fast?</span>
+                                            </div>
+                                            <input type="radio" class="question-radio" name="question9" id="question_9_0" value="1">
+                                            <label class="question-label" for="question_9_0">
+                                                <div class="question-num">1</div>
+                                                <div class="question-text">Yes, it can.</div>
+                                            </label>
+                                            <input type="radio" class="question-radio" name="question9" id="question_9_1" value="2">
+                                            <label class="question-label" for="question_9_1">
+                                                <div class="question-num">2</div>
+                                                <div class="question-text">No, it can't.</div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="monthly-li swiper-slide swiper-no-swiping">
+                            <!-- 채점시 맞았을 때 correct, 틀렸을 때 wrong -->
+                            <div class="question-wrap">
+                                <div class="question-header">
+                                    <!-- button 클릭시 class pause 추가-->
+                                    <button id="q_btn_10" type="button" class="play-btn" onclick="playQ(10)">
+                                        <img class="play-icon default" src="../img/test/icon/play-icon.svg" alt="">
+                                        <img class="play-icon hover" src="../img/test/icon/play-icon-hover.svg" alt="">
+                                        <img class="play-icon active" src="../img/test/icon/play-icon-active.svg" alt="">
+
+                                        <img class="pause-icon default" src="../img/test/icon/pause-icon.svg" alt="">
+                                        <img class="pause-icon hover" src="../img/test/icon/pause-icon-hover.svg" alt="">
+                                        <img class="pause-icon active" src="../img/test/icon/pause-icon-active.svg" alt="">
+                                    </button>
+                                    <span class="question-title">
+                                        <span class="num">10.</span>
+                                        <span>Read and choose the right picture.</span>
+                                    </span>
+                                </div>
+                                <div class="question-ex">
+                                    <div class="question-sen">
+                                        <span class="txt">It is red.</span>
+                                    </div>
+                                </div>
+                                <div class="question-content vertical">
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question10" id="question_10_0" value="1">
+                                        <label class="question-label" for="question_10_0">
+                                            <div class="question-num">1</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/112_red.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question10" id="question_10_1" value="2">
+                                        <label class="question-label" for="question_10_1">
+                                            <div class="question-num">2</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/112_blue.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="question-item">
+                                        <input type="radio" class="question-radio" name="question10" id="question_10_2" value="3">
+                                        <label class="question-label" for="question_10_2">
+                                            <div class="question-num">3</div>
+                                            <div class="question-img">
+                                                <img src="/demos/yeamoonsa/s3/game/wordhunt/img/112_green.png" alt="">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn-prev">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-prev" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M55.2 40.5L36 60M36 60L55.2 79.5M36 60L84 60" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button type="button" class="btn-next">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-next" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M64.8 40.5L84 60M84 60L64.8 79.5M84 60L36 60" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                <div class="btn-wrap">
+                    <button type="button" class="done-btn on" id="doneButton" onclick="doneTest()" style="display: none;">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M3.19995 13.4943L14.3094 25.5996L28.8 5.59961" stroke="#CCCCCC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="done-btn-text">Done</span>
+                    </button>
+                    
+                    <button type="button" class="btn-result on" id="resultButton" onclick="showResult()" style="display: none;">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-next" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.5 28L28.5 16L17.5 4" stroke="#C36518" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.5 16H28.5" stroke="#C36518" stroke-width="6" stroke-linecap="round"/>
+                        </svg>
+                        <span>Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            <footer>
+                <div class="info-box">
+                    <time class="date">2026-10-14</time>
+                    <div class="user-info">
+                        <span class="user-school">Gangnam</span>
+                        <span class="user-class">Rainbow</span>
+                        <span class="user-name">Emma</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- class on 추가 -->
+    <div id="exit_modal" class="dimmed">
+        <div class="popup-wrap">
+            <div class="popup-icon">
+                <img src="../img/test/icon/character_step1.svg" alt="">
+            </div>
+            <div class="popup-title">Do you want to leave?</div>
+            <div class="popup-btn-wrap">
+                <button type="button" class="no-btn" onclick="stay()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <g opacity="0.4">
+                            <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                    <span class="popup-btn-text">No</span>
+                </button>
+                <button type="button" class="yes-btn" onclick="leave()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <div class="layered-shadow layered-shadow3"></div>
+                    <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                            <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                    <span class="popup-btn-text">Yes</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- class on 추가 -->
+    <div id="check_modal" class="dimmed">
+        <div class="popup-wrap">
+            <div class="popup-icon">
+                <img src="../img/test/icon/character_step1.svg" alt="">
+            </div>
+            <div class="popup-title">
+                There are more questions!<br>
+                Is it okay to finish now?
+            </div>
+            <div class="popup-btn-wrap">
+                <button type="button" class="no-btn" onclick="backToTest()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <g opacity="0.4">
+                            <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                    </svg>
+                    <span class="popup-btn-text">Go back</span>
+                </button>
+                <button type="button" class="yes-btn" onclick="checkDone()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <div class="layered-shadow layered-shadow3"></div>
+                    <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                            <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                    <span class="popup-btn-text">Done</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="../js/monthly_test.js"></script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="EBS 수학진단도구" data-back-href="/work/ebs-math#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBS 수학진단도구</title>
+    
+    <link rel="icon" href="../img/favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EBS 수학진단도구">
+    <meta property="og:title" content="EBS 수학진단도구">
+    <meta property="og:description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta name="description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta property="og:image" content="../img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  
+
+    <link rel="stylesheet" href="../vendor/katex-0.18.5/katex.min.css">
+    <script defer src="../vendor/katex-0.18.5/katex.min.js"></script>
+    <script defer src="../vendor/katex-0.18.5/contrib/auto-render.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- is-retry: 재진단(다시 탐사) 리포트. 클래스를 빼면 최초 탐사 리포트 -->
+    <div class="group-reporter">
+
+
+        <div class="reporter-wrap">
+
+            <header class="reporter-header">
+                <div class="reporter-header-bar">
+
+                    <div class="reporter-header-left">
+                        <button type="button" class="exit-btn" aria-label="EBS math로 나가기" onclick="location.href='mypage.html'"><span class="exit-btn-inner">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <g clip-path="url(#clip0_3218_12905)">
+    <g filter="url(#filter0_dd_3218_12905)">
+      <path d="M5.5525 1.80035L12.3534 1.80245L14.5808 1.80266C14.9761 1.80309 15.3951 1.79402 15.7872 1.80738C16.3231 2.37739 16.8962 2.95222 17.4408 3.5192C17.1507 3.55057 16.5715 3.53455 16.2536 3.53443L14.054 3.53397L6.42396 3.53818C6.30162 3.6448 6.09179 3.87508 5.97377 3.9974L5.18918 4.80545L5.18937 19.2048C5.55834 19.5744 6.01041 20.0562 6.39142 20.3962C7.55441 20.3827 8.75072 20.3977 9.91768 20.3958L14.0093 20.3988C15.1538 20.3926 16.2984 20.3946 17.4429 20.4048C16.8897 20.9688 15.6851 22.1319 15.6851 22.1319C15.6851 22.1319 14.0504 22.1359 13.2599 22.1355L9.05792 22.1342L6.49089 22.1352C6.0421 22.1365 5.42253 22.1497 4.98511 22.1298C4.9127 22.0507 4.82755 21.9735 4.75057 21.898C4.08141 21.2417 3.4304 20.5622 2.75904 19.9086C2.73918 19.4455 2.75787 18.8437 2.75733 18.3662L2.7567 15.0545L2.75792 4.12381C3.34022 3.5085 3.96554 2.9233 4.55668 2.31568C4.72288 2.14486 4.89566 1.97126 5.06885 1.80788C5.22007 1.79928 5.3989 1.80182 5.5525 1.80035Z" fill="url(#paint0_linear_3218_12905)"/>
+      <path d="M6.58643 5.72321L7.62547 4.6792L11.9795 6.70009L11.9832 17.6512L7.62547 19.4557L6.58643 18.3162V5.72321ZM10.7555 13.9047C10.8603 13.8197 10.9899 13.7202 11.0891 13.632L11.0902 10.9766C10.839 10.7776 10.556 10.5398 10.3049 10.3508C10.2899 10.5378 10.295 10.7784 10.2948 10.9708L10.295 11.9575C10.2954 12.7081 10.2783 13.5332 10.2998 14.2765C10.3998 14.1755 10.6348 13.9997 10.7555 13.9047Z" fill="url(#paint1_linear_3218_12905)"/>
+      <path d="M16.0911 9.28509C16.393 9.27506 16.7114 9.28055 17.0146 9.28058L18.4366 9.28125C19.3688 10.2403 20.3066 11.1938 21.25 12.1419C21.0496 12.347 20.8345 12.5446 20.6332 12.7487C19.9156 13.4768 19.1598 14.1876 18.4471 14.9185C18.2173 14.9268 17.9192 14.9161 17.6824 14.9162L16.0961 14.9148L17.0424 13.9711C17.3877 13.6272 17.7351 13.2854 18.0846 12.9457C17.7797 12.9382 17.451 12.9439 17.1447 12.9438L14.6276 12.9439L13.5047 12.9438C13.3463 12.9437 13.103 12.9348 12.952 12.9448V11.3313L18.0815 11.3293C17.9095 11.1663 16.081 9.33247 16.0669 9.28988L16.0911 9.28509Z" fill="url(#paint2_linear_3218_12905)"/>
+    </g>
+  </g>
+  <defs>
+    <filter id="filter0_dd_3218_12905" x="-5.25012" y="-6.19995" width="34.5001" height="36.3406" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="4"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.129412 0 0 0 0 0.329412 0 0 0 0 0.537255 0 0 0 0.8 0"/>
+      <feBlend mode="multiply" in2="BackgroundImageFix" result="effect1_dropShadow_3218_12905"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.129412 0 0 0 0 0.329412 0 0 0 0 0.537255 0 0 0 0.8 0"/>
+      <feBlend mode="multiply" in2="effect1_dropShadow_3218_12905" result="effect2_dropShadow_3218_12905"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_3218_12905" result="shape"/>
+    </filter>
+    <linearGradient id="paint0_linear_3218_12905" x1="10.0964" y1="22.1407" x2="10.0964" y2="1.80005" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B3F5FF"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_3218_12905" x1="9.28482" y1="19.4557" x2="9.28482" y2="4.6792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B3F5FF"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_3218_12905" x1="17.101" y1="14.9217" x2="17.101" y2="9.27905" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B3F5FF"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+    <clipPath id="clip0_3218_12905">
+      <rect width="24" height="24" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+  </span></button>
+                        <!-- 마이페이지 BI 칩과 같이 홈으로. 스타일이 div 기준이라 태그는 그대로 두고 링크 역할만 준다 -->
+                        <div class="reporter-bi-chip" role="link" tabindex="0" style="cursor: pointer;" onclick="location.href='home.html'" onkeydown="if (event.key === 'Enter') location.href='home.html'"><img class="reporter-bi-img" src="../img/bi.png" alt="수학진단도구"></div>
+                    </div>
+
+                    <!-- 가운데 회차 배지 — 헤더 바 위쪽으로 8px 걸쳐 나와 아래로 늘어진 간판 모양 -->
+                    <div class="reporter-header-center">
+                        <div class="reporter-attempt">
+                            <i class="reporter-attempt-bolt reporter-attempt-bolt-left"></i>
+                            <i class="reporter-attempt-bolt reporter-attempt-bolt-right"></i>
+                            <img class="reporter-attempt-glow" src="../img/mypage/header-glow-bar.svg" alt>
+                            <i class="reporter-ic-flag"><img src="../img/mypage/reporter-icon-flag.svg" alt></i>
+                            <p class="reporter-attempt-text">1회차 탐사 일지</p>
+                        </div>
+                    </div>
+
+                    <div class="reporter-header-right">
+                        <button type="button" class="reporter-tool-btn" data-reporter-print aria-label="탐사 일지 내려받기">
+                            <i class="reporter-ic-download"><img src="../img/mypage/icon-download.svg" alt></i>
+                        </button>
+                        <button type="button" class="reporter-tool-btn" data-reporter-print aria-label="탐사 일지 인쇄">
+                            <i class="reporter-ic-print"><img src="../img/mypage/icon-print.svg" alt></i>
+                        </button>
+                    </div>
+
+                </div>
+            </header>
+
+            <main class="reporter-content">
+
+                <div class="reporter-summary">
+
+                    <!-- 단원 정보 -->
+                    <section class="reporter-unit">
+                        <div class="reporter-unit-detail">
+                            <div class="reporter-unit-subjects">
+                                
+                                    
+                                    <span>수와 연산</span>
+                                
+                                    <i class="reporter-ic-dot-12"><img src="../img/mypage/icon-dot-12.svg" alt></i>
+                                    <span>변화와 관계</span>
+                                
+                            </div>
+                            <div class="reporter-unit-title-row">
+                                <h1 class="reporter-unit-title">중3 1학기 전체 단원</h1>
+                                <!-- reporter-unit-badge-first = 최초 탐사 /reporter-unit-badge-retry = 다시 탐사-->
+                                <span class="reporter-unit-badge reporter-unit-badge-first reporter-first-only">최초
+                                    탐사</span>
+                                <span class="reporter-unit-badge reporter-unit-badge-retry reporter-retry-only">다시
+                                    탐사</span>
+                            </div>
+                        </div>
+                        <div class="reporter-unit-meta">
+                            <div class="reporter-unit-meta-item">
+                                <i class="reporter-ic-calendar"><img src="../img/mypage/icon-calendar.svg" alt></i>
+                                2026.09.22
+                            </div>
+                            <i class="reporter-ic-dot-12"><img src="../img/mypage/icon-dot-12.svg" alt></i>
+                            <div class="reporter-unit-meta-item">
+                                <i class="reporter-ic-clock"><img src="../img/mypage/icon-clock.svg" alt></i>
+                                오후 1:50
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 단원 탭. 버튼의 data-reporter-tab과 같은 data-reporter-panel 요소(탐사 결과 문구 + 단원 패널)만 노출.
+                         칩 색·아이콘은 단원이 속한 영역(number/change/shape/data)을 따른다 -->
+                    <div class="reporter-tabs" role="tablist">
+                        <button type="button" class="reporter-chip reporter-chip-number is-active" role="tab" aria-selected="true" data-reporter-tab="unit-1">
+                            <i class="reporter-ic-chip-number"><img alt src="../img/mypage/icon-chip-number.svg"></i>
+                            <span>제곱근과 실수</span>
+                        </button><button type="button" class="reporter-chip reporter-chip-change" role="tab" aria-selected="false" data-reporter-tab="unit-2">
+                            <i class="reporter-ic-chip-change"><img alt src="../img/mypage/icon-chip-change.svg"></i>
+                            <span>일차함수와 그래프</span>
+                        </button>
+                    </div>
+
+                    <!-- 이번 탐사 결과 -->
+                    <section class="reporter-result">
+                        <div class="reporter-section-head">
+                            <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                            <h2 class="reporter-section-title">이번 탐사 결과</h2>
+                        </div>
+
+                        <div class="reporter-result-panel">
+                            <!-- 단원마다 문구가 달라 탭 전환 때 같이 바뀐다(data-reporter-panel) -->
+                            <p class="reporter-result-text reporter-first-only" data-reporter-panel="unit-1"><span class="reporter-mark">정수와 유리수의 덧셈</span>에서 한 번 더 확인이 필요해.<br>이 개념을 다지면 제곱근까지 한 번에 이어질 거야!</p><p class="reporter-result-text reporter-first-only" data-reporter-panel="unit-2"><span class="reporter-mark">일차함수의 기울기</span>를 구하는 부분에서 멈췄어.<br>그래프의 증가량을 차근차근 세어 보면 금방 해결될 거야.</p>
+                            
+                            <p class="reporter-result-text reporter-retry-only" data-reporter-panel="unit-1"><span class="reporter-mark">정수와 유리수의 덧셈</span>에서 한 번 더 확인이 필요해.<br>이 개념을 다지면 제곱근까지 한 번에 이어질 거야!</p><p class="reporter-result-text reporter-retry-only" data-reporter-panel="unit-2"><span class="reporter-mark">일차함수의 기울기</span>를 구하는 부분에서 멈췄어.<br>그래프의 증가량을 차근차근 세어 보면 금방 해결될 거야.</p>
+                            
+                            <div class="reporter-result-character">
+                                <span class="reporter-result-character-crop">
+                                    <img src="../img/mypage/semi.png" alt="세미">
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 이번에 다시 출발할 곳 — 재진단 리포트에서만 노출. 단원 탭마다 하나씩 두고(data-reporter-panel),
+                         그 단원에 오답이 없으면(tab.noWrong) 그 탭에서는 섹션째 그리지 않는다 -->
+                    <section class="reporter-restart reporter-retry-only" data-reporter-panel="unit-1">
+                        <div class="reporter-section-head">
+                            <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                            <h2 class="reporter-section-title">이번에 다시 출발할 곳</h2>
+                        </div>
+
+                        <div class="reporter-restart-panel">
+                            <p class="reporter-restart-message">이번에는 <span class="reporter-mark">유리수와 순환소수</span>부터 다시 출발하면 돼.<br>지난번보다 한 걸음 앞으로 나아갔어!</p>
+                            <div class="reporter-restart-character">
+                                <span class="reporter-restart-character-crop">
+                                    <img src="../img/mypage/semi_ver2.png" alt="세미">
+                                </span>
+                            </div>
+                        </div>
+                    </section><section class="reporter-restart reporter-retry-only" data-reporter-panel="unit-2">
+                        <div class="reporter-section-head">
+                            <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                            <h2 class="reporter-section-title">이번에 다시 출발할 곳</h2>
+                        </div>
+
+                        <div class="reporter-restart-panel">
+                            <p class="reporter-restart-message"></p>
+                            <div class="reporter-restart-character">
+                                <span class="reporter-restart-character-crop">
+                                    <img src="../img/mypage/semi_ver2.png" alt="세미">
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="reporter-subjects">
+
+                    <!-- 개념 지도 보는 법. 페이지에 하나만 두고, ? 버튼을 누르면 mypage.js가 그 버튼의 헤더 안으로 옮겨서 연다 -->
+                    <div class="reporter-legend" id="reporter-legend" role="dialog" aria-label="개념 지도 보는 법" hidden>
+                        <i class="reporter-legend-corner reporter-legend-corner-tl"><img src="../img/question/common/corner-decoration.png" alt></i>
+                        <i class="reporter-legend-corner reporter-legend-corner-tr"><img src="../img/question/common/corner-decoration.png" alt></i>
+                        <i class="reporter-legend-corner reporter-legend-corner-bl"><img src="../img/question/common/corner-decoration.png" alt></i>
+                        <i class="reporter-legend-corner reporter-legend-corner-br"><img src="../img/question/common/corner-decoration.png" alt></i>
+                        <p class="reporter-legend-title">개념 지도 보는 법</p>
+                        <div class="reporter-legend-list">
+                            <div class="reporter-legend-item">
+                                <div class="reporter-legend-icon">
+                                    <div class="reporter-node is-current">
+                                        <div class="reporter-node-icon">
+                                            <span class="reporter-node-circle"></span>
+                                            <i class="reporter-ic-rocket"><img src="../img/mypage/icon-rocket.svg" alt></i>
+                                        </div>
+                                        <div class="reporter-node-tooltip">
+                                            <span class="reporter-node-tooltip-body">여기부터 다시!</span>
+                                            <img class="reporter-node-tooltip-arrow" src="../img/mypage/tooltip-arrow.svg" alt>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reporter-legend-text">
+                                    <strong>가장 먼저 확인해야 할 개념</strong>
+                                    <p>이 길에서 가장 먼저 다시 볼 행성이야.</p>
+                                </div>
+                            </div>
+                            <img class="reporter-legend-divider" src="../img/mypage/legend-divider.svg" alt>
+                            <div class="reporter-legend-item">
+                                <div class="reporter-legend-icon">
+                                    <!-- 행성은 단원 영역마다 달라 탭 전환 때 같이 바뀐다(data-reporter-panel) -->
+                                    <div class="reporter-node">
+                                        <div class="reporter-node-icon reporter-node-icon-number" data-reporter-panel="unit-1">
+                                            <img class="reporter-node-planet-glow" src="../img/mypage/node-planet-01.png" alt>
+                                            <img class="reporter-node-planet" src="../img/mypage/node-planet-01.png" alt>
+                                        </div><div class="reporter-node-icon reporter-node-icon-change" data-reporter-panel="unit-2">
+                                            <img class="reporter-node-planet-glow" src="../img/mypage/node-planet-02.png" alt>
+                                            <img class="reporter-node-planet" src="../img/mypage/node-planet-02.png" alt>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reporter-legend-text">
+                                    <strong>탐사 완료 개념</strong>
+                                    <p>이미 내용을 잘 알고 있는 개념 행성이야.</p>
+                                </div>
+                            </div>
+                            <img class="reporter-legend-divider" src="../img/mypage/legend-divider.svg" alt>
+                            <div class="reporter-legend-item">
+                                <div class="reporter-legend-icon">
+                                    <div class="reporter-node is-required">
+                                        <div class="reporter-node-icon">
+                                            <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock-required.svg" alt="꼭 확인"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reporter-legend-text">
+                                    <strong>꼭 확인해야 할 개념</strong>
+                                    <p>다른 개념 이해에 영향을 주는 꼭 확인해야 할 개념 행성이야.</p>
+                                </div>
+                            </div>
+                            <img class="reporter-legend-divider" src="../img/mypage/legend-divider.svg" alt>
+                            <div class="reporter-legend-item">
+                                <div class="reporter-legend-icon">
+                                    <div class="reporter-node is-locked">
+                                        <div class="reporter-node-icon">
+                                            <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reporter-legend-text">
+                                    <strong>잠긴 개념</strong>
+                                    <p>꼭 확인해야 할 개념 행성을 탐사하면, 탐사 완료할 수 있는 개념 행성이야.</p>
+                                </div>
+                            </div>
+                            <img class="reporter-legend-divider" src="../img/mypage/legend-divider.svg" alt>
+                            <div class="reporter-legend-item">
+                                <div class="reporter-legend-icon">
+                                    <div class="reporter-node is-unchecked">
+                                        <div class="reporter-node-icon">
+                                            <i class="reporter-ic-unchecked"><img src="../img/mypage/reporter-icon-unchecked.svg" alt="확인하지 못함"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reporter-legend-text">
+                                    <strong>확인하지 못한 개념</strong>
+                                    <p>시간이 다 되어 확인하지 못한 개념 행성이야.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 단원별 패널. 세트(지도 + 다음 탐사 목적지)마다 reporter-subject-body 하나 -->
+                    <section class="reporter-subject reporter-subject-number" role="tabpanel" data-reporter-panel="unit-1">
+
+                        <div class="reporter-subject-body">
+
+                            <div class="reporter-block">
+                                <div class="reporter-section-head reporter-section-head-sm reporter-map-head">
+                                    <div class="reporter-map-head-title">
+                                        <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                                        <h3 class="reporter-section-title">나의 개념 지도</h3>
+                                    </div>
+                                    <button type="button" class="reporter-help-btn" aria-label="개념 지도 보는 법" aria-expanded="false" data-reporter-legend-toggle>
+                                        <img src="../img/question/common/info-icon.png" alt>
+                                    </button>
+                                </div>
+
+                                <!-- 경로 하나가 한 줄(ul). 하위가 왼쪽 -->
+                                <div class="reporter-map">
+                                    <div class="reporter-map-row">
+                                        <ul class="reporter-map-nodes" role="list">
+                                            <li class="reporter-node is-current">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                        <span class="reporter-node-circle"></span>
+                                                        <i class="reporter-ic-rocket"><img src="../img/mypage/icon-rocket.svg" alt></i>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중1-1 2단원</span>
+                                                    <p class="reporter-node-title">정수와 유리수의 덧셈</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                <div class="reporter-node-tooltip">
+                                                    <span class="reporter-node-tooltip-body">여기부터 다시!</span>
+                                                    
+                                                    <img class="reporter-node-tooltip-arrow" src="../img/mypage/tooltip-arrow.svg" alt>
+                                                </div>
+                                            </li><li class="reporter-node is-required">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock-required.svg" alt="꼭 확인"></i>
+                                                    
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중2-1 1단원</span>
+                                                    <p class="reporter-node-title">유리수와 순환소수</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 1단원</span>
+                                                    <p class="reporter-node-title">제곱근의 뜻과 성질</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 2단원</span>
+                                                    <p class="reporter-node-title">근호를 포함한 식의 계산</p>
+                                                </div>
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 3단원</span>
+                                                    <p class="reporter-node-title">다항식의 곱셈</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div><div class="reporter-map-row">
+                                        <ul class="reporter-map-nodes" role="list">
+                                            <li class="reporter-node">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        <img class="reporter-node-planet-glow" alt src="../img/mypage/node-planet-01.png">
+                                                        <img class="reporter-node-planet" alt src="../img/mypage/node-planet-01.png">
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중1-1 1단원</span>
+                                                    <p class="reporter-node-title">소인수분해</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        <img class="reporter-node-planet-glow" alt src="../img/mypage/node-planet-01.png">
+                                                        <img class="reporter-node-planet" alt src="../img/mypage/node-planet-01.png">
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중2-1 1단원</span>
+                                                    <p class="reporter-node-title">거듭제곱의 계산</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-unchecked">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    
+                                                    
+                                                    <i class="reporter-ic-unchecked"><img src="../img/mypage/reporter-icon-unchecked.svg" alt="확인하지 못함"></i>
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 1단원</span>
+                                                    <p class="reporter-node-title">무리수와 실수</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 1단원</span>
+                                                    <p class="reporter-node-title">실수의 대소 관계</p>
+                                                </div>
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 2단원</span>
+                                                    <p class="reporter-node-title">제곱근의 곱셈과 나눗셈</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 재진단 정답 지도(모두 정답 + 지난 번 멈춘 지점)는 목적지 블록을 그리지 않는다 -->
+                            <div class="reporter-block">
+                                <div class="reporter-section-head reporter-section-head-sm">
+                                    <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                                    <h3 class="reporter-section-title">다음 탐사 목적지</h3>
+                                </div>
+
+                                <div class="reporter-dest">
+                                    <i class="reporter-dest-signal"></i>
+
+                                    
+                                        <div class="reporter-dest-head">
+                                            <div class="reporter-dest-planet">
+                                                <img alt src="../img/mypage/planet-01.png">
+                                            </div>
+                                            <div class="reporter-dest-text">
+                                                <p class="reporter-dest-unit">중1-1 2단원</p>
+                                                <p class="reporter-dest-title">정수와 유리수의 덧셈</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="reporter-feedbacks">
+
+                                            
+                                            <div class="reporter-feedback">
+                                                <i class="reporter-feedback-frame"></i>
+                                                <div class="reporter-feedback-chip">
+                                                    <i class="reporter-ic-why"><img src="../img/mypage/icon-why.svg" alt></i>
+                                                    왜 여기부터일까?
+                                                </div>
+                                                <p class="reporter-feedback-text">부호가 다른 두 수를 더할 때 <span class="reporter-mark">절댓값의 차</span>를 구하는 부분에서 실수가 있었어.</p>
+                                            </div>
+
+                                            <div class="reporter-feedback">
+                                                <i class="reporter-feedback-frame"></i>
+                                                <div class="reporter-feedback-chip">
+                                                    <i class="reporter-ic-tip"><img src="../img/mypage/icon-tip.svg" alt></i>
+                                                    이렇게 해보면 좋아!
+                                                </div>
+                                                <ul class="reporter-todo" role="list">
+                                                    <li>
+                                                        <span class="reporter-todo-chip">이해</span>
+                                                        <p>수직선 위에서 $(-3) + 5$를 화살표로 직접 그려 봐.</p>
+                                                    </li><li>
+                                                        <span class="reporter-todo-chip">연습</span>
+                                                        <p>부호가 다른 두 수의 덧셈 5문제를 풀고 부호를 먼저 정하는 습관을 들여 봐.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    
+
+                                    <!-- 결손이 없는 세트(시간이 다 돼서 결손 위치를 찾지 못함) — 목적지 대신 안내 카드만 노출 -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </section><section class="reporter-subject reporter-subject-change" role="tabpanel" data-reporter-panel="unit-2">
+
+                        <div class="reporter-subject-body">
+
+                            <div class="reporter-block">
+                                <div class="reporter-section-head reporter-section-head-sm reporter-map-head">
+                                    <div class="reporter-map-head-title">
+                                        <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                                        <h3 class="reporter-section-title">나의 개념 지도</h3>
+                                    </div>
+                                    <button type="button" class="reporter-help-btn" aria-label="개념 지도 보는 법" aria-expanded="false" data-reporter-legend-toggle>
+                                        <img src="../img/question/common/info-icon.png" alt>
+                                    </button>
+                                </div>
+
+                                <!-- 경로 하나가 한 줄(ul). 하위가 왼쪽 -->
+                                <div class="reporter-map">
+                                    <div class="reporter-map-row">
+                                        <ul class="reporter-map-nodes" role="list">
+                                            <li class="reporter-node">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        <img class="reporter-node-planet-glow" alt src="../img/mypage/node-planet-02.png">
+                                                        <img class="reporter-node-planet" alt src="../img/mypage/node-planet-02.png">
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중1-2 1단원</span>
+                                                    <p class="reporter-node-title">좌표평면과 그래프</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-current">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                        <span class="reporter-node-circle"></span>
+                                                        <i class="reporter-ic-rocket"><img src="../img/mypage/icon-rocket.svg" alt></i>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중2-1 3단원</span>
+                                                    <p class="reporter-node-title">일차함수의 기울기</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                <div class="reporter-node-tooltip">
+                                                    <span class="reporter-node-tooltip-body">여기부터 다시!</span>
+                                                    
+                                                    <img class="reporter-node-tooltip-arrow" src="../img/mypage/tooltip-arrow.svg" alt>
+                                                </div>
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중2-1 3단원</span>
+                                                    <p class="reporter-node-title">일차함수의 그래프</p>
+                                                </div>
+                                                <!-- 재진단: 초기진단 🚀였던 노드는 "지난 번 멈춘 지점"(보라). 지금 🚀와 같은 노드면 말풍선 두 개를 쌓는다 -->
+                                                
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 1단원</span>
+                                                    <p class="reporter-node-title">실수의 대소 관계</p>
+                                                </div>
+                                            </li><li class="reporter-node is-locked">
+                                                <div class="reporter-node-icon">
+                                                    <i class="reporter-ic-lock"><img src="../img/mypage/reporter-icon-lock.svg" alt="잠김"></i>
+                                                </div>
+                                                <div class="reporter-node-text">
+                                                    <span class="reporter-node-badge">중3-1 2단원</span>
+                                                    <p class="reporter-node-title">제곱근의 곱셈과 나눗셈</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 재진단 정답 지도(모두 정답 + 지난 번 멈춘 지점)는 목적지 블록을 그리지 않는다 -->
+                            <div class="reporter-block">
+                                <div class="reporter-section-head reporter-section-head-sm">
+                                    <i class="reporter-ic-section"><img src="../img/mypage/icon-section.svg" alt></i>
+                                    <h3 class="reporter-section-title">다음 탐사 목적지</h3>
+                                </div>
+
+                                <div class="reporter-dest">
+                                    <i class="reporter-dest-signal"></i>
+
+                                    
+                                        <div class="reporter-dest-head">
+                                            <div class="reporter-dest-planet">
+                                                <img alt src="../img/mypage/planet-02.png">
+                                            </div>
+                                            <div class="reporter-dest-text">
+                                                <p class="reporter-dest-unit">중2-1 3단원</p>
+                                                <p class="reporter-dest-title">일차함수의 기울기</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="reporter-feedbacks">
+
+                                            
+                                            <div class="reporter-feedback">
+                                                <i class="reporter-feedback-frame"></i>
+                                                <div class="reporter-feedback-chip">
+                                                    <i class="reporter-ic-why"><img src="../img/mypage/icon-why.svg" alt></i>
+                                                    왜 여기부터일까?
+                                                </div>
+                                                <p class="reporter-feedback-text">$x$의 증가량과 $y$의 증가량을 <span class="reporter-mark">거꾸로 나누는</span> 실수가 보였어.</p>
+                                            </div>
+
+                                            <div class="reporter-feedback">
+                                                <i class="reporter-feedback-frame"></i>
+                                                <div class="reporter-feedback-chip">
+                                                    <i class="reporter-ic-tip"><img src="../img/mypage/icon-tip.svg" alt></i>
+                                                    이렇게 해보면 좋아!
+                                                </div>
+                                                <ul class="reporter-todo" role="list">
+                                                    <li>
+                                                        <span class="reporter-todo-chip">이해</span>
+                                                        <p>그래프 위 두 점을 골라 가로·세로로 몇 칸 움직였는지 세어 봐.</p>
+                                                    </li><li>
+                                                        <span class="reporter-todo-chip">연습</span>
+                                                        <p>기울기가 2, $-\frac{1}{2}$인 직선을 직접 그려 봐.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    
+
+                                    <!-- 결손이 없는 세트(시간이 다 돼서 결손 위치를 찾지 못함) — 목적지 대신 안내 카드만 노출 -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+
+                <div class="reporter-actions">
+                    <!-- 초기진단 리포트가 아직 교사 확정 전이면 숨김 -->
+                    
+                    <div class="reporter-action-frame btn-frame">
+                        <button type="button" class="reporter-action btn btn-primary btn-h40" onclick="location.href='mypage.html'">마이페이지로 돌아가기</button>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="../js/math-render.js"></script>
+    <script src="../js/mypage.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

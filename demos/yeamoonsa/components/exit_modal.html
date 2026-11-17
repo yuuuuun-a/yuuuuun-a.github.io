@@ -1,0 +1,90 @@
+<!-- 나가기 모달 - 공통 컴포넌트 -->
+<div id="exit_modal" class="dimmed">
+  <div class="popup-wrap">
+    <div class="popup-icon">
+      <img id="exit_modal_icon" src="" alt="">
+    </div>
+    <div class="popup-title">Do you want to leave?</div>
+    <div class="popup-btn-wrap">
+      <button type="button" class="no-btn">
+        <div class="layered-shadow layered-shadow1"></div>
+        <div class="layered-shadow layered-shadow2"></div>
+        <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <g opacity="0.4">
+            <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <span class="popup-btn-text">No</span>
+      </button>
+      <button type="button" class="yes-btn">
+        <div class="layered-shadow layered-shadow1"></div>
+        <div class="layered-shadow layered-shadow2"></div>
+        <div class="layered-shadow layered-shadow3"></div>
+        <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+            <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="popup-btn-text">Yes</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// 나가기 모달 공통 이벤트 핸들러
+(function() {
+  function isPC() {
+    var userAgent = navigator.userAgent.toLowerCase();
+    var mobileKeywords = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone', 'mobile'];
+    return !mobileKeywords.some(function(keyword) {
+      return userAgent.includes(keyword);
+    });
+  }
+
+  // 모달 열기
+  window.openExitModal = function() {
+    var exit_modal = document.getElementById("exit_modal");
+    if (exit_modal) {
+      exit_modal.classList.add("on");
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  // 모달 닫기 (No 버튼)
+  window.stay = function() {
+    var exit_modal = document.getElementById("exit_modal");
+    if (exit_modal) {
+      exit_modal.classList.remove("on");
+      document.body.style.overflow = "unset";
+    }
+  };
+
+  // 나가기 (Yes 버튼)
+  window.leave = function() {
+    if (isPC()) {
+      self.close();
+    } else {
+      window.history.back();
+    }
+  };
+
+  // No 버튼 이벤트
+  var noBtns = document.querySelectorAll('#exit_modal .no-btn');
+  noBtns.forEach(function(btn) {
+    btn.addEventListener('click', window.stay);
+    btn.addEventListener('touchstart', window.stay);
+  });
+
+  // Yes 버튼 이벤트
+  var yesBtns = document.querySelectorAll('#exit_modal .yes-btn');
+  yesBtns.forEach(function(btn) {
+    btn.addEventListener('click', window.leave);
+    btn.addEventListener('touchstart', window.leave);
+  });
+})();
+</script>
+

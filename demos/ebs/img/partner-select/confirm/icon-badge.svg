@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Polygon 4">
+<path d="M6.61569e-07 27.5772L0 11.4228L11.4228 6.61569e-07L27.5772 0L39 11.4228V27.5772L27.5772 39H11.4228L6.61569e-07 27.5772Z" fill="#D9D9D9"/>
+<path d="M6.61569e-07 27.5772L0 11.4228L11.4228 6.61569e-07L27.5772 0L39 11.4228V27.5772L27.5772 39H11.4228L6.61569e-07 27.5772Z" fill="url(#paint0_linear_0_1871)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_1871" x1="19.5" y1="6.40923e-06" x2="36.8344" y2="28.4314" gradientUnits="userSpaceOnUse">
+<stop offset="0.4" stop-color="#2B7FFF"/>
+<stop offset="1" stop-color="#00CDF4"/>
+</linearGradient>
+</defs>
+</svg>

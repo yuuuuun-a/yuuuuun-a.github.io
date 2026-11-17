@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <script src="../js/game/game_common.js"></script>
+    <script src="../js/game/lottie-web@5.13.0.js"></script>
+    <script src="../js/motion/monthly_result.js"></script>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <link rel="stylesheet" href="../css/monthly.css">
+</head>
+<body>
+    <div class="monthly-result">
+        <div class="score">
+            <!-- 점수별 1개만 노출: 8점 이상 excellent / 5~7점 good_job / 4점 이하 nice_try -->
+            <div id="excellent" class="excellent" aria-label="Excellent!"></div>
+            <!-- <div id="good_job" class="good-job" aria-label="Good job!"></div> -->
+            <!-- <div id="nice_try" class="nice-try" aria-label="Nice try!"></div> -->
+        </div>
+        
+        <div class="btn-wrap">
+            <button type="button" class="btn-close on" onclick="closeResult()">
+                <div class="layered-shadow layered-shadow1"></div>
+                <div class="layered-shadow layered-shadow2"></div>
+                <div class="layered-shadow layered-shadow3"></div>
+                <svg class="icon-door" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 3.81707C6 2.26128 7.27685 1 8.85185 1H25.1481C26.7232 1 28 2.26128 28 3.81707V8.2561C28 8.92292 27.4528 9.46342 26.7778 9.46342C26.1027 9.46342 25.5556 8.92292 25.5556 8.2561V3.81707C25.5556 3.5948 25.3732 3.41463 25.1481 3.41463H8.85185C8.62683 3.41463 8.44444 3.5948 8.44444 3.81707V29.5732C8.44444 30.24 7.89728 30.7805 7.22222 30.7805C6.54716 30.7805 6 30.24 6 29.5732V3.81707ZM26.7778 25.5366C27.4528 25.5366 28 26.0771 28 26.7439V31.1829C28 32.7387 26.7232 34 25.1481 34H19.4444C18.7694 34 18.2222 33.4595 18.2222 32.7927C18.2222 32.1259 18.7694 31.5854 19.4444 31.5854H25.1481C25.3732 31.5854 25.5556 31.4052 25.5556 31.1829V26.7439C25.5556 26.0771 26.1027 25.5366 26.7778 25.5366Z" fill="#FCAA14" stroke="#FCAA14" stroke-width="1.25"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4.79659C6 2.82001 8.084 1.46848 9.99987 2.20261L19.1665 5.7149C20.2739 6.13918 21 7.16656 21 8.30888V35.2034C21 37.1799 18.916 38.5315 17.0001 37.7974L7.83347 34.2851C6.72613 33.8608 6 32.8335 6 31.6911V4.79659ZM9.07147 4.42608C8.79773 4.32122 8.5 4.51433 8.5 4.79659V31.6911C8.5 31.8542 8.60373 32.001 8.76187 32.0616L17.9285 35.5739C18.2023 35.6788 18.5 35.4857 18.5 35.2034V8.30888C18.5 8.14565 18.3963 7.9989 18.2381 7.93837L9.07147 4.42608Z" fill="#FCAA14" stroke="#FCAA14" stroke-width="1.25"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6247 12.3342C28.0796 11.8353 27.2588 11.9027 26.7917 12.4848L23.3129 16.6717C22.8957 17.1916 22.8957 17.9589 23.3129 18.4786L26.7917 22.5151C27.2588 23.0974 28.0796 23.1647 28.6247 22.6657C29.1698 22.1668 29.2329 21.2903 28.7657 20.7082L27.1264 18.9634H34.7C35.418 18.9634 36 18.3419 36 17.5752C36 16.8084 35.418 16.1869 34.7 16.1869H27.1264L28.7657 14.2917C29.2329 13.7096 29.1698 12.8332 28.6247 12.3342Z" fill="#FCAA14"/>
+                </svg>
+                <span>Close</span>
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    const book_no = new URLSearchParams(location.search).get('book_no') || 1;
+
+    function closeResult() {
+        if (isPC()) {
+            self.close();
+        } else {
+            window.location.href = `../content.html?book_no=${book_no}`;
+        }
+    }
+</script>
+</html>

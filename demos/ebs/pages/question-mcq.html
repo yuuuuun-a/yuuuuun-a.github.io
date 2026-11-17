@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="EBS 수학진단도구" data-back-href="/work/ebs-math#screens" data-back-label="← 케이스 스터디로" defer></script>
+  <title>EBS 수학진단도구</title>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../vendor/katex-0.18.5/katex.min.css">
+    <script defer src="../vendor/katex-0.18.5/katex.min.js"></script>
+    <script defer src="../vendor/katex-0.18.5/contrib/auto-render.min.js"></script>
+
+    
+    <link rel="icon" href="../img/favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EBS 수학진단도구">
+    <meta property="og:title" content="EBS 수학진단도구">
+    <meta property="og:description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta name="description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta property="og:image" content="../img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>html.math-pending body { visibility: hidden; }</style>
+    <script>
+      document.documentElement.classList.add('math-pending');
+      setTimeout(() => document.documentElement.classList.remove('math-pending'), 3000);
+    </script>
+  
+    <!-- 문항 이미지의 onload="handleQuestionImageLoad(this)"가 부를 함수. 캐시된 이미지는 본문을 읽는 도중에 바로
+         onload가 불리므로 body 끝(commonScripts)이 아니라 head에서 defer 없이 먼저 정의해 둬야 한다
+         (늦게 정의되면 ReferenceError가 나고 이미지가 display:none인 채로 남는다). -->
+    <script src="../js/question/question-image-fallback.js"></script>
+  
+</head>
+
+<body>
+
+  <div class="group-mcq question-mcq" data-diagnosis-id="101" data-next-page="question-msq.html">
+
+    <div class="mcq-area"></div>
+
+    <div class="mcq-wrap">
+
+      <header class="group-header">
+    <div class="header-area">
+
+      <div class="header-wrap header-wrap-left">
+        <!-- -inactive: 아직 도달 안 한 구간. planet-N 이미지는 4종을 순환 사용 -->
+        
+          <i class="header-planet">
+            <img class="header-planet-default" alt src="../img/common/planet-1.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-1-inactive.png">
+          </i>
+          <i class="header-divider header-divider-inactive"></i>
+        
+          <i class="header-planet header-planet-inactive">
+            <img class="header-planet-default" alt src="../img/common/planet-2.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-2-inactive.png">
+          </i>
+          <i class="header-divider header-divider-inactive"></i>
+        
+          <i class="header-planet header-planet-inactive">
+            <img class="header-planet-default" alt src="../img/common/planet-3.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-3-inactive.png">
+          </i>
+          <i class="header-divider header-divider-inactive"></i>
+        
+          <i class="header-planet header-planet-inactive">
+            <img class="header-planet-default" alt src="../img/common/planet-4.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-4-inactive.png">
+          </i>
+          
+        
+      </div>
+
+      <div class="header-wrap header-wrap-center">
+        <!-- 온보딩 3단계에서만 잠깐 나타나 숨쉬듯 깜빡이는 화살표. 평소엔 hidden, question-onboarding.js가 토글 -->
+        <span class="header-deco-arrow header-deco-arrow-left" hidden aria-hidden="true">
+          <svg viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.9853 24.3848L20.4706 15.8995L11.9853 7.41422" stroke="#FCF56F" stroke-width="4"/>
+          </svg>
+        </span>
+        <span class="header-deco"><img src="../img/question/common/header/title-decoration.png" alt></span>
+        <p class="header-text">행성까지 가는 올바른 항로를 골라 주세요.</p>
+        <span class="header-deco header-deco-right"><img src="../img/question/common/header/title-decoration.png" alt></span>
+        <span class="header-deco-arrow header-deco-arrow-right" hidden aria-hidden="true">
+          <svg viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.9853 24.3848L20.4706 15.8995L11.9853 7.41422" stroke="#FCF56F" stroke-width="4"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="header-wrap header-wrap-right">
+        <div class="header-chip">
+          <span class="header-chip-icon"><img src="../img/question/common/header/chip-icon.svg" alt></span>
+          <span class="header-chip-time" data-remaining-seconds="2400">40:00</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+      <main class="group-question">
+
+        <div class="question-nav question-nav-left"></div>
+
+        <div class="question-area-wrap">
+          <div class="question-area-shadow"></div>
+
+          <section class="question-area">
+
+            <div class="question-area-edge question-area-edge-top"></div>
+            <div class="question-area-edge question-area-edge-bottom"></div>
+
+            <div class="question-area-inner-glow"></div>
+
+            <div class="question-wrap">
+
+              <div class="question-box">
+                <div class="question-box-head">
+                  <span class="question-box-icon"><img src="../img/question/common/preview-icon.png" alt></span>
+                  <p class="question-box-text">원을 똑같이 4조각으로 나누어 3조각을 색칠했어요. 색칠한 부분을 분수로 알맞게 나타낸 것을 골라 주세요.</p>
+                </div>
+                <!-- 이미지 비율은 question-box-image.js가 실제 크기를 재서 question-box-media-4x3 / -16x9 를 붙임 (없으면 1:1). 좌상단 버튼은 크게 보기 -->
+                
+              </div>
+
+              <div class="question-body question-body-options-4">
+                <div class="question-body-illustration">
+                  <img src="../img/question/mcq/question-illustration.png" alt>
+                </div>
+                <!-- 선지 개수마다 라인/노드 좌표가 달라서(_question-mcq.scss 참고) 마크업 자체를 통째로 갈아끼운다. -->
+                <div class="constellation">
+
+                  
+
+                  
+
+                  
+
+                  
+                    <span class="constellation-line constellation-line-1"><img src="../img/question/mcq/constellation-line-1.svg" alt></span>
+                    <span class="constellation-line constellation-line-2"><img src="../img/question/mcq/constellation-line-2.svg" alt></span>
+                    <span class="constellation-line constellation-line-3"><img src="../img/question/mcq/constellation-line-3.svg" alt></span>
+                    <span class="constellation-line constellation-line-4"><img src="../img/question/mcq/constellation-line-4.svg" alt></span>
+                    <span class="constellation-line constellation-line-5"><img src="../img/question/mcq/constellation-line-5.svg" alt></span>
+                    <span class="constellation-line constellation-line-6"><img src="../img/question/mcq/constellation-line-6.svg" alt></span>
+
+                    <span class="constellation-node constellation-node-hub">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-1.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-1.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-1.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-2.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-upper-left">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-upper-right">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-lower">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-3.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-3.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-5.svg" alt></span>
+                      <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-6.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt1-edge">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt4-edge">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt1">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt2">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt3">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-6.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                    </span>
+
+                    <span class="constellation-node constellation-node-opt4">
+                      <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                      <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                    </span>
+                  
+
+                </div>
+                <div class="question-options">
+                  <button type="button" class="option-box" data-img-scope data-choice-id="1">
+                    <span class="option-box-text" data-img-fallback>$\frac{1}{4}$</span>
+                    <!-- 선지가 button이라 크게 보기 버튼은 span[role=button]으로 둠(버튼 안 버튼 금지) -->
+                    
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button><button type="button" class="option-box" data-img-scope data-choice-id="2">
+                    <span class="option-box-text" data-img-fallback>$\frac{2}{4}$</span>
+                    <!-- 선지가 button이라 크게 보기 버튼은 span[role=button]으로 둠(버튼 안 버튼 금지) -->
+                    
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button><button type="button" class="option-box" data-img-scope data-choice-id="3">
+                    <span class="option-box-text" data-img-fallback>$\frac{3}{4}$</span>
+                    <!-- 선지가 button이라 크게 보기 버튼은 span[role=button]으로 둠(버튼 안 버튼 금지) -->
+                    
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button><button type="button" class="option-box" data-img-scope data-choice-id="4">
+                    <span class="option-box-text" data-img-fallback>$\frac{4}{4}$</span>
+                    <!-- 선지가 button이라 크게 보기 버튼은 span[role=button]으로 둠(버튼 안 버튼 금지) -->
+                    
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="question-action">
+                <div class="question-action-frame">
+                  <button type="button" class="question-action-btn">선택 완료</button>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+          <i class="question-area-corner question-area-corner-tl"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-tr"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-bl"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-br"><img src="../img/question/common/corner-decoration.png" alt></i>
+
+          <div class="question-nav question-nav-right">
+    <button type="button" class="question-info-btn" aria-expanded="false">
+      <img src="../img/question/common/info-icon.png" alt="설명 보기">
+    </button>
+
+    <button type="button" class="question-note-btn" data-note-toggle aria-expanded="false">
+      <span class="question-note-btn-ic">
+        <img class="question-note-btn-ic-open" src="../img/question/common/note/note-icon.png" alt="연습장 열기">
+        <img class="question-note-btn-ic-close" src="../img/question/common/note/note-close-icon.png" alt="연습장 닫기">
+      </span>
+    </button>
+
+    <!-- 아이콘은 평소 흰색(-ic-off), 켜졌을 때 하늘색(-ic-on) 두 장을 넣고 CSS가 갈아 끼운다.
+         -selected는 지금 쓰고 있는 도구(연필/지우개), 휴지통은 선택이 아니라 누르는 동안만(:active) 켜진다 -->
+    <div class="note-tool" data-note-tool hidden>
+      <button type="button" class="note-tool-btn note-tool-btn-selected" data-note-tool-btn="pen" aria-label="연필" aria-pressed="true">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-pen.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-pen-on.svg" alt>
+      </button>
+      <button type="button" class="note-tool-btn" data-note-tool-btn="eraser" aria-label="지우개" aria-pressed="false">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-eraser.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-eraser-on.svg" alt>
+      </button>
+      <button type="button" class="note-tool-btn" data-note-tool-btn="clear" aria-label="모두 지우기">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-clear.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-clear-on.svg" alt>
+      </button>
+    </div>
+  </div>
+
+          
+    <div class="note-pad" data-note-pad hidden>
+      <div class="note-pad-block" data-note-close></div>
+      <canvas class="note-pad-canvas" data-note-canvas></canvas>
+      <!-- 캔버스 위에서만 쓰는 커서. 연필/지우개만 위아래로 살짝 흔들리고 점(실제 포인터 자리)은 고정이라,
+           한 장짜리 CSS 커서로는 안 되고 점과 도구를 따로 얹은 이 요소를 포인터에 붙여 움직인다.
+           필기 중에는(.note-pad-writing) 흔들림이 멈춘다 -->
+      <span class="note-cursor" data-note-cursor aria-hidden="true">
+        <i class="note-cursor-dot"><img src="../img/question/common/note/cursor-dot.svg" alt></i>
+        <i class="note-cursor-tool">
+          <img class="note-cursor-tool-ic note-cursor-tool-ic-pen" src="../img/question/common/note/cursor-pen-tool.svg" alt>
+          <img class="note-cursor-tool-ic note-cursor-tool-ic-eraser" src="../img/question/common/note/cursor-eraser-tool.svg" alt>
+        </i>
+      </span>
+    </div>
+  
+
+          
+    <div class="question-info-popup" data-question-info-popup hidden>
+      <div class="question-info-popup-dim"></div>
+      <section class="question-area question-info-popup-panel">
+        <div class="question-area-inner-glow"></div>
+        <div class="question-info-popup-stage" data-question-info-popup-stage aria-hidden="true" inert>
+    <div class="question-box">
+      <div class="question-box-head">
+        <span class="question-box-icon"><img src="../img/question/common/preview-icon.png" alt></span>
+        <p class="question-box-text">답이 되는 것을 하나 눌러 고르세요</p>
+      </div>
+    </div>
+    <div class="question-body question-body-options-4">
+      <div class="question-body-illustration">
+        <img src="../img/question/mcq/question-illustration.png" alt>
+      </div>
+      <div class="constellation">
+          <span class="constellation-line constellation-line-1"><img src="../img/question/mcq/constellation-line-1.svg" alt></span>
+          <span class="constellation-line constellation-line-2"><img src="../img/question/mcq/constellation-line-2.svg" alt></span>
+          <span class="constellation-line constellation-line-3"><img src="../img/question/mcq/constellation-line-3.svg" alt></span>
+          <span class="constellation-line constellation-line-4"><img src="../img/question/mcq/constellation-line-4.svg" alt></span>
+          <span class="constellation-line constellation-line-5"><img src="../img/question/mcq/constellation-line-5.svg" alt></span>
+          <span class="constellation-line constellation-line-6"><img src="../img/question/mcq/constellation-line-6.svg" alt></span>
+          <span class="constellation-node constellation-node-hub">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-1.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-1.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-1.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-2.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-upper-left">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-upper-right">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-lower">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-3.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-5.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-6.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt1-edge">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt4-edge">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt1">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt2">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt3">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-6.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt4">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+      </div>
+      <div class="question-options">
+        <button type="button" class="option-box">
+          <span class="option-box-text">보기 1</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 2</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 3</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 4</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="question-action">
+      <div class="question-action-frame">
+        <button type="button" class="question-action-btn">선택 완료</button>
+      </div>
+    </div>
+  </div>
+      </section>
+      <i class="question-area-corner question-area-corner-tl"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-tr"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-bl"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-br"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <span class="question-info-popup-tap" data-question-info-popup-hand aria-hidden="true" data-tap-lottie="../js/question/click.json"></span>
+    </div>
+  
+        </div>
+
+      </main>
+
+      <footer class="group-footer">
+        <div class="footer-area">
+
+          <!-- -active: 사용 가능한 힌트, -inactive: 아직 안 열림. 실제 활성화/해제는 question-hint.js가 처리 -->
+          <div class="footer-hints">
+            <i class="ornament ornament-left"><img src="../img/question/common/ornament-left.svg" alt></i>
+            <i class="ornament ornament-right"><img src="../img/question/common/ornament-right.svg" alt></i>
+            <button type="button" class="footer-hint footer-hint-active" data-text="분모가 같은 분수끼리는 분자만 비교하면 돼요."><img src="../img/question/common/footer/hint-icon-active.png" alt="1단계 힌트"></button><button type="button" class="footer-hint footer-hint-inactive" data-text="전체를 똑같이 나눈 조각이 몇 개인지 먼저 세어 보세요." disabled="disabled"><img src="../img/question/common/footer/hint-icon-inactive.png" alt="2단계 힌트"></button><button type="button" class="footer-hint footer-hint-inactive" data-text="색칠한 조각 수를 분자, 전체 조각 수를 분모에 써요." disabled="disabled"><img src="../img/question/common/footer/hint-icon-inactive.png" alt="3단계 힌트"></button>
+          </div>
+
+          <div class="footer-preview">
+            <div class="footer-preview-surface">
+              <div class="footer-preview-compact">
+                <p class="footer-preview-text"><em>1단계 힌트</em>를 확인할까요?</p>
+                <button type="button" class="footer-preview-btn">확인하기
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8.80808 8.06824L3.5 13.3867H7.40674L12.7148 8.06824L7.40674 2.74976H3.5L8.80808 8.06824Z" fill="url(#paint0_linear_2516_10899)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_2516_10899" x1="8.10741" y1="13.3867" x2="8.10741" y2="2.74976" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#B3F5FF"/>
+                            <stop offset="1" stop-color="white"/>
+                        </linearGradient>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <div class="footer-preview-result">
+                <div class="footer-preview-body">
+                  <p class="footer-preview-level">1단계 힌트</p>
+                  <p class="footer-preview-desc footer-preview-desc-full"></p>
+                  <p class="footer-preview-desc footer-preview-desc-short"></p>
+                </div>
+                <button type="button" class="footer-preview-toggle footer-preview-toggle-collapse">
+                  <i class="footer-preview-chevron"><img src="../img/question/common/footer/ic_left.svg" alt></i> 작게 보기
+                </button>
+                <button type="button" class="footer-preview-toggle footer-preview-toggle-expand">
+                  <i class="footer-preview-chevron footer-preview-chevron-up"><img src="../img/question/common/footer/ic_left.svg" alt></i> 펼쳐 보기
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="footer-skip" data-question-modal-open="skip">이 문제는 넘어가기 <i class="btn-deco"><img src="../img/question/common/footer/ic_right.png" alt="데코"></i></button>
+
+        </div>
+      </footer>
+
+    </div>
+
+    
+
+    <!-- 모르겠어요: 이 문제를 넘길지 되묻는다 -->
+    <div class="question-modal" data-question-modal="skip" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-skip-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-badge" src="../img/question/common/modal/icon-polygon.svg" alt>
+            <img class="question-modal-icon-skip" src="../img/question/common/modal/icon-skip.svg" alt>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-title" id="question-modal-skip-title">이 문제는 넘어갈까요?</p>
+            <p class="question-modal-desc">풀 수 있는 문제인데, 아깝게 놓칠 수도 있어요.<br>신중하게 결정해 주세요!</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-secondary btn-h40" data-question-modal-close>조금 더 생각해보기</button>
+            </div>
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-skip-confirm>이 문제 넘어가기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 중단 확인: 탐사를 여기서 끝낼지 되묻는다 -->
+    <div class="question-modal" data-question-modal="exit" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-exit-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-badge" src="../img/question/common/modal/icon-polygon-warning.svg" alt>
+            <span class="question-modal-icon-exit"><img src="../img/question/common/modal/icon-exit.svg" alt></span>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-eyebrow">주의!</p>
+            <p class="question-modal-title" id="question-modal-exit-title">탐사를 종료할까요?</p>
+            <p class="question-modal-desc">지금 나가면, 탐사가 이대로 종료돼요.<br>이대로 탐사를 끝낼까요?</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-secondary btn-h40" data-question-modal-close>계속하기</button>
+            </div>
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-exit-confirm>탐사 끝내기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 시간 초과: 더 풀 수 없으므로 닫는 수단(딤·Esc) 없이 "탐사 마치기"로만 시험 완료 화면(outro)에 간다.
+         버튼 동작은 question-timer.js. data-question-modal-persistent = Esc로도 닫히지 않음 -->
+    <div class="question-modal" data-question-modal="timeout" data-question-modal-persistent hidden>
+      <div class="question-modal-dim"></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-timeout-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-full" src="../img/question/common/modal/icon-timeout.svg" alt>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-title" id="question-modal-timeout-title">시간이 다 됐어요!</p>
+            <p class="question-modal-desc">탐사가 여기서 마무리돼요.</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-timeout-confirm>탐사 마치기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 이미지 크게 보기: .image-zoom-btn을 누르면 question-image-zoom.js가 그 옆 이미지 주소를 넣고 연다.
+         화면 어디를 눌러도 닫힌다(딤·패널 모두 data-question-modal-close). -->
+    <div class="question-modal image-zoom-modal" data-question-modal="image-zoom" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel image-zoom-panel" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" data-question-modal-close>
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="image-zoom-panel-frame">
+          <img class="image-zoom-panel-img" data-image-zoom-view src alt>
+        </div>
+      </div>
+      <p class="image-zoom-guide">화면을 누르면 닫혀요.</p>
+    </div>
+
+  
+
+  </div>
+
+  
+    <script src="../js/common-toggles.js"></script>
+    <script src="../js/intro.js"></script>
+    <script src="../js/partner-select.js"></script>
+    <script src="../js/math-render.js"></script>
+    <script src="../js/question/question-select.js"></script>
+    <script src="../js/question/question-drag-drop.js"></script>
+    <script src="../js/question/question-line-match.js"></script>
+    <script src="../js/question/question-angle-dial.js"></script>
+    <script src="../js/question/question-hotspot-grid.js"></script>
+    <script src="../js/question/question-hotspot-board.js"></script>
+    <script src="../js/question/question-keypad.js"></script>
+    <script src="../js/question/question-onboarding.js"></script>
+    <script src="../js/question/question-tap-lottie.js"></script>
+    <script src="../js/question/question-info-popup.js"></script>
+    <script src="../js/question/question-info-demo.js"></script>
+    <script src="../js/question/question-note.js"></script>
+    <script src="../js/question/question-note-demo.js"></script>
+    <script src="../js/question/question-modal.js"></script>
+    <script src="../js/question/question-back-guard.js"></script>
+    <script src="../js/question/question-box-image.js"></script>
+    <script src="../js/question/question-box-text.js"></script>
+    <script src="../js/question/question-fill-zone.js"></script>
+    <script src="../js/question/question-image-zoom.js"></script>
+  
+  <script src="../js/question/question-timer.js"></script>
+  <script src="../js/question/question-hint.js"></script>
+  <script src="../js/question/question-submit.js"></script>
+  <script src="../js/question/question-submit-wiring.js"></script>
+  
+  
+  
+  
+    <script src="../js/main.js"></script>
+  
+</body>
+
+</html>

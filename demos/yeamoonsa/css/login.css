@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.login-wrap {width: 100%; height: 100dvh; background: url(../img/login/bg_landscape@2x.png) no-repeat center center; background-size: cover; display: -webkit-flex; display: flex; flex-direction: column; align-items: center;}
+
+.login-header{width: 100%; padding: clamp(16px, 2.222dvh, 32px) var(--inner-padding-l);}
+.login-header .inner{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0;}
+.login-header .home-btn{width: 56px; height: 56px;}
+.login-header .home-btn>svg{width: 100%; height: 100%;}
+.login-header .add-home-btn {
+    height: clamp(36px, 2.5vw, 48px); padding: 0 20px; display: flex; align-items: center; justify-content: center; gap: clamp(6px, 0.41666666667vw, 8px); border-radius: clamp(12px, 0.83333333333vw, 16px); outline: var(--border-width6) solid #fff; background: #CC630F; position: relative;
+    box-shadow: 
+    0 clamp(3px, 0.3125vw, 6px) 0 var(--border-width6) rgba(0, 0, 0, 0.18), 
+    0 clamp(3px, 0.3125vw, 6px) clamp(3px, 0.3125vw, 6px) var(--border-width-minus6) rgba(255, 255, 255, 0.30) inset, 
+    0 clamp(-12px, -0.625vw, -6px) 0 var(--border-width-minus6) rgba(0, 0, 0, 0.14) inset;
+}
+.login-header .add-home-btn>svg {width: clamp(16px, 1.25vw, 24px); height: clamp(16px, 1.25vw, 24px);}
+.login-header .add-home-btn>.btn-text {color: #fff; font-family: Maplestory; font-size: clamp(12px, 0.9375vw, 18px); font-weight: 700; letter-spacing: 0;}
+
+.login-header .add-home-btn::before {
+    content: ''; width: 100%; height: 100%; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; mix-blend-mode: screen; 
+    box-shadow: 0 clamp(1.5px, 0.15625vw, 3px) 0 var(--border-width-minus6) rgba(255, 255, 255, 0.34) inset;
+}
+
+.login-header .add-home-btn:hover {
+    background: #D66D19; 
+    box-shadow: 
+    0 clamp(3px, 0.3125vw, 6px) 0 var(--border-width6) rgba(0, 0, 0, 0.18), 
+    0 clamp(3px, 0.3125vw, 6px) clamp(3px, 0.3125vw, 6px) var(--border-width-minus6) rgba(255, 255, 255, 0.30) inset, 
+    0 clamp(-12px, -0.625vw, -6px) 0 var(--border-width-minus6) rgba(0, 0, 0, 0.08) inset;
+}
+
+.login-header .add-home-btn:active {
+    background: #C25905; 
+    box-shadow: 
+    0 clamp(2px, 0.20833333333vw, 4px) 0 var(--border-width6) rgba(0, 0, 0, 0.24), 
+    0 clamp(3px, 0.3125vw, 6px) clamp(3px, 0.3125vw, 6px) var(--border-width-minus6) rgba(255, 255, 255, 0.30) inset, 
+    0 clamp(-10px, -0.52083333333vw, -5px) 0 var(--border-width-minus6) rgba(0, 0, 0, 0.14) inset;
+}
+
+.logo-area {width: calc(100% - var(--inner-padding-l)*3); max-width: 380px; padding: 0 clamp(16px, 1.198vw, 23px); display: inline-block;}
+.logo {width: 100%; height: 100%; display: block; object-fit: contain; object-position: center;}
+
+form {width: 100%;}
+.login-area {width: calc(100% - var(--inner-padding-l)*4); max-width: 560px; margin: 0 auto; margin-top: clamp(0px, 11.85185185185dvh, 128px); display: flex; flex-direction: column; gap: 24px;}
+.login-area>* {position: relative;}
+.login-area>* + *::before {content: ''; width: 100%; height: clamp(1px, 0.15625vw, 2px); background: var(--gray50);}
+.login-area input {width: 100%; height: clamp(45px, 4.167vw, 80px); padding: 0 clamp(16px, 1.25vw, 24px); border-radius: 999px; border: clamp(1px, 0.052083333333333336dvh, 2px) solid #EEF1F3; font-size: clamp(17.5px, 2.1875vw, 28px); color: var(--gray800); font-family: "Pretendard Variable"; font-size: clamp(17.5px, 2.1875vw, 28px); font-weight: 600; letter-spacing: var(--ls);
+    box-shadow: 0 0.31vw 0 0 #E5E3DB, 0 -0.68vw 0.31vw 0 rgba(238, 238, 238, 0.06) inset, 0 0.36vw 0.31vw 0 rgba(255, 255, 255, 0.40) inset;}
+.login-area input#id {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M29 11C29 15.9703 24.9707 20 20 20C15.0293 20 11 15.9703 11 11C11 6.02972 15.0293 2 20 2C24.9707 2 29 6.02972 29 11Z' fill='%23CCCCCC'/%3E%3Cpath d='M29.1552 37H10.8448C8.16913 37 6 35.0868 6 32.7269V29.3481C6 22.5285 12.2677 17 19.9998 17C27.7318 17 34 22.5285 34 29.3481V32.7269C34 35.0868 31.8309 37 29.1552 37Z' fill='%23CCCCCC'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 24px center;
+    background-size: clamp(24px, 2.083vw, 40px);
+    padding-left: clamp(50px, 5vw, 72px);
+}
+
+.login-area input#pwd {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M27.0727 20C26.0082 20 25.1455 19.113 25.1455 18.0193V10.7641C25.1455 7.56453 22.613 4.9615 19.5002 4.9615C16.387 4.9615 13.8545 7.56453 13.8545 10.7641V18.0193C13.8545 19.113 12.9918 20 11.9273 20C10.8631 20 10 19.113 10 18.0193V10.7641C10 5.3801 14.2618 1 19.4998 1C24.7382 1 29 5.3801 29 10.7641V18.0193C29 19.113 28.1369 20 27.0727 20Z' fill='%23CCCCCC'/%3E%3Cpath d='M24.4638 39.6482H14.9431C9.56417 39.6482 5.20361 35.3373 5.20361 30.0192V23.2771C5.20361 17.9594 9.56417 13.6482 14.9431 13.6482H24.4638C29.8431 13.6482 34.2036 17.9594 34.2036 23.2771V30.0192C34.2036 35.3373 29.8431 39.6482 24.4638 39.6482Z' fill='%23CCCCCC'/%3E%3Cpath d='M23.2036 26.1482C23.2036 28.0812 21.6367 29.6482 19.7036 29.6482C17.7706 29.6482 16.2036 28.0812 16.2036 26.1482C16.2036 24.2151 17.7706 22.6482 19.7036 22.6482C21.6367 22.6482 23.2036 24.2151 23.2036 26.1482Z' fill='white'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 24px center;
+    background-size: clamp(24px, 2.083vw, 40px);
+    padding-left: clamp(50px, 5vw, 72px);
+}
+.login-area input::placeholder {color: var(--gray400); line-height: clamp(42px, 4.167vw, 80px);}
+
+.btn-login {width: clamp(100px, 12.5vw, 240px); height: clamp(40px, 4.16666666667vw, 80px); display: flex; justify-content: center; align-items: center; border-radius: 999px; outline: var(--border-width8) solid #fff; background: #F86F00; box-shadow: 0 clamp(0px, 0.3125vw, 6px) 0 var(--border-width8) rgba(0, 0, 0, 0.18); color: #FFF; text-align: center; font-family: Maplestory; font-size: clamp(16px, 1.66666666667vw, 32px); font-weight: 700; letter-spacing: 0; margin: 0 auto; margin-top: clamp(0px, 8.14814814815svh, 88px); position: relative;}
+.btn-login:hover {background: #FF790A;}
+.btn-login:active {background: #F86F00;}
+
+.btn-login::after {
+    content: '';
+    background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.6'%3E%3Cpath d='M29.7557 27.7695C24.0879 32.7574 21.6824 37.2609 17.4583 33.5435C13.2343 29.8262 14.4047 22.7692 20.0725 17.7814C25.7403 12.7935 33.7592 11.7635 37.9833 15.4808C42.2074 19.1982 35.4235 22.7817 29.7557 27.7695Z' fill='white'/%3E%3Cellipse cx='46.5195' cy='12.4571' rx='5.41603' ry='3.70712' fill='white'/%3E%3C/g%3E%3C/svg%3E") no-repeat center center / cover;
+    height: 100%;
+    aspect-ratio: 1/1;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.btn-login .layered-shadow {width: 100%; height: 100%; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;}
+
+.btn-login .layered-shadow1 {mix-blend-mode: overlay; box-shadow: 0 clamp(-20px, -1.04166666667vw, 0px) clamp(0px, 0.3125vw, 6px) var(--border-width-minus8) #EE650A inset;}
+.btn-login .layered-shadow2 {mix-blend-mode: darken; box-shadow: 0 clamp(-17px, -0.88541666667vw, 0px) 0 var(--border-width-minus8) rgba(199, 93, 0, 0.60) inset;}
+.btn-login .layered-shadow3 {
+    mix-blend-mode: plus-lighter; 
+    box-shadow: 
+    0 clamp(0px, 0.625vw, 12px) 0 var(--border-width-minus8) rgba(255, 255, 255, 0.12) inset, 
+    0 clamp(0px, 0.8333vw, 16px) clamp(0px, 0.52083333333vw, 10px) var(--border-width-minus8) rgba(255, 255, 255, 0.16) inset;
+}
+
+.btn-login:active {box-shadow: 0 clamp(0px, 0.20833333333vw, 4px) 0 var(--border-width8) rgba(0, 0, 0, 0.28);}
+.btn-login:active .layered-shadow2 {box-shadow: 0 clamp(-13px, -0.67708333333vw, 0px) 0 var(--border-width-minus8) rgba(199, 93, 0, 0.60) inset;}
+
+
+
+
+
+@media screen and (orientation: landscape){
+	.login-wrap {background-image: url(../img/login/bg_landscape@2x.png);}
+}
+
+@media screen and (orientation: portrait){
+	.login-wrap {background-image: url(../img/login/bg_portrait@2x.png);}
+}
+
+@media screen and (max-height:720px) and (orientation: landscape){
+    .logo-area {max-height: clamp(0px, 16.67vh, 120px);}
+    .login-area input {height: clamp(45px, 9.86111111111dvh, 71px);}
+    .btn-login { box-shadow: 0 clamp(0px, 0.27777777778dvh, 2px) clamp(0px, 0.55555555556dvh, 4px) 0 rgba(95, 129, 19, 0.40); font-size: clamp(20px, 4.44444444444dvh, 32px);}
+}

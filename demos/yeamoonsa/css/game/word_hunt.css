@@ -1,0 +1,433 @@
+:root {
+    
+    --padding100: calc( var(--wrap-width) * (100/1920) );
+
+
+    --hint-btn-width: calc( var(--wrap-width) * (56/1920) );
+    --hint-btn-height: calc( var(--wrap-width) * (95/1920) );
+    --hint-btn-top: calc( var(--wrap-width) * (41/1920) );
+    --hint-btn-right: calc( var(--wrap-width) * (100/1920) );
+
+    --hint-d-width: calc( var(--wrap-width) * (59/1920) );
+    --hint-d-height: calc( var(--wrap-width) * (99/1920) );
+
+    --hint-a1-width: calc( var(--wrap-width) * (92/1920) );
+    --hint-a1-height: calc( var(--wrap-width) * (136/1920) );
+
+
+    --quiz-round-top: calc( var(--wrap-width) * (21/1920) ); /* outline 빼기 */
+    --padding20: calc( var(--wrap-width) * (20/1920) );
+    --padding24: calc( var(--wrap-width) * (24/1920) );
+    --padding12: calc( var(--wrap-width) * (12/1920) );
+    --gap4: calc( var(--wrap-width) * (4/1920) );
+    --gap8: calc( var(--wrap-width) * (8/1920) );
+    --gap16: calc( var(--wrap-width) * (16/1920) );
+    --magnifier-size: calc( var(--wrap-width) * (31/1920) );
+    --fs38: calc( var(--wrap-width) * (38/1920) );
+
+    --instruction-width: calc( var(--wrap-width) * (968/1920) );
+    --padding8: calc( var(--wrap-width) * (8/1920) );
+    --padding32: calc( var(--wrap-width) * (32/1920) );
+    --fs40: calc( var(--wrap-width) * (40/1920) );
+
+
+    --stopwatch-top: calc( var(--wrap-width) * (168/1920) );
+    --gap16: calc( var(--wrap-width) * (16/1920) );
+    --stopwatch-size: calc( var(--wrap-width) * (82/1920) );
+    --fs34: calc( var(--wrap-width) * (34/1920) );
+
+    --time-bar-width: calc( var(--wrap-width) * (454/1920) );
+    --time-bar-height: calc( var(--wrap-width) * (24/1920) );
+    --shadow-width-minus8: calc( var(--wrap-width) * (-8/1920) );
+
+
+    --card-wrap-bottom: calc( var(--wrap-width) * (80/1920) );
+    --card-row-gap: calc( var(--wrap-width) * (32/1920) ); /* outline 제외 */
+    --card-column-gap: calc( var(--wrap-width) * (48/1920) ); /* outline 제외 */
+    --card-width: calc( var(--wrap-width) * (248/1920) ); /* outline 까지 */
+    --card-height: calc( var(--wrap-width) * (343/1920) ); /* outline 까지 */
+    --card-d-width: calc( var(--wrap-width) * (240/1920) ); /* outline 제외 */
+    --card-d-height: calc( var(--wrap-width) * (335/1920) ); /* outline 제외 */
+    --radius24: calc( var(--wrap-width) * (24/1920) );
+    --shadow-width-minus2: calc( var(--wrap-width) * (-2/1920) );
+    --shadow-width8: calc( var(--wrap-width) * (8/1920) );
+    --shadow-width28: calc( var(--wrap-width) * (28/1920) );
+    --shadow-width32: calc( var(--wrap-width) * (32/1920) );
+    --shadow-width24: calc( var(--wrap-width) * (24/1920) );
+    --shadow-width20: calc( var(--wrap-width) * (20/1920) );
+    --card-front-padding-top: calc( var(--wrap-width) * (32/1920) - var(--border-width8) );
+    --card-q-img-size: calc( var(--wrap-width) * (198/1920) );
+
+    --char-img-width:calc( var(--wrap-width) * (196/1920) );
+    --char-img-height:calc( var(--wrap-width)*(184/1920) );
+    --time-box-width:calc( var(--wrap-width) * (123/1920) );
+    --time-box-height:calc( var(--wrap-width) * (127/1920) );
+    --time-box-height:calc( var(--wrap-width) * (127/1920) );
+    --time-box-font:calc( var(--wrap-width) * (64/1920) );
+    --remember-box-width:calc( var(--wrap-width) * (356/1920) );
+    --remember-box-hight:calc( var(--wrap-width) * (145/1920) );
+    --start-width:calc( var(--wrap-width) * (180/1920) );
+    --start-heigh:calc( var(--wrap-width) * (80/1920) );
+    --success-width:calc( var(--wrap-width) * (191/1920) );        
+    --success-height:calc( var(--wrap-width) * (63/1920) );
+    --success-radius:calc( var(--wrap-width) * (8/1920) );
+    --success-font:calc( var(--wrap-width) * (32/1920) );
+    --success-font2:calc( var(--wrap-width) * (28/1920) );
+
+    --success-shadow1-blur:calc( var(--wrap-width) * (5/1920) );
+    --success-shadow2-x:calc( var(--wrap-width) * (2/1920) );
+    --success-shadow2-y:calc( var(--wrap-width) * (6/1920) );
+
+    --success-p-top:calc( var(--wrap-width) * (10/1920) );
+    --success-p-bottom:calc( var(--wrap-width) * (16/1920) );
+    --success-p-right:calc( var(--wrap-width) * (23/1920) );
+    --success-p-right2:calc( var(--wrap-width) * (18/1920) );
+    --success-p-left:calc( var(--wrap-width) * (14/1920) );
+   --card-p-top: calc(var(--wrap-width) * (26/1920)) ;
+   --card-p-left: calc(var(--wrap-width) * (22/1920)) ;
+   --round-hd-border : calc(var(--wrap-width) * (8/1920)) ;
+}
+
+.wrap.round-01 {background: url(../../img/game/word_hunt/round-01-bg.png)no-repeat; background-size: cover;}
+.wrap.round-02 {background: url(../../img/game/word_hunt/round-02-bg.png)no-repeat; background-size: cover;}
+/* .wrap.round-02 {background: linear-gradient(180deg, #B4F4FF 0%, #DEFAFF 100%); background-size: cover;} */
+.wrap.round-03 {background: url(../../img/game/word_hunt/round-03-bg.png)no-repeat; background-size: cover;}
+#lottie-animation, .intro, #intro {width: 100%; height: 100%;}
+
+
+.start-btn, .btn-retry {position: absolute; bottom: 6.48148148148%; /* 70px/1080px * 100 */ right: 5.20833333333%; /* 100px/1920px * 100 */}
+
+
+/* 헤더 */
+.quiz-hd {width: 100%; position: absolute; top: 0; left: 0; right: 0;}
+.quiz-inner {position: relative; padding: 0 var(--padding100); width: 100%;}
+
+ 
+/* 힌트 버튼 */
+.btn-hint {width: var(--hint-btn-width); height: var(--hint-btn-height); position: absolute; top: var(--hint-btn-top); right: var(--hint-btn-right);z-index: 2;}
+.btn-hint img {display: block; object-fit: contain; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.2s ease-out;}
+.btn-hint .hint-d {opacity: 1;}
+.btn-hint:hover .hint-d {opacity: 0;}
+.btn-hint:not(.on):hover .hint-h {opacity: 1;}
+.btn-hint.on .hint-d {opacity: 0;}
+.btn-hint .hint-a-01,
+.btn-hint .hint-a-02 {transform: translate(-50%, -50%) scale(0.9);}
+.btn-hint.on .hint-a-01,
+.btn-hint.on .hint-a-02 {transform: translate(-50%, -50%) scale(1);}
+.btn-hint.on .hint-a-02 {opacity: 1;}
+.btn-hint.on .hint-a-01 {animation: hint1 ease-out infinite 1400ms;}
+
+@keyframes hint1 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+}
+
+.btn-hint .hint-d,
+.btn-hint .hint-h {width: var(--hint-d-width); height: var(--hint-d-height);}
+.btn-hint .hint-a-01,
+.btn-hint .hint-a-02 {width: var(--hint-a1-width); height: var(--hint-a1-height);}
+/* //힌트 버튼 */
+
+
+.quiz-lottie-list{position: relative;z-index: 3;}
+
+
+.quiz-round {width: fit-content; display: flex; align-items: center; margin: 0 auto; position: relative; top: var(--quiz-round-top);}
+.quiz-round .round-img {display: flex; padding: var(--padding20) var(--padding24) var(--padding12); flex-direction: column; justify-content: center; align-items: center; gap: var(--gap4); border-radius: var(--radius16); outline: var(--round-hd-border) solid #FFF; background: #FFD426;}
+.quiz-round .round-list {display: flex; justify-content: center; gap: var(--gap8);}
+.quiz-round .round-list li {display: flex; justify-content: center; align-items: center;}
+.quiz-round .round-list li svg {width: var(--magnifier-size); height: var(--magnifier-size);}
+.quiz-round .round-list li.on path {fill: #EA5B63;}
+.quiz-round h3 {color: #A54700; text-align: center; font-family: "Proxima Soft"; font-size: var(--fs38); font-weight: 800; line-height: 130%; white-space: nowrap; letter-spacing: 0;}
+.quiz-round h2 {width: var(--instruction-width); padding: var(--padding8) var(--padding24) var(--padding8) var(--padding32); border-radius: 0 var(--radius16) var(--radius16) 0; background: #FFF; color: #582A04; text-align: center; font-family: Fredoka; font-size: var(--fs40); font-weight: 600; line-height: 150%; letter-spacing: 0;}
+/* //헤더 */
+
+
+.wrap > .quiz-wrap {display: block; width: 100%; height: 100%;}
+.quiz-content {position: relative; width: 100%; height: 100%;}
+
+/* 스톱워치 */
+.stopwatch-wrap {position: absolute; top: var(--stopwatch-top); left: 50%; transform: translateX(-50%); display: none; justify-content: center; gap: var(--gap16); align-items: center;}
+.stopwatch-wrap.show {display: flex;}
+.stopwatch {position: relative; width: var(--stopwatch-size); height: var(--stopwatch-size);}
+.hurry-up .stopwatch {animation: shake 1.5s ease-out infinite;}
+
+@keyframes shake {
+    0% {transform: rotate(0deg);}
+    15% {transform: rotate(-5deg);}
+    30% {transform: rotate(0deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.icon-clock {-webkit-flex-shrink: 0; flex-shrink: 0; width: 100%; height: 100%; display: block; }
+.stopwatch-wrap .time {animation: tick-tock 1.5s ease-out 0.5s infinite;}
+
+@keyframes tick-tock {
+    0% {transform: translate(-50%, -50%) rotateX(0deg);}
+    15% {transform: translate(-50%, -50%) rotateX(80deg);}
+    30% {transform: translate(-50%, -50%) rotateX(0deg);}
+    100% {transform: translate(-50%, -50%) rotateX(0deg);}
+}
+
+.stopwatch .time {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #005782; text-align: center; font-family: Poppins; font-size: var(--fs34); font-weight: 600; line-height: 1; letter-spacing: 0; transform-style: preserve-3d;}
+.stopwatch-wrap .time-bar {position: relative; display: block; width: var(--time-bar-width); height: var(--time-bar-height);}
+.stopwatch-wrap .time-bar::-webkit-progress-bar {border-radius: 999px; background: #FFF; box-shadow: 0 var(--shadow-width-minus8) 0 rgba(0, 0, 0, 0.08) inset;}
+.stopwatch-wrap .time-bar::-webkit-progress-value {border-radius: 999px; background: #00BDFF; box-shadow: 0 var(--shadow-width-minus8) 0 rgba(0, 0, 0, 0.12) inset; inline-size: var(--progress, 100%);}
+
+.stopwatch-wrap.hurry-up .icon-clock .path-top {fill: #FF9500;}
+.stopwatch-wrap.hurry-up .icon-clock .path-middle-stroke {fill: #E84716; }
+.stopwatch-wrap.hurry-up .icon-clock .path-bottom {fill: #FF9500; }
+.stopwatch-wrap.hurry-up .time {color: #8E1B00;}
+
+.stopwatch-wrap.hurry-up .time-bar::-webkit-progress-value {background: #FF7543;}
+/* //스톱워치 */
+
+
+/* 카드 */
+.quiz-content .quiz-round-list {width: fit-content; position: absolute; bottom: var(--card-wrap-bottom); left: 50%; transform: translateX(-50%);}
+.quiz-content .round-item {display: none;}
+.round-01 .round-01-item {display: block;}
+.round-02 .round-02-item {display: block;}
+.round-03 .round-03-item {display: block;}
+
+.card-list {display: grid; gap: var(--card-row-gap) var(--card-column-gap); grid-template-rows: repeat(2, var(--card-height)); will-change: transform;}
+.round-01-item .card-list {grid-template-columns: repeat(3, var(--card-width));}
+.round-02-item .card-list {grid-template-columns: repeat(4, var(--card-width));}
+.round-03-item .card-list {grid-template-columns: repeat(5, var(--card-width));}
+
+.quiz-content .card-item {position: relative; display: flex; justify-content: center; align-items: center; transform-style: preserve-3d; transition: transform .3s ease-out, opacity .3s ease-out; cursor: pointer;}
+
+.quiz-content .card-box {
+    width: 100%; height: 100%; border-radius: var(--radius24); border: calc( var(--wrap-width) * (16/1920) ) solid #fff; background-color: #fff;
+    position: absolute; z-index: 1; display: flex; justify-content: center; align-items: center;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+}
+.quiz-content .card-front {padding: var(--card-front-padding-top) 0; flex-direction: column; justify-content: space-between;}
+
+.step1 .quiz-content .round-01-item .card-back {background: url(../../img/game/word_hunt/step1/round-01-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step1 .quiz-content .round-02-item .card-back {background: url(../../img/game/word_hunt/step1/round-02-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step1 .quiz-content .round-03-item .card-back {background: url(../../img/game/word_hunt/step1/round-03-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step2 .quiz-content .round-01-item .card-back {background: url(../../img/game/word_hunt/step2/round-01-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step2 .quiz-content .round-02-item .card-back {background: url(../../img/game/word_hunt/step2/round-02-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step2 .quiz-content .round-03-item .card-back {background: url(../../img/game/word_hunt/step2/round-03-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step3 .quiz-content .round-01-item .card-back {background: url(../../img/game/word_hunt/step3/round-01-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step3 .quiz-content .round-02-item .card-back {background: url(../../img/game/word_hunt/step3/round-02-card-back.png) center/calc((100% + var(--border-width8)*2));}
+.step3 .quiz-content .round-03-item .card-back {background: url(../../img/game/word_hunt/step3/round-03-card-back.png) center/calc((100% + var(--border-width8)*2));}
+
+.quiz-content .type1 .card-front {border-color: #6CD2C6;}
+.quiz-content .type2 .card-front {border-color: #81A1FF;}
+.quiz-content .type3 .card-front {border-color: #FF82AC;}
+.quiz-content .type4 .card-front {border-color: #CEA8E4;}
+.quiz-content .type5 .card-front {border-color: #B29D9D;}
+
+/* .quiz-content .card-box .layered-shadow {width: calc((100% + var(--border-width8)*4)); height: calc((100% + var(--border-width8)*4)); border-radius: var(--radius24); position: absolute; inset: calc(var(--border-width-minus8)*2);} */
+.quiz-content .card-item .layered-shadow {width: 100%; height: 100%; border-radius: var(--radius24); position: absolute; inset: 0;}
+.quiz-content .card-item .layered-shadow1 {z-index: -4; mix-blend-mode: color-burn; box-shadow: 0 var(--shadow-width-minus2) 0 rgba(0, 0, 0, 0.08);}
+.quiz-content .card-item .layered-shadow2 {z-index: -5; mix-blend-mode: darken; box-shadow: 0 var(--shadow-width8) 0 rgba(0, 0, 0, 0.16);}
+.quiz-content .card-item .layered-shadow3 {z-index: -6; mix-blend-mode: color-burn; box-shadow: 0 var(--shadow-width8) 0 rgba(0, 0, 0, 0.08);}
+
+.quiz-content .card-item .layered-shadow4 {z-index: -3;}
+.quiz-content .card-item .layered-shadow5 {z-index: -2;}
+.quiz-content .card-item .layered-shadow6 {z-index: -1;}
+
+.quiz-content .q-txt {color: #1E2124; text-align: center; font-family: "Proxima Soft"; font-size: calc( var(--card-d-width) * 40/240 ); /* 카드 너비 240px 기준 40px */ font-weight: 800; line-height: 1; letter-spacing: 0;}
+.quiz-content .q-txt.long{font-size: calc( var(--card-d-width) * 30/240 );}
+
+.quiz-content .card-box img {width: calc( var(--card-d-width) * 198/240 ); /* 카드 너비 240px 기준 198px */ height: auto; aspect-ratio: 1/1; display: block; object-fit: contain;}
+.quiz-content .card-box.card-front {transform: rotateY(180deg); padding: var(--card-p-top) var(--card-p-left);}
+.quiz-content .card-item.on {transform: rotateY(180deg);}
+.quiz-content .card-item.right {opacity: 0; visibility: hidden;}
+.quiz-content .card-item.eff .card-front {opacity: 0.5;}
+.card-item {position: relative;}
+.card-item::after {content: ''; width: calc( var(--card-d-width) * 356/240 ); height: auto; aspect-ratio: 1/1; display: block; position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) scale(0); pointer-events: none; background: url(../../img/game/word_hunt/right-eff.svg) no-repeat; background-size: contain; opacity: 0; transition: all 0.3s ease-out;}
+.card-item.eff::after {opacity: 1; transform: translate(-50%, -50%) scale(1);}
+
+
+.quiz-content .card-item.hint :is(.layered-shadow4, .layered-shadow5, .layered-shadow6) {animation-duration: 1.4s; animation-timing-function: ease-out; animation-iteration-count: 3; animation-fill-mode: forwards; }
+#round_1 .card-item.hint .layered-shadow4 {mix-blend-mode: darken; animation-name: card-hint1-2;}
+#round_1 .card-item.hint .layered-shadow5 {animation-name: card-hint1-1;}
+
+#round_2 .card-item.hint .layered-shadow4 {mix-blend-mode: overlay; animation-name: card-hint2-3;}
+#round_2 .card-item.hint .layered-shadow5 {mix-blend-mode: hard-light; animation-name: card-hint2-2;}
+#round_2 .card-item.hint .layered-shadow6 {animation-name: card-hint2-1;}
+
+#round_3 .card-item.hint .layered-shadow4 {mix-blend-mode: multiply; animation-name: card-hint3-3;}
+#round_3 .card-item.hint .layered-shadow5 {mix-blend-mode: multiply; animation-name: card-hint3-2;}
+#round_3 .card-item.hint .layered-shadow6 {mix-blend-mode: multiply; animation-name: card-hint3-1;}
+
+*:has(.layered-shadow) {isolation: auto;}
+
+
+@keyframes card-hint1-1 {
+    0% {
+        mix-blend-mode: normal;
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 147, 0, 0.60);
+    }
+    50% {
+        mix-blend-mode: multiply;
+        box-shadow: 0 0 var(--shadow-width32) 0 rgba(255, 147, 0, 0.50);
+    }
+    100% {
+        mix-blend-mode: normal;
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 147, 0, 0.60);
+    }
+} /* 피그마 기준 제일 위쪽에 적용된 그림자 */
+
+@keyframes card-hint1-2 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 147, 0, 0.80);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes card-hint2-1 {
+    0% {
+        mix-blend-mode: soft-light;
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(1, 88, 161, 0.40);
+    }
+    50% {
+        mix-blend-mode: hard-light;
+        box-shadow: 0 0 var(--shadow-width24) 0 rgba(1, 88, 161, 0.64);
+    }
+    100% {
+        mix-blend-mode: soft-light;
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(1, 88, 161, 0.40);
+    }
+} /* 피그마 기준 제일 위쪽에 적용된 그림자 */
+
+@keyframes card-hint2-2 {
+    0% {
+        box-shadow: 0 0 var(--shadow-width24) 0 rgba(1, 88, 161, 0.70);
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(1, 88, 161, 0.90);
+    }
+    100% {
+        box-shadow: 0 0 var(--shadow-width24) 0 rgba(1, 88, 161, 0.70);
+    }
+}
+
+@keyframes card-hint2-3 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width24) 0 rgba(0, 155, 237, 0.20);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes card-hint3-1 {
+    0% {
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 136, 180, 0.95);
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width32) 0 rgba(255, 136, 180, 1);
+    }
+    100% {
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 136, 180, 0.95);
+    }
+} /* 피그마 기준 제일 위쪽에 적용된 그림자 */
+
+@keyframes card-hint3-2 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width20) 0 rgba(255, 136, 180, 0.1);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+
+@keyframes card-hint3-3 {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 var(--shadow-width28) 0 rgba(255, 136, 180, 1);
+    }
+    100% {
+        box-shadow: none;
+    }
+}
+/* //카드 */
+
+/*성공시 오른쪽 단어 보이게*/
+.success-list {position: absolute; top: 27%; right: 0.5%; display: flex; flex-direction: column; gap: var(--gap16);}
+
+.success-list li {
+    min-width: var(--success-width); padding: var(--success-p-top) var(--success-p-right); border-radius: var(--success-radius); background: #fff; 
+    filter: drop-shadow(0 0 var(--success-shadow1-blur) rgba(0, 0, 0, 0.16)) drop-shadow(var(--success-shadow2-x) var(--success-shadow2-y) 0 rgba(0, 0, 0, 0.12)); 
+    margin-right: 9px; /* 말풍선 꼬리 너비 */
+    color: #945927; font-family: "Proxima Soft"; font-size: var(--success-font); font-weight: 700; line-height: normal; display: none; background-size: contain; position: relative;
+}
+.success-list.long li { padding: var(--success-p-top) var(--success-p-right2);font-size: var(--success-font2); }
+.success-list li::after {content: ''; background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15V0L8.07813 6.73178C8.55789 7.13157 8.55789 7.86843 8.07813 8.26822L0 15Z' fill='white'/%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; width: 9px; height: 15px; position: absolute; top: 50%; left: 100%; transform: translateY(-50%);}
+
+.success-list li.on {display: block;}
+
+/*성공시 오른쪽 단어 보이게*/
+
+
+
+/*왼쪽 캐릭터*/
+.char-guide {position: absolute; bottom: 5%;left: 9%; display: none;}
+.round-02 .char-guide {left: 5.2%;}
+.round-03 .char-guide {left: 1.2%;}
+.char-guide.show {display: block;}
+.char-guide .remember-msg-box,
+.char-guide .img-start-msg,
+.char-guide .time-box {display: none;}
+.char-guide .remember-msg-box.on,
+.char-guide .img-start-msg.on,
+.char-guide .time-box.on {display: block;}
+.char-guide .remember-msg-box {position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: var(--remember-box-width); height: var(--remember-box-hight);  animation: msgupdown 1s linear infinite;}
+.char-guide .remember-msg-box img {width: 100%; height: 100%; object-fit: contain; }
+.round-03 .char-guide .remember-msg-box {width: 110%;}
+.char-guide .remember-msg-box .btn-listening{top: 45%;display: none;}
+.wrap.round-01 .btn-listening{display: block;}
+.char-guide .time-box {position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: var(--time-box-width); height: var(--time-box-height); animation: msgupdown 1s linear infinite;}
+.char-guide .time-box img {width: 100%; height: 100%; object-fit: contain;}
+.char-guide .time-box .time {position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); color: #fff; text-align: center; font-family: "Proxima Soft"; font-size: var(--time-box-font); font-weight: 800; line-height: 1;}
+.char-guide .time-box .time.hurry-up {color: #FFD83B;}
+.char-guide .img-char {width: var(--char-img-width); height: var(--char-img-height);}
+@keyframes msgupdown {0%, 100% {transform: translate(-50%, 0);}
+ 50% {transform: translate(-50%, -10%);}
+ }
+.char-guide .img-start-msg {position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); animation: msgupdown 1s linear infinite;width: var(--start-width);height: var(--start-height);}
+ 
+
+ /*왼쪽 캐릭터*/
+
+
+/* 라운드 클리어 */
+.quiz-lottie-wrap {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;}
+
+.quiz-lottie-wrap.round1-clear,
+.quiz-lottie-wrap.round2-clear,
+.quiz-lottie-wrap.times-up,
+.quiz-lottie-wrap.end {display: block;}
+.quiz-lottie-wrap button {display: none;}
+.quiz-lottie-wrap li {display: none;}
+.quiz-lottie-wrap.round1-clear .round1-clear-item {display: block;}
+.quiz-lottie-wrap.round2-clear .round2-clear-item {display: block;}
+.quiz-lottie-wrap.times-up .times-up-item {display: block;}
+.quiz-lottie-wrap.end .end-item {display: block;}
+.quiz-lottie-wrap.round1-clear .btn-next-round,
+.quiz-lottie-wrap.round2-clear .btn-next-round {display: block;}
+.quiz-lottie-wrap.times-up .btn-retry,
+.quiz-lottie-wrap.end .btn-retry {display: block;}
+
+/* 다음 라운드 */
+.quiz-lottie-wrap .btn-next-round {aspect-ratio: 276/80; position: absolute; bottom: 5%; right: 5%;}
+/* //다음 라운드 */
+/*//라운드 클리어*/

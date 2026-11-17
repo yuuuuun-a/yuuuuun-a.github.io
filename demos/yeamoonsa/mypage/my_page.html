@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildup LITERACY</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BuildUp Literacy">
+    <meta property="og:description" content="Build up your literacy skills with readers, videos, games , and quizzes!">
+    <meta property="og:image" content="../img/og_image.png">
+    <meta property="og:url" content="https://buildupliteracy.com/">
+
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layout.css">
+
+    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/my_page/my_page.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script>
+        const mypage = {
+            "student_name": "Emma",
+            "student_profile": null,
+            "step_no": 1,
+            "study_time": 20520,
+            "notice": "이번 주에는 <b>Row, Row, Row Your Boat</b>를 3번 읽어 보세요!\n게임도 꼭 해 보세요 :)",
+            "recentReaders": [
+                {
+                    "readers_no": 1,
+                    "book_no": 1,
+                    "readers_name": "Row, Row, Row Your Boat",
+                    "thumbnail": "sample_book1.png"
+                },
+                {
+                    "readers_no": 2,
+                    "book_no": 1,
+                    "readers_name": "Colors All Around",
+                    "thumbnail": "sample_book2.png"
+                }
+            ],
+            "recent_step": 1,
+            "recent_book": 1,
+            "goldCount": 2,
+            "silverCount": 3,
+            "bronzeCount": 1,
+            "studyCount": {
+                "readers": 12,
+                "video": 18,
+                "game": 24,
+                "monthly": 1
+            },
+            "studyTime": {
+                "readers": 5400,
+                "workbook": 2700,
+                "monthly": 1200,
+                "video": 6720,
+                "game": 4500
+            },
+            "activity_done": true,
+            "localRanking": [
+                {
+                    "ranking": 1,
+                    "student_name": "Emma",
+                    "classroom_name": "Rainbow",
+                    "readers_count": 42,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 2,
+                    "student_name": "Liam",
+                    "classroom_name": "Sunshine",
+                    "readers_count": 38,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 3,
+                    "student_name": "Olivia",
+                    "classroom_name": "Rainbow",
+                    "readers_count": 35,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 4,
+                    "student_name": "Noah",
+                    "classroom_name": "Ocean",
+                    "readers_count": 29,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 5,
+                    "student_name": "Ava",
+                    "classroom_name": "Sunshine",
+                    "readers_count": 27,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 6,
+                    "student_name": "Lucas",
+                    "classroom_name": "Ocean",
+                    "readers_count": 21,
+                    "student_profile": null
+                },
+                {
+                    "ranking": 7,
+                    "student_name": "Mia",
+                    "classroom_name": "Rainbow",
+                    "readers_count": 18,
+                    "student_profile": null
+                }
+            ],
+            "myLocalRank": {
+                "ranking": 1,
+                "student_name": "Emma",
+                "classroom_name": "Rainbow",
+                "readers_count": 42
+            },
+            "myNationalRank": {
+                "readers_count": 42
+            },
+            "rankPercent": 15,
+            "nationalRanking": [
+                {
+                    "ranking": 1,
+                    "student_name": "Sophia",
+                    "local_name": "Bundang",
+                    "classroom_name": "Star",
+                    "readers_count": 61
+                },
+                {
+                    "ranking": 2,
+                    "student_name": "Jacob",
+                    "local_name": "Mapo",
+                    "classroom_name": "Moon",
+                    "readers_count": 58
+                },
+                {
+                    "ranking": 3,
+                    "student_name": "Emma",
+                    "local_name": "Gangnam",
+                    "classroom_name": "Rainbow",
+                    "readers_count": 55
+                },
+                {
+                    "ranking": 4,
+                    "student_name": "Ethan",
+                    "local_name": "Ilsan",
+                    "classroom_name": "Sky",
+                    "readers_count": 52
+                },
+                {
+                    "ranking": 5,
+                    "student_name": "Chloe",
+                    "local_name": "Suwon",
+                    "classroom_name": "Tree",
+                    "readers_count": 49
+                },
+                {
+                    "ranking": 6,
+                    "student_name": "Daniel",
+                    "local_name": "Busan",
+                    "classroom_name": "Sea",
+                    "readers_count": 46
+                },
+                {
+                    "ranking": 7,
+                    "student_name": "Grace",
+                    "local_name": "Daegu",
+                    "classroom_name": "Apple",
+                    "readers_count": 43
+                },
+                {
+                    "ranking": 8,
+                    "student_name": "Henry",
+                    "local_name": "Incheon",
+                    "classroom_name": "River",
+                    "readers_count": 40
+                },
+                {
+                    "ranking": 9,
+                    "student_name": "Lily",
+                    "local_name": "Songpa",
+                    "classroom_name": "Flower",
+                    "readers_count": 37
+                },
+                {
+                    "ranking": 10,
+                    "student_name": "Ryan",
+                    "local_name": "Jamsil",
+                    "classroom_name": "Cloud",
+                    "readers_count": 34
+                }
+            ],
+            "report": {
+                "bookOrderNo": 1,
+                "studyCount": {
+                    "readers": 10,
+                    "video": 14,
+                    "game": 20,
+                    "monthly": 1
+                },
+                "activity_done": true,
+                "studyTime": {
+                    "readers": 4200,
+                    "workbook": 2400,
+                    "monthly": 1080,
+                    "video": 5400,
+                    "game": 3900
+                },
+                "studyTimeTotal": 16980,
+                "classAvgStudyTime": {
+                    "readers": 3300,
+                    "workbook": 2100,
+                    "monthly": 900,
+                    "video": 4200,
+                    "game": 3000
+                },
+                "readersPct": 25,
+                "workbookPct": 14,
+                "videoPct": 32,
+                "gamePct": 23,
+                "monthlyPct": 6,
+                "prevUserMonthly": {
+                    "score": 7
+                },
+                "prevStudyCount": {
+                    "readers": 8,
+                    "monthly": 1,
+                    "video": 10,
+                    "game": 15
+                },
+                "prevStudyTime": {
+                    "readers": 3000,
+                    "workbook": 1800,
+                    "monthly": 900,
+                    "video": 3600,
+                    "game": 2700
+                },
+                "userMonthly": {
+                    "score": 9
+                },
+                "testResults": [
+                    true,
+                    true,
+                    true,
+                    false,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    true
+                ]
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- HEADER -->
+        <header id="header">
+    <div class="inner">
+        <div class="header-area">
+            <a href="../index.html" class="logo-area">
+                <img class="logo" src="../img/logo_outline.svg" alt="Build UP LITERACY">
+            </a>
+            <nav class="gnb-area">
+                <ul class="gnb">
+                    <!-- <li><a href="/" class="link-home"><img src="../img/home.svg" alt="홈으로 가기"></a></li> -->
+                </ul>
+            </nav>
+
+            <!-- 비로그인 상태: 아래 로그인 버튼 노출 + .logout-area 제거 -->
+
+            <!-- <a href="../login.html" class="btn-login">
+                <svg class="icon-login" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                    fill="none">
+                    <path
+                        d="M13.75 3.75H16.25C16.9414 3.75 17.5 4.30859 17.5 5V15C17.5 15.6914 16.9414 16.25 16.25 16.25H13.75C13.0586 16.25 12.5 16.8086 12.5 17.5C12.5 18.1914 13.0586 18.75 13.75 18.75H16.25C18.3203 18.75 20 17.0703 20 15V5C20 2.92969 18.3203 1.25 16.25 1.25H13.75C13.0586 1.25 12.5 1.80859 12.5 2.5C12.5 3.19141 13.0586 3.75 13.75 3.75ZM13.3828 10.8828C13.8711 10.3945 13.8711 9.60156 13.3828 9.11328L8.38281 4.11328C7.89453 3.625 7.10156 3.625 6.61328 4.11328C6.125 4.60156 6.125 5.39453 6.61328 5.88281L9.48047 8.75H1.25C0.558594 8.75 0 9.30859 0 10C0 10.6914 0.558594 11.25 1.25 11.25H9.48047L6.61328 14.1172C6.125 14.6055 6.125 15.3984 6.61328 15.8867C7.10156 16.375 7.89453 16.375 8.38281 15.8867L13.3828 10.8867V10.8828Z"
+                        fill="white" />
+                </svg>
+                <span>Login</span>
+            </a> -->
+            <div class="logout-area">
+                <div class="profile-box" onclick="goMypage('student')" style="cursor: pointer;">
+                    <img class="ico-name" src="../img/icon/ico-name.svg" alt="프로필 미리보기">
+                    <!-- 학생: 단일 지사/반 표시 -->
+                    <p>Gangnam Rainbow Emma</p>
+                    <!-- 교사: select box로 반 선택 (학생 화면에서는 숨김) -->
+                    <div class="teacher-profile" style="display: none;">
+                        <div class="custom-select-box">
+                            <button type="button" class="btn-select">
+                                <span>Gangnam Rainbow</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
+                                    fill="none">
+                                        <path d="M7.13492 8.07813L12.4999 1.64018C13.0427 0.988857 12.5795 -5.62655e-08 11.7317 -9.33256e-08L1.00174 -5.62345e-07C0.153903 -5.99405e-07 -0.309252 0.988858 0.23352 1.64019L5.59848 8.07814C5.99827 8.55789 6.73513 8.55789 7.13492 8.07813Z" fill="#FF8D00"/>
+                                    </svg>
+                            </button>
+                            <ul>
+                                <li><button type="button" class="on" data-classroom-no="1" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Rainbow</button></li>
+                                <li><button type="button" data-classroom-no="2" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Sunshine</button></li>
+                                <li><button type="button" data-classroom-no="3" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Ocean</button></li>
+                            </ul>
+                        </div>
+                        <span>Ms. Kim</span>
+                    </div>
+                </div>
+
+                <a class="btn-logout" onclick="logoutModal()">
+                    <svg class="icon-logout" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M19.6328 10.8828C20.1211 10.3945 20.1211 9.60156 19.6328 9.11328L14.6328 4.11328C14.1445 3.625 13.3516 3.625 12.8633 4.11328C12.375 4.60156 12.375 5.39453 12.8633 5.88281L15.7305 8.75H7.5C6.80859 8.75 6.25 9.30859 6.25 10C6.25 10.6914 6.80859 11.25 7.5 11.25H15.7305L12.8633 14.1172C12.375 14.6055 12.375 15.3984 12.8633 15.8867C13.3516 16.375 14.1445 16.375 14.6328 15.8867L19.6328 10.8867V10.8828ZM6.25 3.75C6.94141 3.75 7.5 3.19141 7.5 2.5C7.5 1.80859 6.94141 1.25 6.25 1.25H3.75C1.67969 1.25 0 2.92969 0 5V15C0 17.0703 1.67969 18.75 3.75 18.75H6.25C6.94141 18.75 7.5 18.1914 7.5 17.5C7.5 16.8086 6.94141 16.25 6.25 16.25H3.75C3.05859 16.25 2.5 15.6914 2.5 15V5C2.5 4.30859 3.05859 3.75 3.75 3.75H6.25Z"
+                            fill="#B1B8BE" />
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="logout_modal" class="modal">
+        <!-- class toggle: open -->
+        <div class="modal-box">
+            <div class="icon-character">
+                <img src="../img/test/icon/character_step1.svg" alt="">
+            </div>
+            <div class="title">Do you want to leave?</div>
+            <div class="btn-area">
+                <button type="button" class="btn-cancel" onclick="cancelLogout()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 32 32" fill="none">
+                        <g opacity="0.4">
+                            <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    <span>No</span>
+                </button>
+                <button type="button" class="btn-submit" onclick="applyLogout()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <div class="layered-shadow layered-shadow3"></div>
+                    <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                            <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                        </g>
+                    </svg>
+                    <span>Yes</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goMypage(userType) {
+            if(userType == 'student') {
+                window.location.href = '../mypage/my_page.html';
+            }
+        }
+
+        function changeClassroom(classroomNo) {
+            location.href = '../step.html';
+        }
+
+        document.querySelectorAll('.btn-select').forEach((btn) => {
+            const parent = btn.parentElement;
+
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                parent.classList.toggle('show');
+            });
+
+            // 마우스가 부모 밖으로 나가면 show 제거
+            parent.addEventListener('mouseleave', () => {
+                parent.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.show').forEach((el) => el.classList.remove('show'));
+        });
+
+    </script>
+</header>
+        <!-- //HEADER -->
+
+        <main class="my-page">
+            <div class="my-page-top">
+                <div class="flex-box">
+                    <div class="flex-box">
+                        <div class="my-profile-area">
+                                <div class="img-box">
+                                    <img class="ico-name" src="../img/icon/ico-name.svg" alt="기본 프로필">
+                                    
+                                </div>
+
+                            <div class="text-box">
+                                <div class="edit-box"><span class="step">Step 1</span><button type="button" class="btn-profile-edit">수정</button></div>
+                                <p class="class">Gangnam Rainbow</p>
+                                <span class="name">Emma</span>
+                            </div>
+                        </div>
+                        <div class="my-study-time-area">
+                            <div class="img-box">
+                                <img src="../img/my_page/monthtime.png" alt="이번달 공부 시간 아이콘">
+                            </div>
+                            <div class="text-box">
+                                <span class="title">이번 달 공부 시간</span>
+                                <span class="time">
+                                    5시간 
+                                    42분
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week-mission-area">
+                        <div class="title-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_2907_14813)">
+                                    <path d="M24 20C24 22.2091 18.6274 24 12 24C5.37258 24 0 22.2091 0 20C0 18.1347 3.83017 16.5677 9.01188 16.125C9.96716 16.0434 10.9684 16 12 16C18.6274 16 24 17.7909 24 20Z" fill="#00B2A8"/>
+                                    <path d="M11.9429 1C12.3294 1 21.3714 6.37349 21.3714 6.37349C22.2095 6.8453 22.2095 8.02548 21.3714 8.49729L12.8857 13.2736V18.0806C12.8857 18.5884 12.4636 19 11.9429 19C11.4221 19 11 18.5884 11 18.0806V1.91935C11 1.41161 11.4221 1 11.9429 1Z" fill="white" stroke="white" stroke-linecap="round"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2907_14813">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span class="title text-stroke" data-text="이번 주 미션">이번 주 미션</span>
+                        </div>
+                        <div class="scroll">
+                            <p style="white-space: pre-line;">이번 주에는 <b>Row, Row, Row Your Boat</b>를 3번 읽어 보세요!
+게임도 꼭 해 보세요 :)</p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="now-studying-area">
+                    <div class="title">
+                        <img src="../img/my_page/now_studying.png" alt="Now Studying">
+                    </div>
+                    <ul class="studying-img-list">
+                        <li><img src="../img/my_page/sample_book1.png" alt="Row, Row, Row Your Boat"></li>
+                        <li><img src="../img/my_page/sample_book2.png" alt="Colors All Around"></li>
+                    </ul>
+                    <div class="studying-text">
+                        <span class="step">Step 1</span>
+                        <span class="book">Book 1</span>
+                    </div>
+                    <button type="button" class="btn-start btn-my-01" onclick="goContent()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M8.08913 22.0352L6.03517 19.9109L8.99432 17.0497L11.0483 19.1741L8.08913 22.0352Z" fill="#DCC2A7"/>
+                            <path d="M1.75726 25.3452C0.747578 24.4722 0.747578 23.0567 1.75726 22.1837L5.54783 19L9 21.9384L5.41367 25.3452C4.40398 26.2183 2.76695 26.2183 1.75726 25.3452Z" fill="#FFDA44"/>
+                            <path d="M8.92871 4.9292C12.8339 1.02385 19.1651 1.02406 23.0703 4.9292C26.9755 8.83441 26.9755 15.1656 23.0703 19.0708C19.1651 22.976 12.8339 22.976 8.92871 19.0708C5.02346 15.1656 5.02344 8.83438 8.92871 4.9292ZM20.9492 7.05029C18.2156 4.3167 13.7836 4.31667 11.0498 7.05029C8.31622 9.78408 8.31622 14.2161 11.0498 16.9497C13.7836 19.6833 18.2156 19.6833 20.9492 16.9497C23.6828 14.2161 23.6828 9.78409 20.9492 7.05029Z" fill="#FFDA44"/>
+                        </svg>
+                        Let's Start!
+                    </button>
+                </div>
+            </div>
+            <div class="my-page-mid">
+                <div class="flex-box">
+                    <div class="medal-area">
+                        <div class="title-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                    <g clip-path="url(#clip0_2907_17849)">
+                                        <rect width="6" height="13" rx="2" transform="matrix(0.863988 -0.503512 0.496496 0.868039 4 4)" fill="#9867AF"/>
+                                        <rect width="6" height="13" rx="2" transform="matrix(-0.863988 -0.503512 -0.496496 0.868039 21 4)" fill="#60AAFF"/>
+                                        <circle cx="12" cy="16" r="8" fill="#FFDB0F"/>
+                                        <circle cx="12" cy="16" r="5" fill="#FCFC2A"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2907_17849">
+                                        <rect width="24" height="24" fill="white"/>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            <span class="title text-stroke" data-text="내 메달 수">내 메달 수</span>
+                        </div>
+                        <ul class="medal-list">
+                            <li>
+                                <img src="../img/my_page/medal_gold.png" alt="금메달">
+                                <span class="count">2개</span>
+                            </li>
+                            <li>
+                                <img src="../img/my_page/medal_silver.png" alt="은메달">
+                                <span class="count">3개</span>
+                            </li>
+                            <li>
+                                <img src="../img/my_page/medal_bronze.png" alt="동메달">
+                                <span class="count">1개</span>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn-medal" onclick="goSticker()">
+                            <div class="img-box"><img src="../img/my_page/medal_result.png" alt="메달"></div>
+                            <span class="text"><img src="../img/my_page/medal_text.png" alt="내 메달&스티커 보기"></span>
+                        </button>
+                    </div>
+                    <div class="report-area">
+                        <div class="title-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path d="M11.5 5C11.5 4.44772 11.0507 3.99393 10.5023 4.05875C9.17438 4.2157 7.89725 4.68442 6.77765 5.43251C5.37984 6.3665 4.29037 7.69402 3.64702 9.24719C3.00368 10.8004 2.83535 12.5094 3.16333 14.1583C3.4913 15.8071 4.30085 17.3217 5.48959 18.5104C6.67834 19.6992 8.19289 20.5087 9.84173 20.8367C11.4906 21.1646 13.1996 20.9963 14.7528 20.353C16.306 19.7096 17.6335 18.6202 18.5675 17.2223C19.3156 16.1028 19.7843 14.8256 19.9412 13.4977C20.0061 12.9493 19.5523 12.5 19 12.5H13C12.1716 12.5 11.5 11.8284 11.5 11V5Z" fill="#F67E04"/>
+                                <path d="M14 4C14 3.44772 14.45 2.99268 14.9966 3.07131C15.5731 3.15423 16.1383 3.30896 16.6788 3.53284C17.5281 3.88463 18.2997 4.40024 18.9497 5.05025C19.5998 5.70026 20.1154 6.47194 20.4672 7.32122C20.691 7.86171 20.8458 8.4269 20.9287 9.00339C21.0073 9.55005 20.5523 10 20 10L15 10C14.4477 10 14 9.55228 14 9V4Z" fill="#FF515A"/>
+                            </svg>
+                            <span class="title text-stroke" data-text="학습 리포트">학습 리포트</span>
+                        </div>
+                        <div class="img-box">
+                            <img src="../img/my_page/studyreport.png" alt=" 스터디 리포트 아이콘">
+                        </div>
+                        <button type="button" class="btn-report">
+                            <div class="img-box"><img src="../img/my_page/report.png" alt="리포트 예시"></div>
+                            <span class="text"><img src="../img/my_page/report_text.png" alt="지난 리포트 보기"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="is-study-complete-area">
+                    <h3>
+                        <span class="text-stroke" data-text="10월에 이만큼 공부했어요">10월에 이만큼 공부했어요</span>
+                    </h3>
+                    <ul class="study-complete-list">
+                        <li>
+                            <span class="title">Readers</span>
+                            <div class="img-box"><img src="../img/my_page/Reader_book.png" alt="Readers Book 예시">
+                            </div>
+                            <span class="count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                </svg>
+                                <span>12번</span>
+                            </span>
+                            <span class="time">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.70874C16.4873 4.70874 20.125 8.34643 20.125 12.8337C20.125 17.3211 16.4873 20.9587 12 20.9587C7.51269 20.9587 3.875 17.3211 3.875 12.8337C3.875 8.34643 7.51269 4.70874 12 4.70874ZM12 6.55835C8.53441 6.55835 5.72461 9.36815 5.72461 12.8337C5.72461 16.2993 8.53441 19.1091 12 19.1091C15.4656 19.1091 18.2754 16.2993 18.2754 12.8337C18.2754 9.36815 15.4656 6.55835 12 6.55835Z" fill="#CCCCCC"/>
+                                    <path d="M12 9V12.6103C12 12.7497 12.0696 12.8797 12.1855 12.957L14.5 14.5" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M16.168 3.66699L19.5013 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.168 19.5L17.0013 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 19.5L6.9987 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 3.66699L4.4987 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                1시간 
+                                30분
+                            </span>
+                            <button type="button" onclick="goReaders()">녹음 듣기</button>
+
+                        </li>
+                        <li>
+                            <span class="title">Activity Book</span>
+                            <div class="img-box"><img src="../img/my_page/activity_book.png" alt="Activity Book 예시">
+                            </div>
+                            <span class="count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                </svg>
+                                <span>완료</span>
+                                
+                            </span>
+                            <span class="time">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.70874C16.4873 4.70874 20.125 8.34643 20.125 12.8337C20.125 17.3211 16.4873 20.9587 12 20.9587C7.51269 20.9587 3.875 17.3211 3.875 12.8337C3.875 8.34643 7.51269 4.70874 12 4.70874ZM12 6.55835C8.53441 6.55835 5.72461 9.36815 5.72461 12.8337C5.72461 16.2993 8.53441 19.1091 12 19.1091C15.4656 19.1091 18.2754 16.2993 18.2754 12.8337C18.2754 9.36815 15.4656 6.55835 12 6.55835Z" fill="#CCCCCC"/>
+                                    <path d="M12 9V12.6103C12 12.7497 12.0696 12.8797 12.1855 12.957L14.5 14.5" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M16.168 3.66699L19.5013 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.168 19.5L17.0013 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 19.5L6.9987 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 3.66699L4.4987 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                
+                                45분
+                            </span>
+                            <button type="button" onclick="goActivity()">결과 보기</button>
+
+                        </li>
+                        <li>
+                            <span class="title">Monthly Test</span>
+                            <div class="img-box"><img src="../img/my_page/monthly_test.png" alt="Monthly Test 예시">
+                            </div>
+                            <span class="count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                </svg>
+                                <span>1번</span>
+                            </span>
+                            <span class="time">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.70874C16.4873 4.70874 20.125 8.34643 20.125 12.8337C20.125 17.3211 16.4873 20.9587 12 20.9587C7.51269 20.9587 3.875 17.3211 3.875 12.8337C3.875 8.34643 7.51269 4.70874 12 4.70874ZM12 6.55835C8.53441 6.55835 5.72461 9.36815 5.72461 12.8337C5.72461 16.2993 8.53441 19.1091 12 19.1091C15.4656 19.1091 18.2754 16.2993 18.2754 12.8337C18.2754 9.36815 15.4656 6.55835 12 6.55835Z" fill="#CCCCCC"/>
+                                    <path d="M12 9V12.6103C12 12.7497 12.0696 12.8797 12.1855 12.957L14.5 14.5" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M16.168 3.66699L19.5013 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.168 19.5L17.0013 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 19.5L6.9987 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 3.66699L4.4987 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                
+                                20분
+                            </span>
+                            <button type="button" onclick="goMonthlyTest()">결과 보기</button>
+
+                        </li>
+                        <li>
+                            <span class="title">Videos</span>
+                            <div class="img-box"><img src="../img/my_page/videos.png" alt="Videos 예시"></div>
+                            <span class="count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                </svg>
+                                <span>18번</span>
+                            </span>
+                            <span class="time">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.70874C16.4873 4.70874 20.125 8.34643 20.125 12.8337C20.125 17.3211 16.4873 20.9587 12 20.9587C7.51269 20.9587 3.875 17.3211 3.875 12.8337C3.875 8.34643 7.51269 4.70874 12 4.70874ZM12 6.55835C8.53441 6.55835 5.72461 9.36815 5.72461 12.8337C5.72461 16.2993 8.53441 19.1091 12 19.1091C15.4656 19.1091 18.2754 16.2993 18.2754 12.8337C18.2754 9.36815 15.4656 6.55835 12 6.55835Z" fill="#CCCCCC"/>
+                                    <path d="M12 9V12.6103C12 12.7497 12.0696 12.8797 12.1855 12.957L14.5 14.5" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M16.168 3.66699L19.5013 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.168 19.5L17.0013 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 19.5L6.9987 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 3.66699L4.4987 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                1시간 
+                                52분
+                            </span>
+
+                        </li>
+                        <li>
+                            <span class="title">Games</span>
+                            <div class="img-box"><img src="../img/my_page/games.png" alt="Games 예시"></div>
+                            <span class="count">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                </svg>
+                                <span>24번</span>
+                            </span>
+                            <span class="time">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4.70874C16.4873 4.70874 20.125 8.34643 20.125 12.8337C20.125 17.3211 16.4873 20.9587 12 20.9587C7.51269 20.9587 3.875 17.3211 3.875 12.8337C3.875 8.34643 7.51269 4.70874 12 4.70874ZM12 6.55835C8.53441 6.55835 5.72461 9.36815 5.72461 12.8337C5.72461 16.2993 8.53441 19.1091 12 19.1091C15.4656 19.1091 18.2754 16.2993 18.2754 12.8337C18.2754 9.36815 15.4656 6.55835 12 6.55835Z" fill="#CCCCCC"/>
+                                    <path d="M12 9V12.6103C12 12.7497 12.0696 12.8797 12.1855 12.957L14.5 14.5" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M16.168 3.66699L19.5013 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.168 19.5L17.0013 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 19.5L6.9987 21.1667" stroke="#CCCCCC" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.83203 3.66699L4.4987 6.16699" stroke="#CCCCCC" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                1시간 
+                                15분
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="my-page-bottom">
+                <div class="rank-kindergarten-area">
+                    <div class="title-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="4.22857" cy="4.22857" r="4.22857" transform="matrix(-1 0 0 1 16.2305 2.5)" fill="white" stroke="white" stroke-width="1.5"/>
+                            <path d="M4.60156 17.2308C4.60156 16.3213 5.17332 15.5099 6.02986 15.204C9.89155 13.8249 14.1116 13.8249 17.9733 15.204C18.8298 15.5099 19.4016 16.3213 19.4016 17.2308V18.6938C19.4016 19.9109 18.3236 20.8459 17.1187 20.6737L15.8199 20.4882C13.2872 20.1264 10.7159 20.1264 8.18319 20.4882L6.88441 20.6737C5.67954 20.8459 4.60156 19.9109 4.60156 18.6938V17.2308Z" fill="#8100D7" stroke="#8100D7" stroke-width="1.5"/>
+                        </svg>
+                        <span class="title text-stroke" data-text="우리 유치원 랭킹">우리 유치원 랭킹</span>
+                    </div>
+                    <ul class="top-tier-list">
+                        <li>
+                            <div class="img-box">
+                                <img class="ico-name" src="../img/icon/ico-name.svg" alt="1등 프로필">
+                                
+                            </div>
+                            <span class="class">Rainbow</span>
+                            <span class="name">Emma</span>
+                            <span class="count">42회</span>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <img class="ico-name" src="../img/icon/ico-name.svg" alt="2등 프로필">
+                                
+                            </div>
+                            <span class="class">Sunshine</span>
+                            <span class="name">Liam</span>
+                            <span class="count">38회</span>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <img class="ico-name" src="../img/icon/ico-name.svg" alt="3등 프로필">
+                                
+                            </div>
+                            <span class="class">Rainbow</span>
+                            <span class="name">Olivia</span>
+                            <span class="count">35회</span>
+                        </li>
+                    </ul>
+                    <div class="rank-table-wrpa">
+                        <ul>
+                            <li class="me">
+                                <span class="rank"><em class="rank1">1</em></span>
+                                <span class="name">Emma</span>
+                                <span class="class">Rainbow</span>
+                                <span class="count">42회</span>
+                            </li>
+                        </ul>
+                        <div class="scroll">
+                            <ul class="rank-model-list">
+                                <li>
+                                    <span class="rank"><em>1</em></span>
+                                    <span class="name">Emma</span>
+                                    <span class="class">Rainbow</span>
+                                    <span class="count">42회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>2</em></span>
+                                    <span class="name">Liam</span>
+                                    <span class="class">Sunshine</span>
+                                    <span class="count">38회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>3</em></span>
+                                    <span class="name">Olivia</span>
+                                    <span class="class">Rainbow</span>
+                                    <span class="count">35회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>4</em></span>
+                                    <span class="name">Noah</span>
+                                    <span class="class">Ocean</span>
+                                    <span class="count">29회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>5</em></span>
+                                    <span class="name">Ava</span>
+                                    <span class="class">Sunshine</span>
+                                    <span class="count">27회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>6</em></span>
+                                    <span class="name">Lucas</span>
+                                    <span class="class">Ocean</span>
+                                    <span class="count">21회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>7</em></span>
+                                    <span class="name">Mia</span>
+                                    <span class="class">Rainbow</span>
+                                    <span class="count">18회</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="rank-national-area">
+                    <div class="title-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19.165 13.7549C20.2315 13.8633 21.2882 14.0951 22.3115 14.4541C23.1969 14.7648 23.7881 15.5892 23.7881 16.5127V17.498C23.7879 18.7892 22.6236 19.7811 21.3223 19.5986L21.0234 19.5566C20.9628 19.5481 20.9015 19.5422 20.8408 19.5342C20.9221 19.2049 20.9678 18.8604 20.9678 18.5039V17.2803C20.9678 15.8598 20.2769 14.5593 19.165 13.7549ZM17.7764 5.41211C19.8325 5.41211 21.5 7.04963 21.5 9.06934C21.4999 11.0889 19.8324 12.7266 17.7764 12.7266C17.2645 12.7265 16.7769 12.6241 16.333 12.4404C17.4707 11.3196 18.1777 9.76231 18.1777 8.03906C18.1777 7.10099 17.9668 6.21242 17.5928 5.41602C17.6536 5.41311 17.7148 5.41212 17.7764 5.41211Z" fill="#8100D7"/>
+                            <path d="M4.78125 13.7549C3.71319 13.8631 2.65471 14.0946 1.62988 14.4541C0.744481 14.7648 0.15332 15.5892 0.15332 16.5127V17.498C0.153477 18.7892 1.31784 19.7811 2.61914 19.5986L2.91797 19.5566C2.97991 19.5479 3.0425 19.5414 3.10449 19.5332C3.02332 19.2042 2.97755 18.86 2.97754 18.5039V17.2803C2.97754 15.8595 3.669 14.5592 4.78125 13.7549ZM6.16504 5.41211C4.10888 5.41211 2.44141 7.04963 2.44141 9.06934C2.44153 11.0889 4.10896 12.7266 6.16504 12.7266C6.6777 12.7265 7.16591 12.6236 7.61035 12.4395C6.47349 11.3188 5.76758 9.76156 5.76758 8.03906C5.76759 7.10113 5.97766 6.21233 6.35156 5.41602C6.28978 5.41302 6.22758 5.41212 6.16504 5.41211Z" fill="#8100D7"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.46089 14.7255C10.037 13.4483 13.9449 13.4483 17.521 14.7255C18.6009 15.1111 19.3218 16.134 19.3218 17.2807V18.5043C19.3218 20.1077 17.9017 21.3393 16.3145 21.1125L15.9499 21.0605C13.324 20.6853 10.658 20.6853 8.03199 21.0605L7.66744 21.1125C6.08022 21.3393 4.66016 20.1077 4.66016 18.5043V17.2807C4.66016 16.134 5.38101 15.1111 6.46089 14.7255Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5338 8.04034C16.5338 5.53278 14.501 3.5 11.9935 3.5C9.4859 3.5 7.45312 5.53278 7.45312 8.04034C7.45312 10.5479 9.4859 12.5807 11.9935 12.5807C14.501 12.5807 16.5338 10.5479 16.5338 8.04034Z" fill="white"/>
+                        </svg>
+                        <span class="title text-stroke" data-text="전국 랭킹">전국 랭킹</span>
+                    </div>
+                    <div class="reading-feedback-wrap">
+                        <div class="reading-box">
+                            <div class="img-box">
+                                <img src="../img/my_page/reading.png" alt="독서량 이미지">
+                            </div>
+                            <div class="text-box">
+                                <span class="label">내 독서량</span>
+                                <span class="count">42회</span>
+                            </div>
+                        </div>
+                        <div class="feedback-box">
+                            <div class="feedback feedback-01">이번 달 최고예요! 정말 멋져요
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M9.56265 10.695C9.56265 10.695 10.8967 8.25798 13.2245 8.09767C15.8281 7.91798 17.5608 9.80297 17.646 11.9334C17.8029 15.8561 14.4476 21.7536 10.5145 21.9896C6.40918 22.2369 2.29018 16.9753 2.03012 14.0339C1.79423 11.3662 2.95677 8.86693 5.06024 8.59857C7.00881 8.34959 8.65954 9.39074 9.56265 10.695Z" fill="#FF7E0F"/>
+                                    <path d="M18.6055 1.01929C20.6016 0.890133 21.9307 2.24487 21.9961 3.77612C22.0864 5.89437 20.6565 8.81358 18.6611 10.2068C17.9256 8.3469 15.9236 6.80734 13.5889 6.97046C12.5231 7.04493 11.7228 7.37409 11.127 7.78589C10.4973 6.90684 10.0909 6.00109 10.0234 5.28589C9.84267 3.36842 10.734 1.57253 12.3467 1.37964C13.8405 1.20084 15.1055 1.94909 15.7979 2.88647C15.7979 2.88647 16.821 1.13477 18.6055 1.01929Z" fill="#74D3FB"/>
+                                </svg>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="rank-table-wrpa">
+                        <div class="scroll">
+                            <ul class="rank-model-list">
+                                <li>
+                                    <span class="rank"><em>1</em></span>
+                                    <span class="name">Sophia</span>
+                                    <span class="school">Bundang</span>
+                                    <span class="class">Star</span>
+                                    <span class="count">61회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>2</em></span>
+                                    <span class="name">Jacob</span>
+                                    <span class="school">Mapo</span>
+                                    <span class="class">Moon</span>
+                                    <span class="count">58회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>3</em></span>
+                                    <span class="name">Emma</span>
+                                    <span class="school">Gangnam</span>
+                                    <span class="class">Rainbow</span>
+                                    <span class="count">55회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>4</em></span>
+                                    <span class="name">Ethan</span>
+                                    <span class="school">Ilsan</span>
+                                    <span class="class">Sky</span>
+                                    <span class="count">52회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>5</em></span>
+                                    <span class="name">Chloe</span>
+                                    <span class="school">Suwon</span>
+                                    <span class="class">Tree</span>
+                                    <span class="count">49회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>6</em></span>
+                                    <span class="name">Daniel</span>
+                                    <span class="school">Busan</span>
+                                    <span class="class">Sea</span>
+                                    <span class="count">46회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>7</em></span>
+                                    <span class="name">Grace</span>
+                                    <span class="school">Daegu</span>
+                                    <span class="class">Apple</span>
+                                    <span class="count">43회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>8</em></span>
+                                    <span class="name">Henry</span>
+                                    <span class="school">Incheon</span>
+                                    <span class="class">River</span>
+                                    <span class="count">40회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>9</em></span>
+                                    <span class="name">Lily</span>
+                                    <span class="school">Songpa</span>
+                                    <span class="class">Flower</span>
+                                    <span class="count">37회</span>
+                                </li>
+                                <li>
+                                    <span class="rank"><em>10</em></span>
+                                    <span class="name">Ryan</span>
+                                    <span class="school">Jamsil</span>
+                                    <span class="class">Cloud</span>
+                                    <span class="count">34회</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        <section class="profile-modal">
+            <div class="profile-wrap">
+                <div class="profile-area">
+                    <h3>프로필 사진 설정</h3>
+                    <div class="img-box">
+                        <img class="ico-name profile-preview" style="object-fit: cover; width: 100%; height: 100%;" alt="프로필 미리보기" src="../img/icon/ico-name.svg">
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="radio-box">
+                                <input type="radio" name="profileImg" id="profileCurrent" value="current" checked>
+                                <label for="profileCurrent">현재 프로필 이미지</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radio-box">
+                                <input type="radio" name="profileImg" id="profileDefault" value="default">
+                                <label for="profileDefault">기본 이미지로 변경</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="radio-box">
+                                <input type="radio" name="profileImg" id="profileUpload" value="upload">
+                                <label for="profileUpload">사진 불러오기 (jpg, png)</label>
+                            </div>
+                            <div class="file-box">
+                                <input type="text" class="file-name" readonly>
+                                <input type="file" id="fileUpload" accept=".jpg,.jpeg,.png" />
+                                <label for="fileUpload">불러오기</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="name-area">
+                    <h3>이름 설정</h3>
+                    <input type="text" class="input-name" placeholder="이름을 입력하세요." value="Emma">
+                </div>
+                <div class="btn-box">
+                    <button class="btn-cancel btn-my-01" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <g opacity="0.4">
+                                <path d="M11.6728 5.75347L4.67578 11.0012L11.6728 16.249" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4.82178 11.0858H17.3635C20.6619 11.0858 23.3357 13.7596 23.3357 17.058C23.3357 20.3563 20.6619 23.0303 17.3635 23.0303" stroke="white" stroke-width="3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                        </svg>
+                        취소
+                    </button>
+                    <button class="btn-confirm btn-my-01" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path opacity="0.4" d="M5.5 12L11.919 19.5518C12.1187 19.7867 12.4813 19.7867 12.681 19.5518L22.5 8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        확인
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="report-modal">
+            <div class="scroll-wrap">
+            <div class="report-group">
+                <div class="report-hd">
+                    <button type="button" class="btn-report-close" aria-label="리포트 닫기">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 21L21 3" stroke="#7A3300" stroke-width="3.6" stroke-linecap="round"/>
+                            <path d="M21 21L3 3" stroke="#7A3300" stroke-width="3.6" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <h3><img class="logo" src="../img/logo_outline.svg" alt="Build UP LITERACY"></h3>
+                    <h4>2026년 9월 학습 리포트</h4>
+                    <div class="my-info-wrap">
+                        <div class="info-box">
+                            <span class="class">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M5 20.25H19C19.6904 20.25 20.25 19.6904 20.25 19V9.125C20.2499 8.7093 20.043 8.32114 19.6982 8.08887L12.6982 3.37402C12.2762 3.08995 11.7238 3.08991 11.3018 3.37402L4.30176 8.08887C3.95701 8.32114 3.75008 8.7093 3.75 9.125V19C3.75 19.6904 4.30964 20.25 5 20.25Z" stroke="#FF9F10" stroke-width="1.5"/>
+                                    <path d="M14.25 20.25V14.9766C14.25 13.7526 13.2481 12.75 12 12.75C10.7517 12.75 9.75 13.7527 9.75 14.9766V20.25H14.25Z" stroke="#FF9F10" stroke-width="1.5"/>
+                                </svg>
+                                <b>Gangnam</b> <b>Rainbow</b>
+                            </span>
+                            <span class="name">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <circle cx="3.9375" cy="3.9375" r="3.9375" transform="matrix(-1 0 0 1 16.4492 4)" stroke="#FF9F10" stroke-width="1.5"/>
+                                    <path d="M6 16.8285C6 16.1257 6.42465 15.4925 7.07492 15.2257C10.5511 13.7996 14.4489 13.7996 17.9251 15.2257C18.5753 15.4925 19 16.1257 19 16.8285V18.714C19 19.9117 17.9261 20.8238 16.7442 20.6298C13.9335 20.1686 11.0665 20.1686 8.2558 20.6298C7.07389 20.8238 6 19.9117 6 18.714V16.8285Z" stroke="#FF9F10" stroke-width="1.5"/>
+                                </svg>
+                                <b>Emma</b> 어린이
+                            </span>
+                        </div>
+                        <div class="date-box">
+                            <span class="date">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M3.09375 9.40445H20.9177" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.4429 13.3097H16.4522" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0054 13.3097H12.0147" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.56013 13.3097H7.56939" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.4429 17.1964H16.4522" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0054 17.1964H12.0147" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.56013 17.1964H7.56939" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.0413 2V5.29078" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.9632 2V5.29078" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2383 3.5791H7.77096C4.83427 3.5791 3 5.21504 3 8.22213V17.2718C3 20.3261 4.83427 21.9999 7.77096 21.9999H16.229C19.175 21.9999 21 20.3545 21 17.3474V8.22213C21.0092 5.21504 19.1842 3.5791 16.2383 3.5791Z" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                2026.09.01 ~ 2026.09.30
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-area">
+                    <div class="report-wrap stat-learning-result">
+                        <div class="wrap-hd">
+                            <h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M3.09375 9.40445H20.9177" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.4429 13.3097H16.4522" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0054 13.3097H12.0147" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.56013 13.3097H7.56939" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.4429 17.1964H16.4522" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12.0054 17.1964H12.0147" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.56013 17.1964H7.56939" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16.0413 2V5.29078" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.9632 2V5.29078" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2383 3.5791H7.77096C4.83427 3.5791 3 5.21504 3 8.22213V17.2718C3 20.3261 4.83427 21.9999 7.77096 21.9999H16.229C19.175 21.9999 21 20.3545 21 17.3474V8.22213C21.0092 5.21504 19.1842 3.5791 16.2383 3.5791Z" stroke="#FF9F10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                콘텐츠 학습 결과
+                            </h5>
+                            <p>※ Activity Book은 학습 횟수를 표시하지 않습니다.</p>
+                        </div>
+                        <div class="report-box">
+                            <h6><span class="text-stroke" data-text="Step 1 Book 1">Step 1 Book 1</span></h6>
+                            <ul class="content-result-list">
+                                <li>
+                                    <span class="title">Readers</span>
+                                    <div class="img-box"><img src="../img/my_page/Reader_book.png" alt="Readers Book 예시"></div>
+                                    <span class="result">
+                                        <!-- 미완료 시 is-pending 클래스 -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2 7L6.40957 12.512C6.60973 12.7622 6.99027 12.7622 7.19043 12.512L14 4" stroke="#1ECCFF " stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        
+                                        <span>완료</span>
+                                    </span>
+                                    <span class="count">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                        </svg>
+                                        <span>10번 학습</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Activity Book</span>
+                                    <div class="img-box"><img src="../img/my_page/activity_book.png" alt="Activity Book 예시"></div>
+                                    <span class="result">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2 7L6.40957 12.512C6.60973 12.7622 6.99027 12.7622 7.19043 12.512L14 4" stroke="#1ECCFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        <span>완료</span>
+                                        
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Videos</span>
+                                    <div class="img-box"><img src="../img/my_page/videos.png" alt="Videos 예시"></div>
+                                    <span class="result">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2 7L6.40957 12.512C6.60973 12.7622 6.99027 12.7622 7.19043 12.512L14 4" stroke="#1ECCFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        
+                                        <span>완료</span>
+                                    </span>
+                                    <span class="count">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                        </svg>
+                                        <span>14번 학습</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Games</span>
+                                    <div class="img-box"><img src="../img/my_page/games.png" alt="Games 예시"></div>
+                                    <span class="result">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2 7L6.40957 12.512C6.60973 12.7622 6.99027 12.7622 7.19043 12.512L14 4" stroke="#1ECCFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        
+                                        <span>완료</span>
+                                    </span>
+                                    <span class="count">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                        </svg>
+                                        <span>20번 학습</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="title">Monthly Test</span>
+                                    <div class="img-box"><img src="../img/my_page/monthly_test.png" alt="Monthly Test 예시"></div>
+                                    <span class="result">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M2 7L6.40957 12.512C6.60973 12.7622 6.99027 12.7622 7.19043 12.512L14 4" stroke="#1ECCFF" stroke-width="2.5" stroke-linecap="round"/>
+                                        </svg>
+                                        
+                                        <span>완료</span>
+                                    </span>
+                                    <span class="count">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12.6172 5.13965C14.9463 4.38709 17.541 4.38709 19.8701 5.13965C20.753 5.42503 21.4246 6.15328 21.4248 7.05176V17.1748C21.4247 17.8642 21.003 18.3948 20.4531 18.6904C19.9056 18.9847 19.2014 19.0664 18.5547 18.8574C17.0725 18.3786 15.4148 18.3786 13.9326 18.8574L12.3271 19.376C12.222 19.4099 12.1123 19.4239 12.0049 19.4229C12.0029 19.4229 12.001 19.4228 11.999 19.4229C11.9972 19.4228 11.995 19.4239 11.9932 19.4238V19.4229C11.8861 19.4238 11.7766 19.4098 11.6719 19.376L10.0674 18.8574C8.58505 18.3785 6.92667 18.3785 5.44434 18.8574C4.79752 19.0664 4.0934 18.9848 3.5459 18.6904C2.9961 18.3948 2.57534 17.8642 2.5752 17.1748V7.05176C2.5754 6.15318 3.24686 5.42497 4.12988 5.13965C6.45896 4.38718 9.05278 4.38712 11.3818 5.13965L11.999 5.33887L12.6172 5.13965ZM10.75 6.73633C8.82937 6.11579 6.68238 6.11587 4.76172 6.73633C4.51921 6.81469 4.44847 6.96749 4.44824 7.05176V17.1748C4.44824 17.1555 4.44489 17.1969 4.52148 17.2412C4.58567 17.2782 4.68666 17.3004 4.8125 17.2598C6.70315 16.6489 8.80857 16.6489 10.6992 17.2598L11.0635 17.377V6.83789L10.75 6.73633ZM19.2383 6.73633C17.3175 6.11571 15.1698 6.11571 13.249 6.73633L12.9365 6.83691V17.377L13.3008 17.2598C15.1913 16.649 17.296 16.649 19.1865 17.2598C19.3126 17.3005 19.4144 17.2783 19.4785 17.2412C19.555 17.1969 19.5508 17.1555 19.5508 17.1748V7.05176C19.5506 6.96751 19.4807 6.8147 19.2383 6.73633Z" fill="#CCCCCC"/>
+                                        </svg>
+                                        <span>1번 학습</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="report-wrap stat-learning-time">
+                        <div class="wrap-hd">
+                            <h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path d="M11.9219 4.29199C16.4092 4.29199 20.0469 7.92968 20.0469 12.417C20.0469 16.9043 16.4092 20.542 11.9219 20.542C7.43474 20.5418 3.79688 16.9042 3.79688 12.417C3.79688 7.92981 7.43474 4.2922 11.9219 4.29199Z" fill="#FF9F10"/>
+                                    <path d="M11.9219 8.58398V12.7775C11.9219 12.9168 11.9915 13.0469 12.1074 13.1242L14.4219 14.6672" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M16.0938 3.25L19.4271 5.75" stroke="#FF9F10" stroke-width="2.25" stroke-linecap="round"/>
+                                    <path d="M16.0938 19.084L16.9271 20.7507" stroke="#FF9F10" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.75781 19.084L6.92448 20.7507" stroke="#FF9F10" stroke-width="1.85" stroke-linecap="round"/>
+                                    <path d="M7.75781 3.25L4.42448 5.75" stroke="#FF9F10" stroke-width="2.25" stroke-linecap="round"/>
+                                </svg>
+                                콘텐츠 학습 시간
+                            </h5>
+                        </div>
+                        <div class="flex-box">
+                            <div class="report-box my-chart-box">
+                                <ul class="chart-legend-list">
+                                    <li>Readers Book</li>
+                                    <li>Activity Book</li>
+                                    <li>Videos</li>
+                                    <li>Games</li>
+                                    <li>Monthly Test</li>
+                                </ul>
+                                <div class="chart-box">
+                                    <canvas id="learningTimeChart"></canvas>
+                                    <div class="all-time-box">
+                                        <div class="img-box"><img src="../img/my_page/chart_time.png" alt="콘텐츠 총 학습시간"> </div>
+                                        <strong>
+                                            4시간 
+                                            43분
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="report-box compare-chart-box">
+                                <ul class="chart-legend-list">
+                                    <li>나</li>
+                                    <li>우리반 어린이 평균</li>
+                                </ul>
+                                <div class="chart-box">
+                                    <canvas id="comparechart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-box">
+                        <div class="report-wrap stat-prev-month">
+                            <div class="wrap-hd">
+                                <h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                    <path d="M16.191 2.00024H7.81C4.77 2.00024 3 3.78024 3 6.83024V17.1602C3 20.2602 4.77 22.0002 7.81 22.0002H16.191C19.28 22.0002 21 20.2602 21 17.1602V6.83024C21 3.78024 19.28 2.00024 16.191 2.00024Z" fill="#FF9F10"/>
+                                    <path d="M8.08105 15.7405H15.9209C16.3199 15.7805 16.621 16.1206 16.6211 16.5305C16.6211 16.9295 16.3199 17.2708 15.9209 17.3108H8.08105C7.78105 17.3508 7.49105 17.2004 7.33105 16.9504C7.17111 16.6905 7.17107 16.3606 7.33105 16.1106C7.49107 15.8506 7.78109 15.7105 8.08105 15.7405ZM15.9209 11.1799C16.3508 11.18 16.7012 11.5312 16.7012 11.9612C16.701 12.391 16.3508 12.7404 15.9209 12.7405H8.08105C7.65014 12.7405 7.30092 12.3911 7.30078 11.9612C7.30078 11.5312 7.65005 11.1799 8.08105 11.1799H15.9209ZM11.0703 6.65063C11.5011 6.65084 11.8506 7.00106 11.8506 7.42993C11.8504 7.87066 11.501 8.22074 11.0703 8.22095H8.08105C7.65007 8.22095 7.3008 7.87066 7.30078 7.44067C7.30078 7.01067 7.65005 6.6604 8.08105 6.6604V6.65063H11.0703Z" fill="white"/>
+                                </svg>
+                                    지난 달 비교
+                                </h5>
+                            </div>
+                            <div class="report-box">
+                                <div class="month-box">
+                                    <span class="month">8월</span>
+                                    <ul class="compare-list">
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/monthlytest.png" alt="Monthly Test 결과"></div>
+                                            <span class="title">Monthly Test 결과</span>
+                                            <span class="result"><b>7</b>/10</span>
+                                        </li>
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/studyamount.png" alt="학습 횟수"></div>
+                                            <span class="title">학습 횟수</span>
+                                            <span class="result"><b>34</b>번</span>
+                                        </li>
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/studytime.png" alt="학습 시간"></div>
+                                            <span class="title">학습 시간</span>
+                                            <span class="result"><b>3</b>시간 <b>20</b>분</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="month-box">
+                                    <span class="month">9월</span>
+                                    <ul class="compare-list">
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/monthlytest.png" alt="Monthly Test 결과"></div>
+                                            <span class="title">Monthly Test 결과</span>
+                                            <span class="result"><b>9</b>/10</span>
+                                        </li>
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/studyamount.png" alt="학습 횟수"></div>
+                                            <span class="title">학습 횟수</span>
+                                            <span class="result"><b>45</b>번</span>
+                                        </li>
+                                        <li>
+                                            <div class="img-box"><img src="../img/my_page/studytime.png" alt="학습 시간"></div>
+                                            <span class="title">학습 시간</span>
+                                            <span class="result"><b>4</b>시간 <b>43</b>분</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="report-wrap stat-monthly-test">
+                            <div class="wrap-hd">
+                                <h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path d="M11.5 5.5C11.5 4.94772 11.0507 4.49393 10.5023 4.55875C9.17438 4.7157 7.89725 5.18442 6.77765 5.93251C5.37984 6.8665 4.29037 8.19402 3.64702 9.74719C3.00368 11.3004 2.83535 13.0094 3.16333 14.6583C3.4913 16.3071 4.30085 17.8217 5.48959 19.0104C6.67834 20.1992 8.19289 21.0087 9.84173 21.3367C11.4906 21.6646 13.1996 21.4963 14.7528 20.853C16.306 20.2096 17.6335 19.1202 18.5675 17.7223C19.3156 16.6028 19.7843 15.3256 19.9412 13.9977C20.0061 13.4493 19.5523 13 19 13H13C12.1716 13 11.5 12.3284 11.5 11.5V5.5Z" fill="#FF9F10"/>
+                                        <path d="M14 4.5C14 3.94772 14.45 3.49268 14.9966 3.57131C15.5731 3.65423 16.1383 3.80896 16.6788 4.03284C17.5281 4.38463 18.2997 4.90024 18.9497 5.55025C19.5998 6.20026 20.1154 6.97194 20.4672 7.82122C20.691 8.36171 20.8458 8.9269 20.9287 9.50339C21.0073 10.05 20.5523 10.5 20 10.5L15 10.5C14.4477 10.5 14 10.0523 14 9.5V4.5Z" fill="#FFD39A"/>
+                                    </svg>
+                                    Monthly Test 결과
+                                </h5>
+                                <p>※ 가장 마지막으로 학습한 결과가 표시됩니다.</p>
+                            </div>
+                            <div class="report-box">
+                                <div class="result-score-box">
+                                    <div class="img-box ">
+                                        <img src="../img/my_page/excellent.png" alt="excellent">
+                                        
+                                        
+                                    </div>
+                                    <span class="score"><b>9</b>/10</span>
+                                    <span class="text-score">
+                                        <span>Excellent!</span>
+                                        
+                                        
+                                    </span>
+                                </div>
+                                <ul class="test-result-list">
+                                    <li>
+                                        <span>1</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>2</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>3</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>4</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            
+                                            <!-- X 오답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <path d="M7 25L25 7" stroke="#F58396" stroke-width="4" stroke-linecap="round"/>
+                                                <path d="M25 25L7 7" stroke="#F58396" stroke-width="4" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>5</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>6</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>7</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>8</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>9</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span>10</span>
+                                        <span>
+                                            <!-- O 정답 -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <circle cx="16" cy="16" r="10" stroke="#16C995" stroke-width="4"/>
+                                            </svg>
+                                            <!-- X 오답 -->
+                                            
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-box">
+                        <button type="button" class="btn-my-01 btn-download" onclick="printPDF()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M14 17L14 5" stroke="#FCAA14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 14L14 17L11 14" stroke="#FCAA14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.0087 10.8556L21.6667 10.8555C22.9553 10.8555 24 11.9002 24 13.1889L24 20.5221C24 21.8108 22.9553 22.8555 21.6667 22.8555L6.33333 22.8555C5.04467 22.8555 4 21.8108 4 20.5221V13.1889C4 11.9002 5.0447 10.8555 6.33338 10.8555L7.99136 10.8556" stroke="#FCAA14" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            다운로드
+                        </button>
+                        <button type="button"  class="btn-my-01 btn-report-close-ft">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                                <path d="M12.3207 14.0254L22.8555 14.0254" stroke="#C36518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 17L12 14L15 11" stroke="#C36518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17.9999 20.0087L17.9999 21.6667C17.9999 22.9553 16.9553 24 15.6666 24L7.33333 24C6.04467 24 5 22.9553 5 21.6667L5 6.33333C5 5.04467 6.04467 4 7.33333 4L15.6666 4C16.9553 4 18 5.0447 18 6.33338L17.9999 7.99136" stroke="#C36518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            닫기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // 프로필 관련 요소
+                const defaultProfileSrc = '../img/icon/ico-name.svg';
+                const currentProfileSrc = mypage.student_profile || defaultProfileSrc;
+                const profilePreview = document.querySelector('.profile-preview');
+                const fileUpload = document.getElementById('fileUpload');
+                const profileRadios = document.querySelectorAll('input[name="profileImg"]');
+                const btnProfileConfirm = document.querySelector('.profile-modal .btn-confirm');
+
+                // 파일 업로드 변경 시 미리보기 + 라디오 자동 선택
+                if (fileUpload) {
+                    fileUpload.addEventListener('change', function () {
+                        const file = this.files[0];
+                        const fileName = file ? file.name : '';
+                        document.querySelector('.file-name').value = fileName;
+                        if (file) {
+                            document.getElementById('profileUpload').checked = true;
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                profilePreview.src = e.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                }
+
+                // 라디오 변경 시 미리보기 이미지 갱신
+                profileRadios.forEach(function (radio) {
+                    radio.addEventListener('change', function () {
+                        if (this.value === 'current') {
+                            profilePreview.src = currentProfileSrc;
+                        } else if (this.value === 'default') {
+                            profilePreview.src = defaultProfileSrc;
+                        } else if (this.value === 'upload') {
+                            // 이미 파일이 선택되어 있으면 미리보기 유지
+                            if (fileUpload.files[0]) {
+                                const reader = new FileReader();
+                                reader.onload = function (e) {
+                                    profilePreview.src = e.target.result;
+                                };
+                                reader.readAsDataURL(fileUpload.files[0]);
+                            }
+                        }
+                    });
+                });
+
+                // 프로필 모달 열기/닫기
+                const btnProfileEdit = document.querySelector('.btn-profile-edit');
+                const profileModal = document.querySelector('.profile-modal');
+                const btnProfileCancel = document.querySelector('.profile-modal .btn-cancel');
+
+                if (btnProfileEdit && profileModal) {
+                    btnProfileEdit.addEventListener('click', function () {
+                        // 모달 열 때 상태 초기화
+                        document.getElementById('profileCurrent').checked = true;
+                        profilePreview.src = currentProfileSrc;
+                        fileUpload.value = '';
+                        document.querySelector('.file-name').value = '';
+                        const inputName = document.querySelector('.profile-modal .input-name');
+                        if (inputName) inputName.value = mypage.student_name || '';
+                        profileModal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    });
+                }
+                if (btnProfileCancel && profileModal) {
+                    btnProfileCancel.addEventListener('click', function () {
+                        profileModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+
+                // 확인 버튼 클릭 시 프로필 및 이름 저장
+                if (btnProfileConfirm) {
+                    btnProfileConfirm.addEventListener('click', async function () {
+                        const selected = document.querySelector('input[name="profileImg"]:checked').value;
+                        const inputName = document.querySelector('.profile-modal .input-name');
+                        const newName = inputName ? inputName.value.trim() : '';
+
+                        if (!newName) {
+                            alert('이름을 입력해주세요.');
+                            return;
+                        }
+
+                        // 이름 저장
+                        try {
+                            const nameParams = new URLSearchParams({ student_name: newName });
+                            const nameRes = await Promise.resolve({ json: async () => ({ success: true }) }); // 퍼블: 서버 API 제거
+                            const nameData = await nameRes.json();
+                            if (!nameData.success) {
+                                alert(nameData.message || '이름 변경에 실패했습니다.');
+                                return;
+                            }
+                        } catch (e) {
+                            alert('이름 변경 중 오류가 발생했습니다.');
+                            return;
+                        }
+
+                        if (selected === 'current') {
+                            // 프로필 이미지 변경 없음, 모달 닫고 새로고침
+                            profileModal.style.display = 'none';
+                            document.body.style.overflow = '';
+                            
+                            return;
+                        }
+
+                        if (selected === 'default') {
+                            // 기본 이미지로 변경 (student_profile = null)
+                            try {
+                                const res = await Promise.resolve({ json: async () => ({ success: true }) }); // 퍼블: 서버 API 제거
+                                const data = await res.json();
+                                if (data.success) {
+                                    // 페이지 내 프로필 이미지 모두 업데이트
+                                    document.querySelectorAll('.my-profile-area .img-box .ico-name').forEach(function (img) {
+                                        img.src = defaultProfileSrc;
+                                    });
+                                    profileModal.style.display = 'none';
+                                    document.body.style.overflow = '';
+                                    
+                                } else {
+                                    alert(data.message || '프로필 변경에 실패했습니다.');
+                                }
+                            } catch (e) {
+                                alert('프로필 변경 중 오류가 발생했습니다.');
+                            }
+                            return;
+                        }
+
+                        if (selected === 'upload') {
+                            const file = fileUpload.files[0];
+                            if (!file) {
+                                alert('업로드할 파일을 선택해주세요.');
+                                return;
+                            }
+                            // 확장자 검증
+                            const ext = file.name.split('.').pop().toLowerCase();
+                            if (!['jpg', 'jpeg', 'png'].includes(ext)) {
+                                alert('jpg, png 파일만 업로드 가능합니다.');
+                                return;
+                            }
+                            try {
+                                const formData = new FormData();
+                                formData.append('profileFile', file);
+                                const res = await Promise.resolve({ json: async () => ({ success: true }) }); // 퍼블: 서버 API 제거
+                                document.querySelectorAll('.my-profile-area .img-box .ico-name').forEach(function (img) {
+                                    img.src = URL.createObjectURL(file);
+                                });
+                                const data = await res.json();
+                                if (data.success) {
+                                    profileModal.style.display = 'none';
+                                    document.body.style.overflow = '';
+                                    
+                                } else {
+                                    alert(data.message || '프로필 업로드에 실패했습니다.');
+                                }
+                            } catch (e) {
+                                alert('프로필 업로드 중 오류가 발생했습니다.');
+                            }
+                            return;
+                        }
+                    });
+                }
+
+                // 리포트 모달 열기/닫기
+                const btnReport = document.querySelector('.btn-report');
+                const reportModal = document.querySelector('.report-modal');
+                const btnReportClose = document.querySelector('.report-modal .btn-report-close');
+                const btnReportCloseFt = document.querySelector('.report-modal .btn-report-close-ft');
+
+                if (btnReport && reportModal) {
+                    btnReport.addEventListener('click', function () {
+                        reportModal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    });
+                }
+                if (btnReportClose && reportModal) {
+                    btnReportClose.addEventListener('click', function () {
+                        reportModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+                if (btnReportCloseFt && reportModal) {
+                    btnReportCloseFt.addEventListener('click', function () {
+                        reportModal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    });
+                }
+
+                // 도넛 차트
+                const ctx = document.getElementById('learningTimeChart');
+                if (ctx && typeof Chart !== 'undefined') {
+                    if (typeof ChartDataLabels !== 'undefined') {
+                        Chart.register(ChartDataLabels);
+                    }
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["Reader's Book", 'Activity Book', 'Videos', 'Games', 'Monthly Test'],
+                            datasets: [{
+                                data: [mypage.report.readersPct, mypage.report.workbookPct, mypage.report.videoPct, mypage.report.gamePct, mypage.report.monthlyPct],
+                                backgroundColor: ['#42E2FF', '#B08AF0', '#FFB114', '#77E056', '#FFA1B7'],
+                                borderWidth: 0
+                            }]
+                        },
+                        options: {
+                            cutout: '60%',
+                            responsive: true,
+                            maintainAspectRatio: true,
+                            plugins: {
+                                legend: { display: false },
+                                datalabels: {
+                                    color: '#fff',
+                                    font: {
+                                        family: 'Pretendard Variable',
+                                        size: 15,
+                                        weight: 600
+                                    },
+                                    textShadowColor: 'rgba(0, 0, 0, 0.24)',
+                                    textShadowBlur: 4,
+                                    formatter: (value) => value + '%',
+                                    anchor: 'center',
+                                    align: 'center'
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // 비교 막대 차트
+                const compareCtx = document.getElementById('comparechart');
+                if (compareCtx && typeof Chart !== 'undefined') {
+                    const compareContext = compareCtx.getContext('2d');
+
+                    // 데이터 정의
+                    const myData = [mypage.report.studyTime.readers, mypage.report.studyTime.workbook, mypage.report.studyTime.video, mypage.report.studyTime.game, mypage.report.studyTime.monthly];
+                    const avgData = [mypage.report.classAvgStudyTime.readers, mypage.report.classAvgStudyTime.workbook, mypage.report.classAvgStudyTime.video, mypage.report.classAvgStudyTime.game, mypage.report.classAvgStudyTime.monthly];
+
+                    // 최대값 계산 (데이터 최대값 + 15% 여유)
+                    const maxVal = Math.ceil(Math.max(...myData, ...avgData) * 1.15);
+
+                    // 하늘색 그라데이션
+                    const cyanGradient = compareContext.createLinearGradient(0, 0, 0, 350);
+                    cyanGradient.addColorStop(0, '#9876FF');
+                    cyanGradient.addColorStop(1, '#D4C6FF');
+
+                    // 보라색 그라데이션
+                    const purpleGradient = compareContext.createLinearGradient(0, 0, 0, 350);
+                    purpleGradient.addColorStop(0, '#4CD9FF');
+                    purpleGradient.addColorStop(1, '#C2F3FF');
+
+                    // 배경 막대를 그리는 커스텀 플러그인
+                    const backgroundBarsPlugin = {
+                        id: 'backgroundBars',
+                        beforeDatasetsDraw: function(chart) {
+                            const ctx = chart.ctx;
+                            const meta0 = chart.getDatasetMeta(0); // 나
+                            const meta1 = chart.getDatasetMeta(1); // 우리반 평균
+                            const yScale = chart.scales.y;
+                            const yMax = yScale.getPixelForValue(maxVal);
+                            const yZero = yScale.getPixelForValue(0);
+                            const barHeight = yZero - yMax;
+
+                            // 배경 막대 색상
+                            const bgColors = ['#F3F8FE', '#F3F8FE'];
+
+                            [meta0, meta1].forEach((meta, idx) => {
+                                meta.data.forEach((bar) => {
+                                    const x = bar.x;
+                                    const width = bar.width;
+                                    const radius = width / 2;
+
+                                    ctx.save();
+                                    ctx.fillStyle = bgColors[idx];
+                                    ctx.beginPath();
+                                    // 위만 둥글게 (topLeft, topRight만 radius, bottomLeft, bottomRight는 0)
+                                    ctx.roundRect(x - width / 2, yMax, width, barHeight, [radius, radius, 0, 0]);
+                                    ctx.fill();
+                                    ctx.restore();
+                                });
+                            });
+                        }
+                    };
+
+                    new Chart(compareCtx, {
+                        type: 'bar',
+                        plugins: [backgroundBarsPlugin],
+                        data: {
+                            labels: ["Reader's Book", 'Activity Book', 'Videos', 'Games', 'Monthly Test'],
+                            datasets: [
+                                {
+                                    label: '나',
+                                    data: myData,
+                                    backgroundColor: cyanGradient,
+                                    borderRadius: { topLeft: 999, topRight: 999, bottomLeft: 0, bottomRight: 0 },
+                                    barPercentage: 0.8,
+                                    categoryPercentage: 0.9
+                                },
+                                {
+                                    label: '우리반 평균',
+                                    data: avgData,
+                                    backgroundColor: purpleGradient,
+                                    borderRadius: { topLeft: 999, topRight: 999, bottomLeft: 0, bottomRight: 0 },
+                                    barPercentage: 0.8,
+                                    categoryPercentage: 0.9
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: {
+                                    grid: { display: false },
+                                    border: { display: true, color: '#CDD1D5' },
+                                    ticks: {
+                                        color: '#4C3727',
+                                        font: { size: 16, family: 'Pretendard Variable' }
+                                    }
+                                },
+                                y: {
+                                    display: false,
+                                    beginAtZero: true,
+                                    max: maxVal
+                                }
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const value = context.raw;
+                                            const h = Math.floor(value / 60);
+                                            const m = value % 60;
+                                            const timeStr = (h >= 1 ? h + 'h ' : '') + m + 'm';
+                                            return context.dataset.label + ': ' + timeStr;
+                                        }
+                                    }
+                                },
+                                datalabels: {
+                                    anchor: 'end',
+                                    align: 'top',
+                                    color: function(context) {
+                                        return context.datasetIndex === 0 ? '#6037D9' : '#13ACD0';
+                                    },
+                                    font: {
+                                        family: 'Pretendard Variable',
+                                        size: 15,
+                                        weight: 600
+                                    },
+                                    formatter: function(value) {
+                                        const h = Math.floor(value / 60);
+                                        const m = value % 60;
+                                        return (h >= 1 ? h + 'h ' : '') + m + 'm';
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+
+            function goContent() {
+                window.location.href = `../content.html?book_no=${mypage.recentReaders[0].book_no}`;
+            }
+
+            function openPage(url) {
+                if (isPC()) {
+                    window.open(url, '_blank', 'width=' + screen.width + ', height=' + screen.height + ', left=0, top=0, scrollbars=yes, resizable=yes, menubar=no, toolbar=no, location=no');
+                } else {
+                    location.href = url;
+                }
+            }
+
+            function goSticker() {
+                openPage('../mypage/sticker_book.html');
+            }
+
+            function goReaders() {
+                openPage('../mypage/readers.html');
+            }
+
+            function goActivity() {
+                openPage('../mypage/activity.html');
+            }
+
+            function goMonthlyTest() {
+                openPage('../mypage/monthly_test.html');
+            }
+
+            function printPDF() {
+                window.print();
+            }
+        </script>
+        <footer id="footer">
+            <div class="inner">
+                <div class="footer-area">
+                    <small class="copy">Copyright ⓒ 2025 Build Up Literacy. All Rights Reserved.</small>
+                    <ul class="f-bar">
+                        <li class="menu-item">
+                            <a href="" class="btn-move">Terms of Service</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="" class="btn-move">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

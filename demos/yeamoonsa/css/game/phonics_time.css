@@ -1,0 +1,440 @@
+:root { 
+    --speech-bubble-width: calc( var(--wrap-width) * (562/1920) ); 
+    --speech-bubble-height: calc( var(--wrap-width) * (230/1920) ); 
+    --speech-bubble-font: calc( var(--wrap-width) * (40/1920) ); 
+    --speech-bubble-font-em: calc( var(--wrap-width) * (48/1920) ); 
+    --speech-bubble-uhoh-width:calc( var(--wrap-width) * (258/1920) ); 
+    --speech-bubble-uhoh-height:calc( var(--wrap-width) * (230/1920) ); 
+    --small-basket-width :calc( var(--wrap-width) * (128/1920) ); 
+    --small-basket-height :calc( var(--wrap-width) * (61/1920) ); 
+    --card-width :calc( var(--wrap-width) * (348/1920) ); 
+    --card-font :calc( var(--wrap-width) * (56/1920) ); 
+    --padding-12: calc( var(--wrap-width) * (12/1920) ); 
+    --radius-48: calc( var(--wrap-width) * (48/1920) ); 
+    --radius-32: calc( var(--wrap-width) * (32/1920) ); 
+    --radius-24: calc( var(--wrap-width) * (24/1920) ); 
+    --border-16 : calc( var(--wrap-width) * (16/1920) ); 
+    --border-8 : calc( var(--wrap-width) * (8/1920) ); 
+    --border-6 : calc( var(--wrap-width) * (6/1920) ); 
+    --border-3c5 : calc( var(--wrap-width) * (3.5/1920) ); 
+    --blur-6 : calc( var(--wrap-width) * (6/1920) ); 
+    --blur-3 : calc( var(--wrap-width) * (3/1920) ); 
+    --gap-56 : calc( var(--wrap-width) * (56/1920) ); 
+    --gap-24 : calc( var(--wrap-width) * (24/1920) ); 
+    --gap-18 : calc( var(--wrap-width) * (18/1920) ); 
+    --correct-box-button-width:calc( var(--wrap-width) * (56/1920) ); 
+    --correct-box-width:calc( var(--wrap-width) * (560/1920) ); 
+    --correct-box-img-width:calc( var(--wrap-width) * (328/1920) ); 
+    --correct-box-height:calc( var(--wrap-width) * (742/1920) ); 
+    --correct-box-font:calc( var(--wrap-width) * (96/1920) ); 
+    --font-126:calc( var(--wrap-width) * (126/1920) );
+    --blur-12 : calc( var(--wrap-width) * (12/1920) );
+    --blur-20 : calc( var(--wrap-width) * (20/1920) );
+    --blur-28 : calc( var(--wrap-width) * (28/1920) );
+    --inset-40: calc( var(--wrap-width) * (40/1920) );
+    --basket-end-w : calc( var(--wrap-width) * (112/1920) );
+    --basket-end-h : calc( var(--wrap-width) * (56/1920) ); }
+
+
+
+
+.btn-retry { position: absolute; bottom: 5%; right: 5%; z-index: 5; } 
+
+.ios-listening-btn-area button {background: #F86F00;}
+.ios-listening-btn-area button:hover {background: #FF790A;}
+.ios-listening-btn-area button:active {background: #F86F00;}
+
+
+
+/* 인트로 시작*/
+.intro { position: relative; width: 100%; height: 100%; container-type: inline-size; container-name: button; } 
+.bg { background: url(../../img/game/phonics_time/intro-bg.png)no-repeat center center; width: 100%; height: 100%; background-size: cover; } 
+.bg .lottie-box { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
+.start-btn { position: absolute; bottom: 25%; left:8%; z-index: 5; } 
+/* 인트로 끝*/
+
+
+
+/*컨텐츠 시작*/
+.content img { width: 100%; height: 100%; object-fit: contain; } 
+
+.lottie-list li { position: absolute; top: 0; left: 0; width: 100%; height: 100%; } 
+.lottie-list li#conveyor_belt { z-index: 1; } 
+
+/* 말풍선 */
+.speech-bubble-box { position: absolute; top: 12%; right: 7%; z-index: 5; width: var(--speech-bubble-width); height: var(--speech-bubble-height); display: none; } 
+/* .start .speech-bubble-box { display: block; }  */
+.start .speech-bubble-box { display: none; } 
+.speech-bubble-box p { position: absolute; top: 44%; left: 50%; color: #582A04; text-align: center; font-family: 'Fredoka'; font-size: var(--speech-bubble-font); font-weight: 600; line-height: 150%; transform: translate(-50%, -50%); width: 100%; } 
+.speech-bubble-box p em { color: #FF6B00; font-family: 'Proxima Soft'; font-size: var(--speech-bubble-font-em); font-weight: 800; } 
+.phonics-02 .speech-bubble-box p em { color: #61A64E; } 
+.phonics-03 .speech-bubble-box p em { color: #00A0EE; } 
+.phonics-04 .speech-bubble-box p em { color: #BB6195; } 
+/* 큰 바스켓 */
+.basket-box { position: absolute; top: 34%; left: 50%; transform: translateX(-50%); width: 20%; height: 28%; z-index: 5; transition: 0.3s; } 
+.step1 .basket-box { top: 35.5%; } 
+.step2 .basket-box { top: 34%; } 
+.step3 .basket-box { top: 34%; } 
+.basket-box ul li { display: none; } 
+.basket-box .phonics-list { position: absolute; bottom: 14%; left: 50%; transform: translateX(-50%); } 
+.basket-box .phonics-list li { width: 100%; height: 100%; justify-content: center; align-items: center; } 
+.phonics-01 .basket-box .phonics-list li:nth-child(1) { display: flex; } 
+.phonics-02 .basket-box .phonics-list li:nth-child(2) { display: flex; } 
+.phonics-03 .basket-box .phonics-list li:nth-child(3) { display: flex; } 
+.phonics-04 .basket-box .phonics-list li:nth-child(4) { display: flex; } 
+
+.text-stroke-wrap { position: relative;font-size: var( --font-126); font-family: "Proxima Soft"; font-weight: 800; line-height: 1; filter: drop-shadow(0 calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(0/1920)) rgba(0,0,0,0.25));z-index: 1; }
+.text-stroke-wrap span { position: relative; font-family: "Proxima Soft"; font-weight: 800; background: linear-gradient(180deg, #FFD446 0%, #FF6B00 55.74%); background-clip: text; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent;white-space: nowrap; padding: 0 0.1em; } 
+.phonics-list li:nth-child(2) .text-stroke-wrap span { background: linear-gradient(180deg, #CBFF97 16.38%, #1FBF4F 55.68%); } 
+.phonics-list li:nth-child(3) .text-stroke-wrap span { background: linear-gradient(180deg, #63b2da 16.38%, #00A0EE 55.68%); } 
+.phonics-list li:nth-child(4) .text-stroke-wrap span { background: linear-gradient(180deg, #FF31FF 16.38%, #C414FF 55.68%); } 
+.text-stroke-wrap span.back { content: attr(data-text); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: -1; -webkit-text-fill-color: transparent; text-shadow:
+ calc(var(--wrap-width)*(2/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(8/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-8/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(10/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-10/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(12/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-12/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(9/1920)) calc(var(--wrap-width)*(-9/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(14/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-14/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(7/1920)) calc(var(--wrap-width)*(-12/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(10/1920)) calc(var(--wrap-width)*(-10/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(12/1920)) calc(var(--wrap-width)*(-7/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(16/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(15/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(11/1920)) calc(var(--wrap-width)*(11/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(8/1920)) calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(15/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(16/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(15/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-8/1920)) calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-11/1920)) calc(var(--wrap-width)*(11/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-15/1920)) calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-16/1920)) 0 calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-15/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(-8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-11/1920)) calc(var(--wrap-width)*(-11/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-8/1920)) calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-15/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ 0 calc(var(--wrap-width)*(-16/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-15/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(8/1920)) calc(var(--wrap-width)*(-14/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(11/1920)) calc(var(--wrap-width)*(-11/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(14/1920)) calc(var(--wrap-width)*(-8/1920)) calc(var(--wrap-width)*(2/1920)) #fff,
+ calc(var(--wrap-width)*(15/1920)) calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) #fff; } 
+
+
+/* 왼쪽 작은 바스켓 */
+.small-basket-list { position: absolute; top: 20%; left: 4%; z-index: 2; display: flex; flex-direction: column;gap: var(--radius-48); } 
+.small-basket-list li { position: relative; width: var(--small-basket-width); height: var(--small-basket-height); background-size: contain !important; display: flex; align-items: center; justify-content: center; } 
+.small-basket-list li .text-stroke-wrap {position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%); z-index: 1; font-size: var(--radius-48); filter: drop-shadow(0 calc(var(--wrap-width) * (5 / 1920)) 0 rgba(0, 0, 0, 0.24)); } 
+.small-basket-list li .text-stroke-wrap span { background: none; -webkit-text-fill-color: #FF6B00; } 
+.small-basket-list li:nth-child(2) .text-stroke-wrap span { -webkit-text-fill-color: #61A64E; } 
+.small-basket-list li:nth-child(3) .text-stroke-wrap span { -webkit-text-fill-color: #00A0EE; } 
+.small-basket-list li:nth-child(4) .text-stroke-wrap span { -webkit-text-fill-color: #D01AFE; } 
+.small-basket-list li .text-stroke-wrap span.back { 
+    white-space: nowrap;
+    text-shadow:
+ calc(var(--wrap-width)*(2/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(-1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-1/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(1/1920)) calc(var(--wrap-width)*(-1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-1/1920)) 0 #fff,
+ calc(var(--wrap-width)*(4/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(3/1920)) 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(4/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(3/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-4/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-3/1920)) calc(var(--wrap-width)*(-3/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-4/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(-4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(3/1920)) calc(var(--wrap-width)*(-3/1920)) 0 #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(6/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(6/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(6/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(6/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-6/1920)) 0 0 #fff,
+ calc(var(--wrap-width)*(-6/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-4/1920)) calc(var(--wrap-width)*(-4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(-2/1920)) calc(var(--wrap-width)*(-6/1920)) 0 #fff,
+ 0 calc(var(--wrap-width)*(-6/1920)) 0 #fff,
+ calc(var(--wrap-width)*(2/1920)) calc(var(--wrap-width)*(-6/1920)) 0 #fff,
+ calc(var(--wrap-width)*(4/1920)) calc(var(--wrap-width)*(-4/1920)) 0 #fff,
+ calc(var(--wrap-width)*(6/1920)) calc(var(--wrap-width)*(-2/1920)) 0 #fff; } 
+.small-basket-list li { position: relative; } 
+.small-basket-list li.ing {
+    position: relative;
+    z-index: 1;
+}
+.small-basket-list li.ing img {
+    position: relative;
+    z-index: 1;
+    filter:
+        drop-shadow(0                          calc(-1 * var(--border-6))  0 #FFF)
+        drop-shadow(var(--border-6)            0                           0 #FFF)
+        drop-shadow(0                          var(--border-6)             0 #FFF)
+        drop-shadow(calc(-1 * var(--border-6)) 0                           0 #FFF);
+}
+.small-basket-list li.ing::before {
+    content: '';
+    position: absolute;
+    width: 100%;height: 100%;top: 0;left: 0;
+    background: url(../../img/game/phonics_time/basket-small-01.png) center / contain no-repeat;
+    filter: drop-shadow(0 0 var(--blur-20) rgba(255, 147, 0, 0.70));
+    mix-blend-mode: plus-lighter;
+    pointer-events: none;
+    z-index: -1;
+}
+.small-basket-list li.ing::after {
+    content: '';
+    position: absolute;
+    width: 100%;height: 100%;top: 0;left: 0;
+    background: url(../../img/game/phonics_time/basket-small-01.png) center / contain no-repeat;
+    filter:
+        drop-shadow(0 0 var(--blur-28) #FF9300)
+        drop-shadow(0 0 var(--blur-12) #FF9300);
+    mix-blend-mode: darken;
+    /*plus-darken 가 없어서.... darken 넣었습니다*/
+    pointer-events: none;
+    z-index: -2;
+}
+.small-basket-list li.end::before{content: '';
+    position: absolute;top: 0;left: 50%;transform: translate(-50%, -50%) ;width: var(--basket-end-w);height: var(--basket-end-h); background: url(../../img/game/phonics_time/basket-small-02.png) center / contain no-repeat;z-index: -1;}
+
+
+
+
+/*카드 영역*/
+
+.sd-wrap { position: absolute; bottom: 40%; left: 0; width: 100%; z-index: 30; height: max-content; opacity: 0; pointer-events: none; } 
+.sd-wrap.on { pointer-events: auto; opacity: 1; } 
+.rolling-wrap { width: 100%; height: 100%; } 
+.rolling-track { display: flex; height: 100%; } 
+.card { width: 33.3333%; } 
+
+
+.btn-card { position: relative; height: 100%; display: flex; justify-content: center; align-items: center; opacity: 1; visibility: visible; background: #fff; overflow: hidden; width: var(--card-width); height: var(--card-width); border-radius: var(--radius-24); box-shadow: var(--shadow-width-minus8) var(--shadow-width18) var(--shadow-width24) var(--shadow-width-minus16) rgba(0, 0, 0, 0.32); } 
+
+.btn-card i { position: absolute; top: 0; left: 0; display: block; width: 100%; height: 100%; border:var(--border-16) solid #6CD2C6; border-radius: var(--radius-24); } 
+.card:nth-child(2) .btn-card i { border-color: #FF99BB; } 
+.card:nth-child(3) .btn-card i { border-color: #768FFF; } 
+.card:nth-child(4) .btn-card i { border-color: #6CD2C6; } 
+.card:nth-child(5) .btn-card i { border-color: #FFD57B; } 
+.card:nth-child(6) .btn-card i { border-color: #BCE28E; } 
+
+.btn-card span { position: absolute; bottom: 7%; left: 50%; transform: translateX(-50%); color: #582A04; text-align: center; font-family: Fredoka; font-size: var(--card-font); font-style: normal; font-weight: 600; line-height: 150%; z-index: 2; } 
+.btn-card span::before,
+.btn-card span::after { content: attr(data-text); position: absolute; left: 0; top: 0; z-index: -1; color: transparent; } 
+
+.btn-card span::before { -webkit-text-stroke: var(--border-6) #FFF; text-stroke: var(--border-6) #FFF; } 
+
+
+.btn-card.out { opacity: 0; visibility: hidden; } 
+
+
+/* ⬅⬅⬅ 오른쪽으로 이동(loop) */
+@keyframes roll-right { 
+ from { transform: translateX(0); } 
+ to { transform: translateX(50%); } 
+ }
+
+
+
+
+/*try again*/
+#play_incorrect { display: none; } 
+.try-again #play_incorrect { display: block; } 
+#play_incorrect img { width: var(--speech-bubble-uhoh-width); height: var(--speech-bubble-uhoh-height); position: absolute; top: 12%; right: 23.5%; z-index: 5; } 
+#play_fin { display: none; } 
+.fin #play_fin { display: block; } 
+
+
+
+/*정답 화면*/
+.correct-wrap { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 30; background: rgba(51, 54, 61, 0.10); backdrop-filter: blur(var(--blur-3)); overflow: hidden; transition: 0.5s; visibility: hidden; opacity: 0; } 
+
+.correct-wrap.on { opacity: 1; visibility: visible; } 
+
+.correct-box { display: flex; justify-content: center; align-items: center; flex-direction: column; border-radius: var(--radius-48); border: var(--border-8) solid #FFF; background: radial-gradient(50% 50% at 50% 50%,
+ rgba(255, 255, 255, 0.60) 64.9%,
+ rgba(255, 255, 255, 0.00) 100%),
+ rgba(255, 255, 255, 0.90); box-shadow: 0 var(--shadow-width12) 0 0 rgba(0, 0, 0, 0.16), 0 var(--shadow-width8) var(--shadow-width16) 0 rgba(0, 0, 0, 0.24); backdrop-filter: blur(6px); backdrop-filter: blur(var(--blur-6)); width: var(--correct-box-width); height: var(--correct-box-height); } 
+
+.co-title { display: flex; align-items: center; gap: var(--gap-18); margin-bottom: var(--gap-24); } 
+
+.co-title h3 { color: #33363D; text-align: center; font-family: "Proxima Soft"; font-size: var(--correct-box-font); font-weight: 800; line-height: 1; } 
+
+.co-title button { display: flex; justify-content: center; align-items: center; padding: var(--padding-12); background: #FFF3D0; border-radius: 50%; border:var(--border-3c5) solid #FFB400; width: var(--correct-box-button-width); height: var(--correct-box-button-width); } 
+.co-title button .svg-stop { display: none; } 
+.co-title button.on .svg-stop { display: block; } 
+.co-title button.on .svg-play { display: none; } 
+.co-title button.on { background: #FFB400; } 
+.co-title button svg { width: 100%; height: 100%; } 
+
+.correct-wrap .img-box { position: relative; width: var(--correct-box-img-width); height: var(--correct-box-img-width); border-radius: var(--radius-32); overflow: hidden; background: #fff; } 
+.correct-wrap .img-box i { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: var(--radius-32); border: var(--border-width8) solid #6CD2C6; } 
+.correct-wrap .btn-box { margin-top: var(--gap-56); } 
+
+.phonics-time .correct-wrap .btn-ok { aspect-ratio: 304/80; position: relative; } 
+
+
+
+/* Ending */
+#play_ending { display: none; } 
+
+.ending .lottie-list li,
+.ending .small-basket-list,
+.ending .sd-wrap,
+.ending .basket-box { display: none; } 
+
+.ending #play_ending { display: block; } 
+.btn-listening { top: 45%; } 
+
+
+/*컨텐츠 끝*/
+
+/* 세로 화면에서 폰트 크기 조정 */
+
+
+

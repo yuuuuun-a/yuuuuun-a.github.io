@@ -1,0 +1,31 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_eraseron)">
+<g filter="url(#filter0_dd_eraseron)">
+<g>
+<path d="M14.2693 3.00674C14.6387 2.99552 15.032 3.00173 15.4029 3.0016C15.8306 2.99873 16.2583 2.99984 16.6859 3.00492C16.998 3.30355 17.3098 3.63822 17.6193 3.94406C18.5859 4.89935 19.5364 5.88303 20.51 6.83012L20.5134 9.1838C20.4403 9.26326 20.2983 9.38702 20.2128 9.46694L19.7135 9.93691L18.3151 11.2433C17.0896 12.3866 15.8469 13.5884 14.608 14.7093L14.4817 14.8297C14.3657 14.687 14.0229 14.3542 13.8797 14.2056L12.462 12.7465C11.1217 11.3608 9.78116 9.94272 8.427 8.57295C8.7146 8.26876 9.16453 7.86415 9.47235 7.57172L11.4832 5.66198L13.3356 3.89146C13.616 3.62436 13.9817 3.2481 14.2693 3.00674Z" fill="#00D3F3"/>
+<path d="M7.62716 9.44531C8.34682 10.1563 9.10338 10.9645 9.80611 11.6973L13.5314 15.6043C13.2861 15.8251 13.0394 16.0667 12.7962 16.2931L11.0455 17.9189L20.526 17.9208C20.5308 18.2934 20.5268 18.6741 20.5268 19.0472L15.8396 19.0487L3.5 19.0468L3.50008 17.9208L6.63795 17.9198C6.53105 17.8318 6.36841 17.6515 6.26445 17.5455C6.0152 17.2934 5.76771 17.0397 5.522 16.7844C4.89892 16.1376 4.24694 15.4805 3.61268 14.8445C3.60963 14.3207 3.60485 13.7716 3.61487 13.249C4.66923 12.2656 5.70018 11.2525 6.74914 10.2631C7.03794 9.99065 7.32892 9.70649 7.62716 9.44531Z" fill="#00D3F3"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_dd_eraseron" x="-1.5" y="-2" width="27.0283" height="26.0488" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.129412 0 0 0 0 0.329412 0 0 0 0 0.537255 0 0 0 0.5 0"/>
+<feBlend mode="multiply" in2="BackgroundImageFix" result="effect1_dropShadow_eraseron"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.129412 0 0 0 0 0.329412 0 0 0 0 0.537255 0 0 0 0.8 0"/>
+<feBlend mode="multiply" in2="effect1_dropShadow_eraseron" result="effect2_dropShadow_eraseron"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_eraseron" result="shape"/>
+</filter>
+<clipPath id="clip0_eraseron">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>

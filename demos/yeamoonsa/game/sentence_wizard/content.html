@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Wizard</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/game/game_common.css">
+    <link rel="stylesheet" href="../../css/game/sentence_wizard.css">
+
+    <script src="../../js/game/game_common.js"></script>
+    <script src="../../js/game/lottie-web@5.13.0.js"></script>
+    <script src="../../js/game/sentence_wizard/sentence_wizard.js"></script>
+    <script>window._gameNo = 1;</script>
+    <script src="../../js/study-counter.js"></script>
+    <script>
+        const game_content = [
+            {
+                "order_no": 1,
+                "script": "I see a _./dog/dog/cat/bird",
+                "img": "../../wordhunt/img/131_dog.png",
+                "audio": "../../wordhunt/audio/dog.mp3"
+            },
+            {
+                "order_no": 2,
+                "script": "It is a _ _./big,cat/big/cat/small",
+                "img": "../../wordhunt/img/131_cat.png",
+                "audio": "../../wordhunt/audio/cat.mp3"
+            },
+            {
+                "order_no": 3,
+                "script": "The _ is red./ball/ball/box/kite",
+                "img": "../../wordhunt/img/132_ball.png",
+                "audio": "../../wordhunt/audio/ball.mp3"
+            },
+            {
+                "order_no": 4,
+                "script": "I like _ _./red,apples/red/apples/green",
+                "img": "../../wordhunt/img/172_apples.png",
+                "audio": "../../wordhunt/audio/apples.mp3"
+            },
+            {
+                "order_no": 5,
+                "script": "Look at the _./butterfly/butterfly/bunny/snail",
+                "img": "../../wordhunt/img/111_butterfly.png",
+                "audio": "../../wordhunt/audio/butterfly.mp3"
+            }
+        ];
+        const _step = 2;
+        const _game_order = 1;
+    </script>
+</head>
+
+<body>
+    <div id="game_wrap" class="wrap intro">
+        <!-- intro, round-01 ~ round-05  + in-game, clear, ending 제어  -->
+        <button type="button" class="exit-btn" aria-label="나가기" onclick="exitModal()">
+            <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+                    </svg>
+        </button>
+        <button type="button" class="btn-retry " onclick="retry()">
+            <div class="layered-shadow layered-shadow1"></div>
+            <div class="layered-shadow layered-shadow2"></div>
+            <span>Try Again</span>
+        </button>
+
+        <div class="game-start-btn-box">
+            <!-- off 제어 -->
+            <button type="button" class="btn-game-start"></button>
+            <button type="button" class="btn-game-start"></button>
+            <button type="button" class="btn-game-start"></button>
+            <button type="button" class="btn-game-start"></button>
+            <button type="button" class="btn-game-start"></button>
+        </div>
+        <ul class="lottie-list">
+            <!-- on 제어 -->
+            <li id="intro" class="intro"></li> 
+            <li id="g_start_01" class="g-start-01"></li>
+            <li id="g_start_02" class="g-start-02"></li>
+            <li id="g_start_03" class="g-start-03"></li>
+            <li id="g_start_04" class="g-start-04"></li>
+            <li id="g_start_05" class="g-start-05"></li> 
+            <li id="g_correct_01" class="g-correct-01"></li>
+            <li id="g_correct_02" class="g-correct-02 "></li>
+            <li id="g_correct_03" class="g-correct-03"></li>
+            <li id="g_correct_04" class="g-correct-04"></li>
+            <li id="g_correct_05" class="g-correct-05"></li>
+            <li id="clear" class="clear"></li>
+            <li id="ending" class="ending"></li>
+        </ul>
+
+        <ul class="box-list">
+            <!-- in 제어-->
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="speech-bubble"><img src="../../img/game/sentence_wizard/speech-bubble.png" alt="말풍선"></div>
+        <div class="speech-bubble-clear"><img src="../../img/game/sentence_wizard/speech-bubble-claee.png" alt="말풍선"></div>
+        <div class="question-area"> 
+            <div class="question-wrap">
+                <div class="question-box">
+                    <button type="button" class="" onclick="playScript(this)">
+                        <!-- stop 제어 -->
+                        <svg class="svg-play" xmlns="http://www.w3.org/2000/svg" width="28" height="27"
+                            viewBox="0 0 28 27" fill="none">
+                            <path d="M18.9529 0.53453C18.0266 0.196806 17.1111 0.932885 17.1111 1.91879C17.1111 2.60795 17.5727 3.20344 18.2117 3.4616C22.1324 5.0456 24.8889 8.77737 24.8889 13.125C24.8889 17.4707 22.1349 21.1885 18.217 22.7716C17.575 23.031 17.1111 23.6294 17.1111 24.3219C17.1111 25.3126 18.0311 26.0522 18.9616 25.7123C24.236 23.7853 28 18.8776 28 13.125C28 7.36921 24.2318 2.45932 18.9529 0.53453ZM21 13.125C21 11.443 20.3728 9.91189 19.3176 8.73466C18.4597 7.77758 17.1111 8.57621 17.1111 9.8615V16.3915C17.1111 17.6648 18.4389 18.4643 19.2966 17.5233C20.3645 16.3515 21 14.8086 21 13.125ZM0.874999 8.63526C0.39175 8.63526 0 9.02701 0 9.51026V16.7397C0 17.223 0.391751 17.6147 0.875 17.6147H6.22222L12.5184 23.6722C13.0743 24.207 14 23.813 14 23.0416V3.2084C14 2.43698 13.0743 2.04301 12.5184 2.57784L6.22222 8.63526H0.874999Z" fill="white"/>
+                        </svg>
+                        <svg class="svg-stop" xmlns="http://www.w3.org/2000/svg" width="21" height="26"
+                            viewBox="0 0 21 26" fill="none">
+                            <path d="M0 22.9583C0 24.6382 1.3618 26 3.04167 26C4.72153 26 6.08333 24.6382 6.08333 22.9583V3.04167C6.08333 1.3618 4.72153 0 3.04167 0C1.3618 0 0 1.3618 0 3.04167V22.9583Z" fill="white"/>
+                            <path d="M20.2782 3.04167V22.9583C20.2782 24.6382 18.9164 26 17.2365 26C15.5566 26 14.1948 24.6382 14.1948 22.9583V3.04167C14.1948 1.3618 15.5566 0 17.2365 0C18.9164 0 20.2782 1.3618 20.2782 3.04167Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <em id="q_number"></em>
+                    <span id="q_text"></span>
+                </div>
+
+                <div class="img-box">
+                    <img id="q_img" src="" alt="">
+                </div>
+                <!-- disabled 제어 -->
+                <div id="answer_box" class="answer-box"></div>
+            </div>
+        </div>
+
+        <section id="exit_modal" class="modal">
+            <!-- class toggle: open -->
+            <div class="modal-box">
+                <div class="icon-character">
+                    <img src="../../img/test/icon/character_step2.svg" alt="">
+                </div>
+                <div class="title">Do you want to leave?</div>
+                <div class="btn-area">
+                    <button type="button" class="btn-cancel" onclick="cancelExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32" fill="none">
+                            <g opacity="0.4">
+                                <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span>No</span>
+                    </button>
+                    <button type="button" class="btn-submit" onclick="applyExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                                <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
+                        <span>Yes</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- class toggle: open -->
+        <div class="btn-disable-modal"></div>
+
+
+    </div>
+</body>
+
+</html>

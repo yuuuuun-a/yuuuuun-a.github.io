@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildup LITERACY</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BuildUp Literacy">
+    <meta property="og:description" content="Build up your literacy skills with readers, videos, games , and quizzes!">
+    <meta property="og:image" content="img/og_image.png">
+    <meta property="og:url" content="https://buildupliteracy.com/">
+
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- HEADER -->
+        <header id="header">
+    <div class="inner">
+        <div class="header-area">
+            <a href="index.html" class="logo-area">
+                <img class="logo" src="img/logo_outline.svg" alt="Build UP LITERACY">
+            </a>
+            <nav class="gnb-area">
+                <ul class="gnb">
+                    <!-- <li><a href="/" class="link-home"><img src="img/home.svg" alt="홈으로 가기"></a></li> -->
+                </ul>
+            </nav>
+
+            <!-- 비로그인 상태: 아래 로그인 버튼 노출 + .logout-area 제거 -->
+
+            <!-- <a href="login.html" class="btn-login">
+                <svg class="icon-login" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                    fill="none">
+                    <path
+                        d="M13.75 3.75H16.25C16.9414 3.75 17.5 4.30859 17.5 5V15C17.5 15.6914 16.9414 16.25 16.25 16.25H13.75C13.0586 16.25 12.5 16.8086 12.5 17.5C12.5 18.1914 13.0586 18.75 13.75 18.75H16.25C18.3203 18.75 20 17.0703 20 15V5C20 2.92969 18.3203 1.25 16.25 1.25H13.75C13.0586 1.25 12.5 1.80859 12.5 2.5C12.5 3.19141 13.0586 3.75 13.75 3.75ZM13.3828 10.8828C13.8711 10.3945 13.8711 9.60156 13.3828 9.11328L8.38281 4.11328C7.89453 3.625 7.10156 3.625 6.61328 4.11328C6.125 4.60156 6.125 5.39453 6.61328 5.88281L9.48047 8.75H1.25C0.558594 8.75 0 9.30859 0 10C0 10.6914 0.558594 11.25 1.25 11.25H9.48047L6.61328 14.1172C6.125 14.6055 6.125 15.3984 6.61328 15.8867C7.10156 16.375 7.89453 16.375 8.38281 15.8867L13.3828 10.8867V10.8828Z"
+                        fill="white" />
+                </svg>
+                <span>Login</span>
+            </a> -->
+            <div class="logout-area">
+                <div class="profile-box" onclick="goMypage('student')" style="cursor: pointer;">
+                    <img class="ico-name" src="img/icon/ico-name.svg" alt="프로필 미리보기">
+                    <!-- 학생: 단일 지사/반 표시 -->
+                    <p>Gangnam Rainbow Emma</p>
+                    <!-- 교사: select box로 반 선택 (학생 화면에서는 숨김) -->
+                    <div class="teacher-profile" style="display: none;">
+                        <div class="custom-select-box">
+                            <button type="button" class="btn-select">
+                                <span>Gangnam Rainbow</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="9" viewBox="0 0 13 9"
+                                    fill="none">
+                                        <path d="M7.13492 8.07813L12.4999 1.64018C13.0427 0.988857 12.5795 -5.62655e-08 11.7317 -9.33256e-08L1.00174 -5.62345e-07C0.153903 -5.99405e-07 -0.309252 0.988858 0.23352 1.64019L5.59848 8.07814C5.99827 8.55789 6.73513 8.55789 7.13492 8.07813Z" fill="#FF8D00"/>
+                                    </svg>
+                            </button>
+                            <ul>
+                                <li><button type="button" class="on" data-classroom-no="1" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Rainbow</button></li>
+                                <li><button type="button" data-classroom-no="2" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Sunshine</button></li>
+                                <li><button type="button" data-classroom-no="3" onclick="changeClassroom(this.dataset.classroomNo)">Gangnam Ocean</button></li>
+                            </ul>
+                        </div>
+                        <span>Ms. Kim</span>
+                    </div>
+                </div>
+
+                <a class="btn-logout" onclick="logoutModal()">
+                    <svg class="icon-logout" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M19.6328 10.8828C20.1211 10.3945 20.1211 9.60156 19.6328 9.11328L14.6328 4.11328C14.1445 3.625 13.3516 3.625 12.8633 4.11328C12.375 4.60156 12.375 5.39453 12.8633 5.88281L15.7305 8.75H7.5C6.80859 8.75 6.25 9.30859 6.25 10C6.25 10.6914 6.80859 11.25 7.5 11.25H15.7305L12.8633 14.1172C12.375 14.6055 12.375 15.3984 12.8633 15.8867C13.3516 16.375 14.1445 16.375 14.6328 15.8867L19.6328 10.8867V10.8828ZM6.25 3.75C6.94141 3.75 7.5 3.19141 7.5 2.5C7.5 1.80859 6.94141 1.25 6.25 1.25H3.75C1.67969 1.25 0 2.92969 0 5V15C0 17.0703 1.67969 18.75 3.75 18.75H6.25C6.94141 18.75 7.5 18.1914 7.5 17.5C7.5 16.8086 6.94141 16.25 6.25 16.25H3.75C3.05859 16.25 2.5 15.6914 2.5 15V5C2.5 4.30859 3.05859 3.75 3.75 3.75H6.25Z"
+                            fill="#B1B8BE" />
+                    </svg>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="logout_modal" class="modal">
+        <!-- class toggle: open -->
+        <div class="modal-box">
+            <div class="icon-character">
+                <img src="img/test/icon/character_step1.svg" alt="">
+            </div>
+            <div class="title">Do you want to leave?</div>
+            <div class="btn-area">
+                <button type="button" class="btn-cancel" onclick="cancelLogout()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 32 32" fill="none">
+                        <g opacity="0.4">
+                            <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    <span>No</span>
+                </button>
+                <button type="button" class="btn-submit" onclick="applyLogout()">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <div class="layered-shadow layered-shadow3"></div>
+                    <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                            <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                        </g>
+                    </svg>
+                    <span>Yes</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goMypage(userType) {
+            if(userType == 'student') {
+                window.location.href = 'mypage/my_page.html';
+            }
+        }
+
+        function changeClassroom(classroomNo) {
+            location.href = 'step.html';
+        }
+
+        document.querySelectorAll('.btn-select').forEach((btn) => {
+            const parent = btn.parentElement;
+
+
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                parent.classList.toggle('show');
+            });
+
+            // 마우스가 부모 밖으로 나가면 show 제거
+            parent.addEventListener('mouseleave', () => {
+                parent.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.show').forEach((el) => el.classList.remove('show'));
+        });
+
+    </script>
+</header>
+        <!-- //HEADER -->
+
+        <main class="book">
+            <div class="inner">
+                <!-- <div class="title-area">
+                    <h2 class="title"><img class="logo" src="img/logo_outline.svg" alt="Build UP LITERACY"></h2>
+                </div> -->
+                <h3 class="step-go">
+                    <a href="step.html">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <span>Step 1</span>
+                    </a>
+                </h3>
+    
+                <ul class="ul-unit">
+                    <!-- 오픈 전 Book: a.link-unit 에서 on 클래스 제거 -->
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(1, 3)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 1</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(2, 4)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 2</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(3, 5)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 3</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(4, 6)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 4</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(5, 7)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 5</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(6, 8)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 6</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(7, 9)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 7</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit on" onclick="moveContent(8, 10)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 8</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit" onclick="moveContent(9, 11)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 9</span>
+                        </a>
+                    </li>
+                    <li class="unit-list">
+                        <a class="link-unit" onclick="moveContent(10, 12)">
+                            <div class="layered-shadow layered-shadow1"></div>
+                            <span>Book 10</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <script>
+            var applyMonthFilter = true;  // 더미: 학생 기준 월 제한
+            var currentMonth = 10;        // 더미: 10월 (Book 9, 10 미오픈)
+            function moveContent(book_no, book_month){
+                var active = !applyMonthFilter || (currentMonth <= 2 || book_month <= currentMonth);
+                if(active){
+                    window.location.href = 'content.html?book_no=' + book_no;
+                } else {
+                    alert("준비중입니다.");
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

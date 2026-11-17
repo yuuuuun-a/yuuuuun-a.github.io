@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.wrap { overflow: visible; } 
+.step { background: url('../img/step/step-bg.png')no-repeat; background-size: cover; min-height: calc(100dvh - clamp(60px, 6.25vw, 80px)); } 
+
+.title-area .title { display: flex; justify-content: center; align-items: center;margin-top: clamp(40px, 7vw, 64px); } 
+.title-area .title img { max-width: 380px; } 
+
+
+.inner{max-width: 1200px;}
+
+.ul-unit{margin-top: clamp(0px, 23.4375vw, 135px);display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0px, 100vw, 30px);margin-bottom : clamp(0px, 23.4375vw, 237px)}
+.ul-unit .unit-list{width: 100%;  overflow: hidden;border: 12px solid #FFF;box-shadow: 0 12px 0 0 rgba(0, 0, 0, 0.10), 0 -32px 6px 0 rgba(0, 0, 0, 0.08) inset, 0 28px 6px 0 rgba(255, 255, 255, 0.24) inset;border-radius: 40px;transition: 0.3s ease-in-out; cursor: default; pointer-events: none;}
+.ul-unit .unit-list:hover{transform: scale(1.02);}
+.ul-unit .unit-list:nth-child(1){background: url("../img/step/step-01-bg.png")no-repeat;background-size: cover; cursor: pointer; pointer-events: auto;}
+.ul-unit .unit-list:nth-child(2){background: url("../img/step/step-02-bg.png")no-repeat;background-size: cover; cursor: pointer; pointer-events: auto;}
+.ul-unit .unit-list:nth-child(3){background: url("../img/step/step-03-bg.png")no-repeat;background-size: cover; cursor: pointer; pointer-events: auto;}
+.ul-unit .unit-list a{display: flex;width: 100%;height: 100%;aspect-ratio: auto 376/440;justify-content: center;padding: clamp(0px, 3vw, 48px);}
+.ul-unit .unit-list span{font-family: 'Proxima Soft';color: #4A0B00; font-weight: 800; font-size: clamp(0px, 2.08333333333vw, 40px);line-height: 1.4;}
+
+.ul-unit .unit-list.disabled{filter: grayscale(100%) opacity(0.5); cursor: default !important; pointer-events: none !important;}
+.ul-unit .unit-list.disabled a.disabled{cursor: default; pointer-events: none;}
+
+
+
+
+@media screen and (max-width:1280px){ 
+ }
+
+@media screen and (max-width:768px){
+    .ul-unit{grid-template-columns: repeat(1, 1fr);}
+    .ul-unit .unit-list span{font-size: clamp(50px, calc( 56 / 1600  * 100vw ), 56px);}
+}
+
+@media screen and (max-width:480px){
+}

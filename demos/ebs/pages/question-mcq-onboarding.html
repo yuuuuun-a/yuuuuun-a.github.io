@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="EBS 수학진단도구" data-back-href="/work/ebs-math#screens" data-back-label="← 케이스 스터디로" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EBS 수학진단도구</title>
+
+  <link rel="stylesheet" href="../vendor/katex-0.18.5/katex.min.css">
+  <script defer src="../vendor/katex-0.18.5/katex.min.js"></script>
+  <script defer src="../vendor/katex-0.18.5/contrib/auto-render.min.js"></script>
+  
+    <style>html.math-pending body { visibility: hidden; }</style>
+    <script>
+      document.documentElement.classList.add('math-pending');
+      setTimeout(() => document.documentElement.classList.remove('math-pending'), 3000);
+    </script>
+  
+
+  <link rel="stylesheet" href="../css/style.css">
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../vendor/katex-0.18.5/katex.min.css">
+    <script defer src="../vendor/katex-0.18.5/katex.min.js"></script>
+    <script defer src="../vendor/katex-0.18.5/contrib/auto-render.min.js"></script>
+
+    
+    <link rel="icon" href="../img/favicon.ico">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EBS 수학진단도구">
+    <meta property="og:title" content="EBS 수학진단도구">
+    <meta property="og:description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta name="description" content="우주를 탐사하며 나의 수학 실력을 진단해 보세요.">
+    <meta property="og:image" content="../img/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+  
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>html.math-pending body { visibility: hidden; }</style>
+    <script>
+      document.documentElement.classList.add('math-pending');
+      setTimeout(() => document.documentElement.classList.remove('math-pending'), 3000);
+    </script>
+  
+    <!-- 문항 이미지의 onload="handleQuestionImageLoad(this)"가 부를 함수. 캐시된 이미지는 본문을 읽는 도중에 바로
+         onload가 불리므로 body 끝(commonScripts)이 아니라 head에서 defer 없이 먼저 정의해 둬야 한다
+         (늦게 정의되면 ReferenceError가 나고 이미지가 display:none인 채로 남는다). -->
+    <script src="../js/question/question-image-fallback.js"></script>
+  
+</head>
+
+<body>
+
+  <div class="group-mcq question-mcq">
+
+    <div class="mcq-area"></div>
+
+    <div class="mcq-wrap">
+
+      <header class="group-header">
+    <div class="header-area">
+
+      <div class="header-wrap header-wrap-left">
+        <!-- -inactive: 아직 도달 안 한 구간. planet-N 이미지는 4종을 순환 사용 -->
+        
+          <i class="header-planet">
+            <img class="header-planet-default" alt src="../img/common/planet-1.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-1-inactive.png">
+          </i>
+          <i class="header-divider"></i>
+        
+          <i class="header-planet">
+            <img class="header-planet-default" alt src="../img/common/planet-2.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-2-inactive.png">
+          </i>
+          <i class="header-divider header-divider-inactive"></i>
+        
+          <i class="header-planet header-planet-inactive">
+            <img class="header-planet-default" alt src="../img/common/planet-3.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-3-inactive.png">
+          </i>
+          <i class="header-divider header-divider-inactive"></i>
+        
+          <i class="header-planet header-planet-inactive">
+            <img class="header-planet-default" alt src="../img/common/planet-4.png">
+            <img class="header-planet-inactive-img" alt src="../img/common/planet-4-inactive.png">
+          </i>
+          
+        
+      </div>
+
+      <div class="header-wrap header-wrap-center">
+        <!-- 온보딩 3단계에서만 잠깐 나타나 숨쉬듯 깜빡이는 화살표. 평소엔 hidden, question-onboarding.js가 토글 -->
+        <span class="header-deco-arrow header-deco-arrow-left" hidden aria-hidden="true">
+          <svg viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.9853 24.3848L20.4706 15.8995L11.9853 7.41422" stroke="#FCF56F" stroke-width="4"/>
+          </svg>
+        </span>
+        <span class="header-deco"><img src="../img/question/common/header/title-decoration.png" alt></span>
+        <p class="header-text">행성까지 가는 올바른 항로를 골라 주세요.</p>
+        <span class="header-deco header-deco-right"><img src="../img/question/common/header/title-decoration.png" alt></span>
+        <span class="header-deco-arrow header-deco-arrow-right" hidden aria-hidden="true">
+          <svg viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.9853 24.3848L20.4706 15.8995L11.9853 7.41422" stroke="#FCF56F" stroke-width="4"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="header-wrap header-wrap-right">
+        <div class="header-chip">
+          <span class="header-chip-icon"><img src="../img/question/common/header/chip-icon.svg" alt></span>
+          <span class="header-chip-time">40:00</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+      <main class="group-question">
+
+        <div class="question-nav question-nav-left"></div>
+
+        <div class="question-area-wrap">
+          <div class="question-area-shadow"></div>
+
+          <section class="question-area">
+
+            <div class="question-area-edge question-area-edge-top"></div>
+            <div class="question-area-edge question-area-edge-bottom"></div>
+
+            <div class="question-area-inner-glow"></div>
+
+            <div class="question-wrap">
+
+              <div class="question-box">
+                <div class="question-box-head">
+                  <span class="question-box-icon"><img src="../img/question/common/preview-icon.png" alt></span>
+                  <p class="question-box-text">우주선 4대에 4대를 더하면 몇 대일까요?</p>
+                </div>
+                <!-- 온보딩 '크게 보기' 스텝에서만 data-onboarding-show로 펼치는 예시 이미지(평소엔 hidden) -->
+                <div class="question-box-media image-zoom" data-onboarding-zoom-media hidden>
+                  <button type="button" class="image-zoom-btn" data-image-zoom aria-label="크게 보기"></button>
+                  <img src="../img/question/common/onboarding/ex-img.png" alt class="question-box-image">
+                </div>
+              </div>
+
+
+
+              <!-- question-body-options-N: 선지(.option-box) 개수에 맞춰 N을 2~5로 바꿔주세요.
+                   .constellation 별자리 배치가 이 클래스 값에 따라 달라집니다.
+                   클래스만 바꾸면 안 되고 .constellation 안쪽 라인/노드 마크업도 개수에 맞는 것으로 갈아끼워야 합니다.
+                   2·3·4·5개 각각의 마크업은 question-mcq.html 참고. -->
+              <div class="question-body question-body-options-4">
+
+                <div class="question-body-illustration">
+                  <img src="../img/question/mcq/question-illustration.png" alt>
+                </div>
+
+                <div class="constellation">
+                  <span class="constellation-line constellation-line-1"><img src="../img/question/mcq/constellation-line-1.svg" alt></span>
+                  <span class="constellation-line constellation-line-2"><img src="../img/question/mcq/constellation-line-2.svg" alt></span>
+                  <span class="constellation-line constellation-line-3"><img src="../img/question/mcq/constellation-line-3.svg" alt></span>
+                  <span class="constellation-line constellation-line-4"><img src="../img/question/mcq/constellation-line-4.svg" alt></span>
+                  <span class="constellation-line constellation-line-5"><img src="../img/question/mcq/constellation-line-5.svg" alt></span>
+                  <span class="constellation-line constellation-line-6"><img src="../img/question/mcq/constellation-line-6.svg" alt></span>
+
+                  <span class="constellation-node constellation-node-hub">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-1.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-1.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-1.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-2.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-upper-left">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-lower">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-3.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-3.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-5.svg" alt></span>
+                    <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-6.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt1-edge">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt4-edge">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt1">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt2">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt3">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-6.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                  </span>
+
+                  <span class="constellation-node constellation-node-opt4">
+                    <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+                    <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+                  </span>
+                </div>
+                <div class="question-options">
+
+                  <button type="button" class="option-box">
+                    <span class="option-box-text">6대</span>
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button>
+
+                  <button type="button" class="option-box">
+                    <span class="option-box-text">7대</span>
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button>
+
+                  <button type="button" class="option-box">
+                    <span class="option-box-text">8대</span>
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button>
+
+                  <button type="button" class="option-box">
+                    <span class="option-box-text">9대</span>
+                    <i class="option-box-bracket option-box-bracket-tl"></i>
+                    <i class="option-box-bracket option-box-bracket-br"></i>
+                  </button>
+
+                </div>
+
+              </div>
+
+
+              <div class="question-action">
+                <div class="question-action-frame">
+                  <button type="button" class="question-action-btn">선택 완료</button>
+                </div>
+              </div>
+
+
+            </div>
+
+          </section>
+
+          <i class="question-area-corner question-area-corner-tl"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-tr"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-bl"><img src="../img/question/common/corner-decoration.png" alt></i>
+          <i class="question-area-corner question-area-corner-br"><img src="../img/question/common/corner-decoration.png" alt></i>
+
+          <div class="question-nav question-nav-right">
+    <button type="button" class="question-info-btn" aria-expanded="false">
+      <img src="../img/question/common/info-icon.png" alt="설명 보기">
+    </button>
+
+    <button type="button" class="question-note-btn" data-note-toggle aria-expanded="false">
+      <span class="question-note-btn-ic">
+        <img class="question-note-btn-ic-open" src="../img/question/common/note/note-icon.png" alt="연습장 열기">
+        <img class="question-note-btn-ic-close" src="../img/question/common/note/note-close-icon.png" alt="연습장 닫기">
+      </span>
+    </button>
+
+    <!-- 아이콘은 평소 흰색(-ic-off), 켜졌을 때 하늘색(-ic-on) 두 장을 넣고 CSS가 갈아 끼운다.
+         -selected는 지금 쓰고 있는 도구(연필/지우개), 휴지통은 선택이 아니라 누르는 동안만(:active) 켜진다 -->
+    <div class="note-tool" data-note-tool hidden>
+      <button type="button" class="note-tool-btn note-tool-btn-selected" data-note-tool-btn="pen" aria-label="연필" aria-pressed="true">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-pen.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-pen-on.svg" alt>
+      </button>
+      <button type="button" class="note-tool-btn" data-note-tool-btn="eraser" aria-label="지우개" aria-pressed="false">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-eraser.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-eraser-on.svg" alt>
+      </button>
+      <button type="button" class="note-tool-btn" data-note-tool-btn="clear" aria-label="모두 지우기">
+        <img class="note-tool-btn-ic-off" src="../img/question/common/note/tool-clear.svg" alt>
+        <img class="note-tool-btn-ic-on" src="../img/question/common/note/tool-clear-on.svg" alt>
+      </button>
+    </div>
+  </div>
+
+          
+    <div class="note-pad" data-note-pad hidden>
+      <div class="note-pad-block" data-note-close></div>
+      <canvas class="note-pad-canvas" data-note-canvas></canvas>
+      <!-- 캔버스 위에서만 쓰는 커서. 연필/지우개만 위아래로 살짝 흔들리고 점(실제 포인터 자리)은 고정이라,
+           한 장짜리 CSS 커서로는 안 되고 점과 도구를 따로 얹은 이 요소를 포인터에 붙여 움직인다.
+           필기 중에는(.note-pad-writing) 흔들림이 멈춘다 -->
+      <span class="note-cursor" data-note-cursor aria-hidden="true">
+        <i class="note-cursor-dot"><img src="../img/question/common/note/cursor-dot.svg" alt></i>
+        <i class="note-cursor-tool">
+          <img class="note-cursor-tool-ic note-cursor-tool-ic-pen" src="../img/question/common/note/cursor-pen-tool.svg" alt>
+          <img class="note-cursor-tool-ic note-cursor-tool-ic-eraser" src="../img/question/common/note/cursor-eraser-tool.svg" alt>
+        </i>
+      </span>
+    </div>
+  
+
+          
+    <div class="question-info-popup" data-question-info-popup hidden>
+      <div class="question-info-popup-dim"></div>
+      <section class="question-area question-info-popup-panel">
+        <div class="question-area-inner-glow"></div>
+        <div class="question-info-popup-stage" data-question-info-popup-stage aria-hidden="true" inert>
+    <div class="question-box">
+      <div class="question-box-head">
+        <span class="question-box-icon"><img src="../img/question/common/preview-icon.png" alt></span>
+        <p class="question-box-text">답이 되는 것을 하나 눌러 고르세요</p>
+      </div>
+    </div>
+    <div class="question-body question-body-options-4">
+      <div class="question-body-illustration">
+        <img src="../img/question/mcq/question-illustration.png" alt>
+      </div>
+      <div class="constellation">
+          <span class="constellation-line constellation-line-1"><img src="../img/question/mcq/constellation-line-1.svg" alt></span>
+          <span class="constellation-line constellation-line-2"><img src="../img/question/mcq/constellation-line-2.svg" alt></span>
+          <span class="constellation-line constellation-line-3"><img src="../img/question/mcq/constellation-line-3.svg" alt></span>
+          <span class="constellation-line constellation-line-4"><img src="../img/question/mcq/constellation-line-4.svg" alt></span>
+          <span class="constellation-line constellation-line-5"><img src="../img/question/mcq/constellation-line-5.svg" alt></span>
+          <span class="constellation-line constellation-line-6"><img src="../img/question/mcq/constellation-line-6.svg" alt></span>
+          <span class="constellation-node constellation-node-hub">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-1.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-1.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-1.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-2.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-upper-left">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-upper-right">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-2.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-2.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-lower">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-3.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-3.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-h"><img src="../img/question/mcq/constellation-sparkle-5.svg" alt></span>
+          <span class="constellation-node-sparkle constellation-node-sparkle-v"><img src="../img/question/mcq/constellation-sparkle-6.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt1-edge">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt4-edge">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-4.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-4.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt1">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt2">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt3">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-6.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+          <span class="constellation-node constellation-node-opt4">
+          <span class="constellation-node-glow"><img src="../img/question/mcq/constellation-glow-5.svg" alt></span>
+          <span class="constellation-node-star"><img src="../img/question/mcq/constellation-star-5.svg" alt></span>
+          </span>
+      </div>
+      <div class="question-options">
+        <button type="button" class="option-box">
+          <span class="option-box-text">보기 1</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 2</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 3</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button><button type="button" class="option-box">
+          <span class="option-box-text">보기 4</span>
+          <i class="option-box-bracket option-box-bracket-tl"></i>
+          <i class="option-box-bracket option-box-bracket-br"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="question-action">
+      <div class="question-action-frame">
+        <button type="button" class="question-action-btn">선택 완료</button>
+      </div>
+    </div>
+  </div>
+      </section>
+      <i class="question-area-corner question-area-corner-tl"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-tr"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-bl"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <i class="question-area-corner question-area-corner-br"><img src="../img/question/common/corner-decoration.png" alt></i>
+      <span class="question-info-popup-tap" data-question-info-popup-hand aria-hidden="true" data-tap-lottie="../js/question/click.json"></span>
+    </div>
+  
+        </div>
+
+      </main>
+
+      <footer class="group-footer">
+        <div class="footer-area">
+
+          <!-- -active: 사용 가능한 힌트, -inactive: 아직 안 열림 -->
+          <div class="footer-hints">
+            <i class="ornament ornament-left"><img src="../img/question/common/ornament-left.svg" alt></i>
+            <i class="ornament ornament-right"><img src="../img/question/common/ornament-right.svg" alt></i>
+            <button type="button" class="footer-hint footer-hint-active"><img src="../img/question/common/footer/hint-icon-active.png" alt="1단계 힌트"></button>
+            <button type="button" class="footer-hint footer-hint-active"><img src="../img/question/common/footer/hint-icon-active.png" alt="2단계 힌트"></button>
+            <button type="button" class="footer-hint footer-hint-inactive" disabled><img src="../img/question/common/footer/hint-icon-inactive.png" alt="3단계 힌트"></button>
+          </div>
+
+          <!--
+          has-confirmed: 확인하기는 처음 한 번만 — 클릭 후에는 다시 안 보임
+          is-collapsed: has-confirmed 이후 상태 전환용. 없으면 펼침(설명+작게 보기),
+                        있으면 접힘(라벨만+펼쳐 보기)
+        -->
+          <div class="footer-preview">
+            <div class="footer-preview-surface">
+              <div class="footer-preview-compact">
+                <p class="footer-preview-text"><em>1단계 힌트</em>를 확인할까요?</p>
+                <button type="button" class="footer-preview-btn">확인하기
+                  <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M8.80808 8.06824L3.5 13.3867H7.40674L12.7148 8.06824L7.40674 2.74976H3.5L8.80808 8.06824Z" fill="url(#paint0_linear_2516_10899)"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_2516_10899" x1="8.10741" y1="13.3867" x2="8.10741" y2="2.74976" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#B3F5FF"/>
+                                                <stop offset="1" stop-color="white"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                </button>
+              </div>
+              <div class="footer-preview-result">
+                <div class="footer-preview-body">
+                  <p class="footer-preview-level">1단계 힌트</p>
+                  <p class="footer-preview-desc footer-preview-desc-full">X의 계수를 잘 보세요. 계수가 음수이면 그래프는 위로 볼록하고, 절댓값이
+                    1보다 크면 $y=x^2$보다 폭이 좁아져요.X의 계수를 잘 보세요. 계수가 음수이면 그래프는 위로 볼록하고, 절댓값이 1보다 크면 $y=x^2$보다 폭이 좁아져요.</p>
+                  <p class="footer-preview-desc footer-preview-desc-short">계수가 무엇인지에 따라 그래프가 어디로 볼록한지 정해져요.</p>
+                </div>
+                <button type="button" class="footer-preview-toggle footer-preview-toggle-collapse">
+                  <i class="footer-preview-chevron"><img src="../img/question/common/footer/ic_left.svg" alt></i> 작게 보기
+                </button>
+                <button type="button" class="footer-preview-toggle footer-preview-toggle-expand">
+                  <i class="footer-preview-chevron footer-preview-chevron-up"><img src="../img/question/common/footer/ic_left.svg" alt></i> 펼쳐 보기
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="footer-skip" data-question-modal-open="skip">이 문제는 넘어가기 <i class="btn-deco"><img src="../img/question/common/footer/ic_right.png" alt="데코"></i></button>
+
+        </div>
+      </footer>
+
+      <div class="onboarding" data-onboarding>
+
+        <!-- 스포트라이트 스크림 — 화면 전체를 어둡게+흐리게 덮고 현재 스텝 타깃만 도려낸다.
+             backdrop-filter는 요소 모양을 따르므로 clip-path(evenodd)로 구멍을 내고,
+             question-onboarding.js가 스텝마다 경로를 다시 계산한다. -->
+        <div class="onboarding-scrim" data-onboarding-scrim aria-hidden="true" hidden></div>
+
+        <!-- 누를 수 있는 타깃 위에 얹는 탭 커서. 위치는 스텝의 data-onboarding-tap 기준으로 JS가 잡는다. -->
+        <span class="onboarding-tap" data-onboarding-tap aria-hidden="true" hidden data-tap-lottie="../js/question/click.json" data-tap-lottie-loop></span>
+
+        <div class="onboarding-step onboarding-intro is-active" data-step="0">
+          <!-- onboarding-skip-right: 0~2스텝은 왼쪽에 뒤로가기 버튼이 있어 건너뛰기를 오른쪽으로 보낸다. 3스텝부터는 기본(왼쪽) 자리다. -->
+          <button type="button" class="onboarding-skip onboarding-skip-right"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <button type="button" class="onboarding-back exit-btn" aria-label="뒤로">
+            <span class="exit-btn-inner"><img class="onboarding-back-icon" src="../img/question/common/onboarding/back-arrow.svg" alt></span>
+          </button>
+          <div class="onboarding-intro-character">
+            <img class="onboarding-intro-character-img" src="../img/question/common/onboarding/semi.png" alt>
+      
+          </div>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>안녕,<br>네가 신입 탐사 대원이구나?</p>
+                <!-- is-visible: 타이핑이 끝나면 question-onboarding.js가 붙이는 상태 클래스(그 전엔 opacity 0) -->
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step onboarding-intro onboarding-intro-continued" data-step="1">
+          <button type="button" class="onboarding-skip onboarding-skip-right"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <button type="button" class="onboarding-back exit-btn" aria-label="뒤로">
+            <span class="exit-btn-inner"><img class="onboarding-back-icon" src="../img/question/common/onboarding/back-arrow.svg" alt></span>
+          </button>
+          <div class="onboarding-intro-character">
+            <img class="onboarding-intro-character-img" src="../img/question/common/onboarding/semi.png" alt>
+    
+          </div>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>나는 세미야.<br>오늘부터 너의 탐사를 도와줄 파트너가 되어 줄게!</p>
+                <!-- is-visible: 타이핑이 끝나면 question-onboarding.js가 붙이는 상태 클래스(그 전엔 opacity 0) -->
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step onboarding-intro onboarding-intro-continued" data-step="2">
+          <button type="button" class="onboarding-skip onboarding-skip-right"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <button type="button" class="onboarding-back exit-btn" aria-label="뒤로">
+            <span class="exit-btn-inner"><img class="onboarding-back-icon" src="../img/question/common/onboarding/back-arrow.svg" alt></span>
+          </button>
+          <div class="onboarding-intro-character">
+            <img class="onboarding-intro-character-img" src="../img/question/common/onboarding/semi.png" alt>
+
+          </div>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>시작하기 전에 몇 가지만 차근차근 짚어 줄게.<br>나만 따라오면 돼!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="3" data-onboarding-dim="full" data-onboarding-lift=".header-wrap-center" data-onboarding-show=".header-deco-arrow-left,.header-deco-arrow-right">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-right"><img src="../img/question/common/onboarding/semi_ver5.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>여기 봐!<br>우리가 해결해야 할 미션이야.<br>미션은 문제마다 달라지니,<br>잘 읽고 풀어 보자.</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 시안에서는 문항 카드 전체가 밝게 남고, 선지 위에만 탭 커서가 올라간다. -->
+        <div class="onboarding-step" data-step="4" data-onboarding-target=".question-area" data-onboarding-tap=".question-options .option-box:nth-of-type(3)" data-onboarding-tap-center data-onboarding-pop=".question-options .option-box:nth-of-type(3)" data-onboarding-select=".question-options .option-box:nth-of-type(3)">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver3.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>답은 여기서 고르거나 입력하면 돼.<br>문제마다 방식이 조금씩 다르지만<br>해보면 금방 알 수 있어!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 그림 크게 보기. 온보딩 문항엔 이미지가 없어서 발문 이미지([data-onboarding-zoom-media])를
+             이 스텝에서만 펼치고, 그 좌상단 크게 보기 버튼 위에 탭 커서를 올린다. -->
+        <div class="onboarding-step" data-step="5" data-onboarding-target=".question-box" data-onboarding-show="[data-onboarding-zoom-media]" data-onboarding-tap=".question-box .image-zoom-btn" data-onboarding-tap-offset="-9,-12" data-onboarding-pop=".question-box .image-zoom-btn">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver3.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <p class="onboarding-dialog-text" data-onboarding-typing>그림이 작아서 잘 안 보인다고?<br>그림 왼쪽 위 버튼을 눌러 봐.<br>크게 볼 수 있어!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 크게 보기가 열린 모습 + 닫는 법. 실제 모달(.question-modal)은 .mcq-wrap 바깥에 있어 온보딩 말풍선·손까지 덮으므로,
+             같은 클래스로 만든 예시 패널을 스텝 안에 넣는다. 손 위치는 애니메이션(scale-in)에 영향 없는 래퍼 기준. -->
+        <div class="onboarding-step" data-step="6" data-onboarding-dim="full" data-onboarding-tap="[data-onboarding-zoom-demo]" data-onboarding-pop="none">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-zoom-demo" data-onboarding-zoom-demo aria-hidden="true">
+            <div class="question-modal-panel image-zoom-panel">
+              <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+              <div class="image-zoom-panel-frame">
+                <img class="image-zoom-panel-img" src="../img/question/common/onboarding/ex-img.png" alt>
+              </div>
+            </div>
+          </div>
+          <p class="image-zoom-guide" aria-hidden="true">화면을 누르면 닫혀요.</p>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-top">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <span class="onboarding-avatar onboarding-avatar-smile"><img src="../img/question/common/onboarding/semi_ver2.png" alt></span>
+              <div class="onboarding-dialog-body">
+                <p class="onboarding-dialog-text" data-onboarding-typing>짜잔, 이렇게 크게 볼 수 있어!<br>다 봤으면 화면 아무 곳이나 한 번 눌러 줘.<br>원래 화면으로 돌아갈 거야.</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="7" data-onboarding-target=".question-info-btn,.question-info-popup" data-onboarding-show=".question-info-popup" data-onboarding-pop=".question-info-btn">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver4.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>어떻게 푸는 문제인지 모르겠다면<br>오른쪽 위 물음표를 눌러 줘!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 연습장 안내 2스텝. 8은 연습장 버튼을 눌러 여는 소개(탭 커서만), 9는 펜/지우개/휴지통 도구 설명이다.
+             9의 .note-pad/.note-tool은 평소 hidden이라 data-onboarding-show로 펴 두고,
+             그 위에서 question-note-demo.js가 data-onboarding-note 값에 따라 실제로 써 보인다
+             (erase = 연필로 'x=2+2'를 쓰고 지우개로 지운 뒤 휴지통으로 비우기).
+             연습장이 열리면 오른쪽 버튼 아이콘은 연필에서 X(닫기)로 바뀐다. -->
+        <div class="onboarding-step" data-step="8" data-onboarding-target=".question-note-btn" data-onboarding-tap=".question-note-btn" data-onboarding-tap-offset="-6,-12" data-onboarding-pop=".question-note-btn">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver8.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>머릿속으로만 풀기 어려운 문제도 있지?<br>그럴 땐 오른쪽 연습장을 열어 봐.<br>직접 쓰면서 풀 수 있어!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="9" data-onboarding-target=".note-pad,.note-tool" data-onboarding-show=".note-pad,.note-tool" data-onboarding-pop=".note-tool" data-onboarding-note="erase">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver4.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing><img class="onboarding-dialog-icon" src="../img/question/common/note/tool-pen.svg" alt>펜으로 쓰고, <img class="onboarding-dialog-icon" src="../img/question/common/note/tool-eraser.svg" alt>지우개로 지울 수 있어.<br>전부 지우고 싶으면 <img class="onboarding-dialog-icon" src="../img/question/common/note/tool-clear.svg" alt>휴지통을 누르면 돼.<br>여기에 쓴 건 답으로 제출되지 않으니까<br>마음껏 써도 괜찮아!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="10" data-onboarding-target=".question-action-frame" data-onboarding-tap=".question-action-btn" data-onboarding-pop=".question-action-btn">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-top">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <span class="onboarding-avatar onboarding-avatar-smile"><img src="../img/question/common/onboarding/semi_ver2.png" alt></span>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>다 풀었다면 여기 ‘완료’ 버튼을 눌러 줘.<br>누르기 전까지는 답을 바꿀 수 있으니까<br>한 번 더 확인하고 눌러도 돼!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 힌트 스텝만 밝아지는 영역이 둘(힌트 캡슐 + 확인 바)이라 타깃을 콤마로 나눠 준다. -->
+        <div class="onboarding-step" data-step="11" data-onboarding-target=".footer-hints,.footer-preview" data-onboarding-tap=".footer-preview-btn" data-onboarding-pop=".footer-preview-btn">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-top">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <span class="onboarding-avatar onboarding-avatar-think"><img src="../img/question/common/onboarding/semi_ver2.png" alt></span>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>혼자 풀기 어려우면 힌트를 써 봐!<br>1단계부터 순서대로 열 수 있고,<br>단계가 올라갈수록 더 자세한 힌트가 나와.</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="12" data-onboarding-target=".footer-skip" data-onboarding-tap=".footer-skip">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-top">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <span class="onboarding-avatar onboarding-avatar-think"><img src="../img/question/common/onboarding/semi_ver2.png" alt></span>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>아무리 고민해도 모르겠는 문제에서는<br>이 버튼을 눌러 봐.<br>다음 문제로 넘어갈 수 있어!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onboarding-step" data-step="13" data-onboarding-target=".header-chip">
+          <button type="button" class="onboarding-skip"><i class="btn-icon"><img src="../img/question/common/onboarding/skip-arrow.svg" alt></i>사전 훈련 건너뛰기</button>
+          <div class="onboarding-stage">
+            <div class="onboarding-character onboarding-character-left"><img src="../img/question/common/onboarding/semi_ver6.png" alt></div>
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>여기는 탐사를 시작한 뒤 얼마나 지났는지 보여줘.<br><em>40분이 지나면 탐사가 자동으로 끝나니까</em><br>가끔 확인해가며 풀어 봐!</p>
+                <button type="button" class="onboarding-next" data-onboarding-next aria-label="다음"><img class="onboarding-next-icon" src="../img/question/common/onboarding/continue-arrow.svg" alt><img class="onboarding-next-icon     onboarding-next-icon-hover" src="../img/question/common/onboarding/continue-arrow-hover.svg" alt aria-hidden="true"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 아웃트로는 다음 화살표 대신 골드 CTA로 끝난다(Figma 주석 "모션: CTA · 완료 후"). -->
+        <div class="onboarding-step onboarding-outro" data-step="14">
+          <button type="button" class="onboarding-back exit-btn" aria-label="뒤로">
+            <span class="exit-btn-inner"><img class="onboarding-back-icon" src="../img/question/common/onboarding/back-arrow.svg" alt></span>
+          </button>
+          <div class="onboarding-intro-character">
+            <img class="onboarding-intro-character-img" src="../img/question/common/onboarding/semi_ver7.png" alt>
+            <img class="onboarding-intro-character-img onboarding-intro-character-glow" src="../img/question/common/onboarding/semi_ver7.png" alt aria-hidden="true">
+          </div>
+          <div class="onboarding-stage">
+            <div class="onboarding-dialog onboarding-dialog-bottom">
+              <i class="onboarding-dialog-line onboarding-dialog-line-top"></i>
+              <i class="onboarding-dialog-line onboarding-dialog-line-bottom"></i>
+              <div class="onboarding-dialog-body">
+                <!-- 캐릭터별 대사: docs/character.md -->
+                
+                
+                <p class="onboarding-dialog-text" data-onboarding-typing>설명은 여기까지야!<br>이제 진짜 탐사를 시작해볼까?<br>걱정 마, 내가 옆에서 계속 도와 줄게. 같이 가보자!</p>
+                <div class="onboarding-cta" data-onboarding-reveal>
+                  <div class="onboarding-cta-frame">
+                    <button type="button" class="onboarding-cta-btn" data-onboarding-next onclick="location.href='home.html'">사전 훈련 종료</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    
+
+    <!-- 모르겠어요: 이 문제를 넘길지 되묻는다 -->
+    <div class="question-modal" data-question-modal="skip" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-skip-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-badge" src="../img/question/common/modal/icon-polygon.svg" alt>
+            <img class="question-modal-icon-skip" src="../img/question/common/modal/icon-skip.svg" alt>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-title" id="question-modal-skip-title">이 문제는 넘어갈까요?</p>
+            <p class="question-modal-desc">풀 수 있는 문제인데, 아깝게 놓칠 수도 있어요.<br>신중하게 결정해 주세요!</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-secondary btn-h40" data-question-modal-close>조금 더 생각해보기</button>
+            </div>
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-skip-confirm>이 문제 넘어가기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 중단 확인: 탐사를 여기서 끝낼지 되묻는다 -->
+    <div class="question-modal" data-question-modal="exit" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-exit-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-badge" src="../img/question/common/modal/icon-polygon-warning.svg" alt>
+            <span class="question-modal-icon-exit"><img src="../img/question/common/modal/icon-exit.svg" alt></span>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-eyebrow">주의!</p>
+            <p class="question-modal-title" id="question-modal-exit-title">탐사를 종료할까요?</p>
+            <p class="question-modal-desc">지금 나가면, 탐사가 이대로 종료돼요.<br>이대로 탐사를 끝낼까요?</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-secondary btn-h40" data-question-modal-close>계속하기</button>
+            </div>
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-exit-confirm>탐사 끝내기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 시간 초과: 더 풀 수 없으므로 닫는 수단(딤·Esc) 없이 "탐사 마치기"로만 시험 완료 화면(outro)에 간다.
+         버튼 동작은 question-timer.js. data-question-modal-persistent = Esc로도 닫히지 않음 -->
+    <div class="question-modal" data-question-modal="timeout" data-question-modal-persistent hidden>
+      <div class="question-modal-dim"></div>
+      <div class="question-modal-panel" role="dialog" aria-modal="true" aria-labelledby="question-modal-timeout-title">
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="question-modal-head">
+          <i class="question-modal-deco question-modal-deco-head"><img src="../img/question/common/modal/deco-a.svg" alt></i>
+          <i class="question-modal-icon">
+            <img class="question-modal-icon-full" src="../img/question/common/modal/icon-timeout.svg" alt>
+          </i>
+          <div class="question-modal-text">
+            <p class="question-modal-title" id="question-modal-timeout-title">시간이 다 됐어요!</p>
+            <p class="question-modal-desc">탐사가 여기서 마무리돼요.</p>
+          </div>
+        </div>
+        <div class="question-modal-actions">
+          <div class="question-modal-actions-group">
+            <div class="question-modal-action-frame btn-frame">
+              <button type="button" class="question-modal-action btn btn-primary btn-h40" data-question-timeout-confirm>탐사 마치기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 이미지 크게 보기: .image-zoom-btn을 누르면 question-image-zoom.js가 그 옆 이미지 주소를 넣고 연다.
+         화면 어디를 눌러도 닫힌다(딤·패널 모두 data-question-modal-close). -->
+    <div class="question-modal image-zoom-modal" data-question-modal="image-zoom" hidden>
+      <div class="question-modal-dim" data-question-modal-close></div>
+      <div class="question-modal-panel image-zoom-panel" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" data-question-modal-close>
+        <i class="question-modal-deco question-modal-deco-panel"><img src="../img/question/common/modal/deco-b.svg" alt></i>
+        <div class="image-zoom-panel-frame">
+          <img class="image-zoom-panel-img" data-image-zoom-view src alt>
+        </div>
+      </div>
+      <p class="image-zoom-guide">화면을 누르면 닫혀요.</p>
+    </div>
+
+  
+
+  </div>
+
+  
+    <script src="../js/common-toggles.js"></script>
+    <script src="../js/intro.js"></script>
+    <script src="../js/partner-select.js"></script>
+    <script src="../js/math-render.js"></script>
+    <script src="../js/question/question-select.js"></script>
+    <script src="../js/question/question-drag-drop.js"></script>
+    <script src="../js/question/question-line-match.js"></script>
+    <script src="../js/question/question-angle-dial.js"></script>
+    <script src="../js/question/question-hotspot-grid.js"></script>
+    <script src="../js/question/question-hotspot-board.js"></script>
+    <script src="../js/question/question-keypad.js"></script>
+    <script src="../js/question/question-onboarding.js"></script>
+    <script src="../js/question/question-tap-lottie.js"></script>
+    <script src="../js/question/question-info-popup.js"></script>
+    <script src="../js/question/question-info-demo.js"></script>
+    <script src="../js/question/question-note.js"></script>
+    <script src="../js/question/question-note-demo.js"></script>
+    <script src="../js/question/question-modal.js"></script>
+    <script src="../js/question/question-back-guard.js"></script>
+    <script src="../js/question/question-box-image.js"></script>
+    <script src="../js/question/question-box-text.js"></script>
+    <script src="../js/question/question-fill-zone.js"></script>
+    <script src="../js/question/question-image-zoom.js"></script>
+  
+  
+    <script src="../js/main.js"></script>
+  
+</body>
+
+</html>

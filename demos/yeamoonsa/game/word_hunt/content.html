@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Hunt</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/game/game_common.css">
+    <link rel="stylesheet" href="../../css/game/word_hunt.css">
+
+    <script src="../../js/game/game_common.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="../../js/game/word_hunt/word_hunt.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+        window._gameNo = 1;
+        const _step = 2;
+    </script>
+    <script src="../../js/study-counter.js"></script>
+</head>
+
+<body class="step2">
+    <div id="word_hunt" class="wrap word-hunt round-01">
+        <div class="quiz-hd">
+            <div class="quiz-inner">
+                <button type="button" class="exit-btn" aria-label="나가기" onclick="exitModal()">
+                    <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+                    </svg>
+                </button>
+                <div class="quiz-round">
+                    <div class="round-img">
+                        <ul class="round-list">
+                            <!-- 라운드 진행때 마다 li에 on클래스 넣어주세요 -->
+                            <li class="on">
+                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5605 0.00390625C20.7032 0.184998 26.4385 6.03355 26.4385 13.2197C26.4384 15.9103 25.599 18.4379 24.2188 20.5254L30.2324 26.499L30.2344 26.5L30.2354 26.501V26.502C31.2544 27.5236 31.2543 29.2117 30.2354 30.2334V30.2344L30.2344 30.2354H30.2334C29.2117 31.2543 27.5236 31.2544 26.502 30.2354H26.501L26.4971 30.2314L20.5342 24.2148C18.4447 25.5956 15.9108 26.4384 13.2197 26.4385C6.03355 26.4385 0.184998 20.7032 0.00390625 13.5605L0 13.2197C3.98105e-06 5.9194 5.9194 3.98093e-06 13.2197 0L13.5605 0.00390625ZM13.2197 5.22949C8.80688 5.2295 5.2295 8.80688 5.22949 13.2197L5.24023 13.6309C5.45451 17.8523 8.94491 21.209 13.2197 21.209L13.6309 21.1982C17.8522 20.984 21.2087 17.4943 21.209 13.2197L21.1982 12.8086C20.9912 8.72313 17.7161 5.4476 13.6309 5.24023L13.2197 5.22949Z" fill="#D4B01F"/>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5605 0.00390625C20.7032 0.184998 26.4385 6.03355 26.4385 13.2197C26.4384 15.9103 25.599 18.4379 24.2188 20.5254L30.2324 26.499L30.2344 26.5L30.2354 26.501V26.502C31.2544 27.5236 31.2543 29.2117 30.2354 30.2334V30.2344L30.2344 30.2354H30.2334C29.2117 31.2543 27.5236 31.2544 26.502 30.2354H26.501L26.4971 30.2314L20.5342 24.2148C18.4447 25.5956 15.9108 26.4384 13.2197 26.4385C6.03355 26.4385 0.184998 20.7032 0.00390625 13.5605L0 13.2197C3.98105e-06 5.9194 5.9194 3.98093e-06 13.2197 0L13.5605 0.00390625ZM13.2197 5.22949C8.80688 5.2295 5.2295 8.80688 5.22949 13.2197L5.24023 13.6309C5.45451 17.8523 8.94491 21.209 13.2197 21.209L13.6309 21.1982C17.8522 20.984 21.2087 17.4943 21.209 13.2197L21.1982 12.8086C20.9912 8.72313 17.7161 5.4476 13.6309 5.24023L13.2197 5.22949Z" fill="#D4B01F"/>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5605 0.00390625C20.7032 0.184998 26.4385 6.03355 26.4385 13.2197C26.4384 15.9103 25.599 18.4379 24.2188 20.5254L30.2324 26.499L30.2344 26.5L30.2354 26.501V26.502C31.2544 27.5236 31.2543 29.2117 30.2354 30.2334V30.2344L30.2344 30.2354H30.2334C29.2117 31.2543 27.5236 31.2544 26.502 30.2354H26.501L26.4971 30.2314L20.5342 24.2148C18.4447 25.5956 15.9108 26.4384 13.2197 26.4385C6.03355 26.4385 0.184998 20.7032 0.00390625 13.5605L0 13.2197C3.98105e-06 5.9194 5.9194 3.98093e-06 13.2197 0L13.5605 0.00390625ZM13.2197 5.22949C8.80688 5.2295 5.2295 8.80688 5.22949 13.2197L5.24023 13.6309C5.45451 17.8523 8.94491 21.209 13.2197 21.209L13.6309 21.1982C17.8522 20.984 21.2087 17.4943 21.209 13.2197L21.1982 12.8086C20.9912 8.72313 17.7161 5.4476 13.6309 5.24023L13.2197 5.22949Z" fill="#D4B01F"/>
+                                </svg>
+                            </li>
+                        </ul>
+                        <h3 id="round_title">Round 1</h3>
+                    </div>
+                    <h2>Let’s flip the cards and catch a pair!</h2>
+                </div>
+                <button type="button" class="btn-hint" onclick="getHint()">
+                    <img class="hint-d" src="../../img/game/word_hunt/hint-d.png" alt="힌트">
+                    <img class="hint-h" src="../../img/game/word_hunt/hint-h.png" alt="힌트">
+                    <img class="hint-a-01" src="../../img/game/word_hunt/hint-a-01.png" alt="힌트">
+                    <img class="hint-a-02" src="../../img/game/word_hunt/hint-a-02.png" alt="힌트">
+                </button>
+            </div>
+        </div>
+        <div class="quiz-wrap">
+            <div class="quiz-content">
+                <div class="stopwatch-wrap">
+                    <!--stopwatch-wrap 빨간스톱워치  hurry-up 클래스 넣어주세요.+  show클래스 보입니다.-->
+                    <div class="stopwatch">
+                        <svg class="icon-clock" width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="path-bottom" d="M23.239 79.7932C21.9037 82.0266 19.1363 82.6677 17.0656 81.2408C14.9756 79.8139 14.3757 76.8567 15.711 74.644L20.7619 66.2068C22.0972 63.9734 24.8646 63.3323 26.9353 64.7592C29.0254 66.1861 29.6253 69.1433 28.29 71.356L23.239 79.7932Z" fill="#00DBFF"/>
+                            <path class="path-bottom" d="M57.7619 79.7932C59.0972 82.0266 61.8646 82.6677 63.9353 81.2408C66.0254 79.8139 66.6253 76.8567 65.29 74.644L60.239 66.2068C58.9037 63.9734 56.1363 63.3323 54.0656 64.7592C51.9756 66.1861 51.3757 69.1433 52.711 71.356L57.7619 79.7932Z" fill="#00DBFF"/>
+                            <path class="path-middle-stroke" d="M75.0005 40.9893C75.0005 59.7605 59.7871 75 41.0005 75C22.2138 75 7.00049 59.7819 7.00049 40.9893C7.00049 22.1967 22.2138 7 41.0005 7C59.7871 7 75.0005 22.2181 75.0005 41.0107V40.9893Z" fill="#00A0EE"/>
+                            <path class="path-middle-fill" d="M68.0005 41C68.0005 55.9078 55.9083 68 41.0005 68C26.0926 68 14.0005 55.9078 14.0005 41C14.0005 26.0922 26.0926 14 41.0005 14C55.9083 14 68.0005 26.0922 68.0005 41Z" fill="white"/>
+                            <path class="path-top" d="M16.9176 0.0238546C8.5582 -0.446411 1.46217 6.09456 1.01998 14.4952C0.788364 19.0482 2.57816 23.473 5.96826 26.5939C6.24199 26.8504 6.59995 27 6.97897 27C7.08425 27 7.18953 27 7.29481 26.9572C7.77911 26.8504 8.15813 26.5084 8.34764 26.0595C11.8009 17.6161 18.6021 11.011 27.0037 7.93287C27.4669 7.76186 27.8249 7.3771 27.9512 6.90683C28.0776 6.43657 27.9512 5.92355 27.6564 5.53879C24.9401 2.22555 21.1079 0.258987 16.9176 0.0238546Z" fill="#00DBFF"/>
+                            <path class="path-top" d="M65.104 0.0451946C60.8938 0.280141 57.0835 2.22379 54.3468 5.55576C54.0311 5.94022 53.9258 6.45283 54.0521 6.92273C54.1784 7.39262 54.5363 7.77708 54.9994 7.94795C63.4199 11.0236 70.2195 17.6235 73.6508 26.0602C73.8403 26.5087 74.2403 26.8505 74.7034 26.9573C74.8087 26.9786 74.9139 27 75.0192 27C75.3981 27 75.756 26.8718 76.0296 26.5942C79.4189 23.4544 81.2293 19.0545 80.9767 14.4837C80.5346 6.08974 73.4403 -0.446058 65.083 0.0238358L65.104 0.0451946Z" fill="#00DBFF"/>
+                        </svg>
+
+                        <span class="time"></span>
+                    </div>
+                    <progress class="time-bar"></progress>
+                    <!-- .stopwatch-wrap i::after 시간초에 따라 width: %로 움직여주세요 -->
+                </div>
+                <div class="char-guide show"><!-- char-guide에 show 클래스 넣으면 보입니다. -->
+                    <img class="img-start-msg " src="../../img/game/word_hunt/start-msg.png" alt="시작메시지"><!-- on 클래스 넣으면 보입니다. -->
+                    <div class="time-box"><!-- li에 on 클래스 넣으면 보입니다. -->
+                        <span class="time"></span><!-- 노란 글씨 hurry-up 클래스 넣어주세요-->
+                        <img class="img-time-msg" src="../../img/game/word_hunt/time-msg.png" alt="시간초">
+                    </div>
+                    <div class="remember-msg-box">
+                        <img class="img-remember-msg " src="../../img/game/word_hunt/remember-msg.png" alt="기억안내">
+                    </div>
+                    <img class="img-char" src="../../img/game/word_hunt/step2/char-guide.png" alt="캐릭터">
+                </div>
+                <ul class="quiz-round-list">
+                    <li id="round_1" class="round-01-item round-item">
+                        <ul class="card-list">
+                            <!--<li class="card-item on">에 on클래스 넣으시면 카드 뒤집힙니다. 두개의 카드가 맞으면 right 클래스 넣어주세요. 카드 힌트는 hint 넣어주세요-->
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">fish</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">fish</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="round_2" class="round-02-item round-item">
+                        <ul class="card-list">
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">bunny</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_bunny.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">bunny</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_bunny.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type4">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">butterfly</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_butterfly.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type4">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">butterfly</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_butterfly.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="round_3" class="round-03-item round-item">
+                        <ul class="card-list">
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type1">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">turtle</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_turtle.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type2">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">frog</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_frog.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">fish</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type3">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">fish</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_fish.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type4">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">butterfly</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_butterfly.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type4">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">butterfly</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_butterfly.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type5">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">snail</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_snail.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                            <li class="card-item type5">
+                                <div class="layered-shadow layered-shadow1"></div>
+                                <div class="layered-shadow layered-shadow2"></div>
+                                <div class="layered-shadow layered-shadow3"></div>
+                                <div class="layered-shadow layered-shadow4"></div>
+                                <div class="layered-shadow layered-shadow5"></div>
+                                <div class="layered-shadow layered-shadow6"></div>
+
+                                <div class="card-box card-front">
+                                    <p class="q-txt">snail</p>
+                                    <img class="q-img" src="/demos/yeamoonsa/s3/game/wordhunt/img/111_snail.png" alt="">
+                                </div>
+                                <div class="card-box card-back"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="success-list"></ul>
+                <div id="end_div" class="quiz-lottie-wrap ">
+                    <!-- 1라운드 완료 round1-clear 2라운드 완료 round2-clear 시간초과 times-up 모두 완료 end 클래스 넣어주세용-->
+                    <ul class="quiz-lottie-list">
+                        <li id="round1_clear_lottie" class="round1-clear-item"></li>
+                        <li id="round2_clear_lottie"  class="round2-clear-item"></li>
+                        <li id="times_up_lottie" class="times-up-item"></li>
+                        <li id="end_lottie"  class="end-item"></li>
+                    </ul>
+                    <button type="button" class="btn-next-round" onclick="nextRound()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <span>Next Round</span>
+                    </button>
+                    <button type="button" class="btn-retry" onclick="retry()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <span>Try Again</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <section id="exit_modal" class="modal">
+            <!-- class toggle: open -->
+            <div class="modal-box">
+                <div class="icon-character">
+                    <img src="../../img/test/icon/character_step2.svg" alt="">
+                </div>
+                <div class="title">Do you want to leave?</div>
+                <div class="btn-area">
+                    <button type="button" class="btn-cancel" onclick="cancelExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32" fill="none">
+                            <g opacity="0.4">
+                                <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span>No</span>
+                    </button>
+                    <button type="button" class="btn-submit" onclick="applyExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                                <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
+                        <span>Yes</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- class toggle: open -->
+        <div class="btn-disable-modal"></div>
+
+
+    </div>
+</body>
+
+</html>

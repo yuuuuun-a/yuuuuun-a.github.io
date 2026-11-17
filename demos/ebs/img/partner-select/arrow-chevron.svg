@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16.6038" height="22.6406" viewBox="0 0 16.6038 22.6406" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.0692 0H16.6038L5.5346 11.3208H0L11.0692 0Z" fill="url(#paint0_linear_arrow_chevron)"/>
+<path d="M11.0692 22.6406H16.6038L5.5346 11.3199H0L11.0692 22.6406Z" fill="url(#paint1_linear_arrow_chevron)"/>
+<defs>
+<linearGradient id="paint0_linear_arrow_chevron" x1="16.6038" y1="5.6604" x2="0" y2="5.6604" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A4FFFF"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint1_linear_arrow_chevron" x1="16.6038" y1="16.9802" x2="0" y2="16.9802" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A4FFFF"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

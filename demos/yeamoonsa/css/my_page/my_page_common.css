@@ -1,0 +1,96 @@
+:root { --wrap-width: 100vw; --wrap-height: calc( var(--wrap-width) * (9/16) ); --exit-btn-width: calc( var(--wrap-width) * (72/1920) ); --radius16: calc( var(--wrap-width) * (16/1920) ); --exit-btn-top: calc( var(--wrap-width) * (48/1920) ); --exit-btn-left: calc( var(--wrap-width) * (100/1920) ); --start-btn-width: calc( var(--wrap-width) * (240/1920) ); --start-btn-height: calc( var(--wrap-width) * (80/1920) ); --shadow-width8: calc( var(--wrap-width) * (8/1920) ); --shadow-width-minus8: calc( var(--wrap-width) * (-8/1920) ); --shadow-width6: calc( var(--wrap-width) * (6/1920) ); --shadow-width-minus6: calc( var(--wrap-width) * (-6/1920) ); --shadow-width-5: calc( var(--wrap-width) * (5/1920) ); --shadow-width-minus5: calc( var(--wrap-width) * (-5/1920) ); --shadow-width4: calc( var(--wrap-width) * (4/1920) ); --shadow-width-minus4: calc( var(--wrap-width) * (-4/1920) ); --shadow-width3: calc( var(--wrap-width) * (3/1920) ); --shadow-width-minus3: calc( var(--wrap-width) * (-3/1920) ); --shadow-width2: calc( var(--wrap-width) * (2/1920) ); --shadow-width-minus2: calc( var(--wrap-width) * (-2/1920) ); --shadow-width1: calc( var(--wrap-width) * (1/1920) ); --shadow-width-minus1: calc( var(--wrap-width) * (-1/1920) ); --shadow-width-minus23: calc( var(--wrap-width) * (-23/1920) ); --shadow-width24: calc( var(--wrap-width) * (24/1920) ); --shadow-width18: calc( var(--wrap-width) * (18/1920) ); --shadow-width12: calc( var(--wrap-width) * (12/1920) ); --shadow-width16: calc( var(--wrap-width) * (16/1920) ); --shadow-width10: calc( var(--wrap-width) * (10/1920) ); --shadow-width-minus10: calc( var(--wrap-width) * (-10/1920) ); --shadow-width-minus16: calc( var(--wrap-width) * (-16/1920) ); --shadow-width-minus18: calc( var(--wrap-width) * (-18/1920) ); --shadow-width-minus17: calc( var(--wrap-width) * (-17/1920) ); --shadow-width-minus20: calc( var(--wrap-width) * (-20/1920) ); --shadow-width-minus13: calc( var(--wrap-width) * (-13/1920) ); --outline-8: calc( var(--wrap-width) * (8/1920) ); --listening-width: calc( var(--wrap-width) * (136/1920) );
+   --shadow-width-7: calc( var(--wrap-width) * (7/1920) );
+   --shadow-width-minus7: calc( var(--wrap-width) * (-7/1920) );
+   --shadow-width-3: calc( var(--wrap-width) * (3/1920) );
+   --shadow-width-2: calc( var(--wrap-width) * (2/1920) );
+   --shadow-width-1: calc( var(--wrap-width) * (1/1920) );
+   --shadow-width-14: calc( var(--wrap-width) * (14/1920) );
+   --shadow-width-12: calc( var(--wrap-width) * (12/1920) );
+   --shadow-width-10: calc( var(--wrap-width) * (10/1920) );
+   --shadow-width-8: calc( var(--wrap-width) * (8/1920) );
+   --shadow-width-6: calc( var(--wrap-width) * (6/1920) );
+   --shadow-width-4: calc( var(--wrap-width) * (4/1920) );
+     --content-width:calc( var(--wrap-width) * (1350/1920) ); 
+    --content-height:calc( var(--wrap-width) * (734/1920) ); 
+    --book-width:calc( var(--wrap-width) * (144/1920) ); 
+    --book-height:calc( var(--wrap-width) * (160/1920) ); 
+    --font-36:calc( var(--wrap-width) * (36/1920) ); 
+    --font-32:calc( var(--wrap-width) * (32/1920) ); 
+    --font-18:calc( var(--wrap-width) * (18/1920) ); 
+    --padding-245:calc( var(--wrap-width) * (245/1920) ); 
+    --padding-56:calc( var(--wrap-width) * (56/1920) ); 
+    --padding-48:calc( var(--wrap-width) * (48/1920) ); 
+    --padding-40:calc( var(--wrap-width) * (40/1920) ); 
+    --padding-34:calc( var(--wrap-width) * (34/1920) ); 
+    --padding-32:calc( var(--wrap-width) * (32/1920) ); 
+    --padding-26:calc( var(--wrap-width) * (26/1920) ); 
+    --padding-24:calc( var(--wrap-width) * (24/1920) ); 
+    --padding-18:calc( var(--wrap-width) * (18/1920) ); 
+    --gap-30:calc( var(--wrap-width) * (30/1920) ); 
+    --gap-24:calc( var(--wrap-width) * (24/1920) ); 
+    --gap-16:calc( var(--wrap-width) * (16/1920) ); 
+    --gap-12:calc( var(--wrap-width) * (12/1920) ); 
+    --gap-8:calc( var(--wrap-width) * (8/1920) ); 
+    --gap-4:calc( var(--wrap-width) * (4/1920) ); 
+    --border-2 :calc( var(--wrap-width) * (2/1920) ); 
+    --border-1 :calc( var(--wrap-width) * (1/1920) ); 
+    --border-r-999 :calc( var(--wrap-width) * (999/1920) ); 
+ } 
+
+
+/* 나가기 버튼 */
+.exit-btn, .btn-exit,.help-btn { width: var(--exit-btn-width); height: auto; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center; border-radius: var(--radius16); background: #43C7D7; position: absolute; top: var(--exit-btn-top); left: var(--exit-btn-left); z-index: 10; transition: all .2s ease-out; box-shadow: 
+ 0 var(--shadow-width6) 0 0 rgba(0, 0, 0, 0.18), 
+ 0 var(--shadow-width-minus6) 0 0 rgba(0, 0, 0, 0.14) inset; } 
+
+
+:is(.exit-btn, .btn-exit, .help-btn):where(:hover) { background: #49CDDD; transform: scale(1.027); } 
+:is(.exit-btn, .btn-exit, .help-btn):where(:active) { background: #3BB4C3; box-shadow: 
+ 0 var(--shadow-width-minus4) 0 0 rgba(0, 0, 0, 0.14) inset, 
+ 0 var(--shadow-width2) 0 0 rgba(0, 0, 0, 0.28); transform: scale(1); } 
+
+.exit-btn::after, 
+.btn-exit::after, .help-btn::after { content: ''; width: auto; height: 100%; display: block; aspect-ratio: 1/1; pointer-events: none; background-repeat: no-repeat; background-size: cover; mix-blend-mode: soft-light; background-image: url("data:image/svg+xml, %3Csvg class='icon-drop' width='72' height='72' viewBox='0 0 72 72' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.6'%3E%3Cpath d='M14.1093 18.9459C10.6683 22.341 9.20794 25.4063 6.64349 22.8761C4.07904 20.3458 4.78959 15.5424 8.23054 12.1473C11.6715 8.75225 16.5398 8.05118 19.1043 10.5814C21.6687 13.1117 17.5502 15.5509 14.1093 18.9459Z' fill='white' fill-opacity='0.6'/%3E%3Cellipse cx='24.2866' cy='8.52331' rx='3.28809' ry='2.52331' fill='white' fill-opacity='0.6'/%3E%3C/g%3E%3C/svg%3E"); } 
+:is(.exit-btn, .btn-exit, .help-btn) svg { width: auto; height: 100%; aspect-ratio: 1/1; display: block; position: absolute; inset: 0; z-index: 1; } 
+
+.help-btn{ right: var(--exit-btn-left);left: auto;background: #CC630F;}
+.help-btn:hover{background: #D66D19 ;}
+.help-btn:active{background: #C15905;}
+.help-btn svg{height: var(--padding-48);top: 50%;left: 50%;transform: translate(-50%, -50%);}
+/* //나가기 버튼 */
+
+
+
+
+.layered-shadow { width: 100%; height: 100%; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none; } 
+
+.layered-shadow1 { mix-blend-mode: plus-lighter; box-shadow: 
+ 0 var(--shadow-width12) 0 var(--shadow-width-minus8) rgba(255, 255, 255, 0.12) inset, 
+ 0 var(--shadow-width16) var(--shadow-width10) var(--shadow-width-minus8) rgba(255, 255, 255, 0.16) inset; } 
+
+ .layered-shadow2 { mix-blend-mode: overlay; box-shadow: 0 var(--shadow-width-minus16) 0 var(--shadow-width-minus8) rgba(0, 0, 0, 0.24) inset; } 
+
+.layered-shadow3 { mix-blend-mode: overlay; box-shadow: 0 var(--shadow-width-minus10) var(--shadow-width6) var(--shadow-width-minus8) #EE650A inset; } 
+
+
+
+
+
+.content { padding: 0 var(--padding-245); } 
+
+main{ width: 100%; height: 100dvh; background: url(../../img/my_page/result-bg.png)no-repeat center; background-size: cover; overflow: hidden; } 
+
+
+.book-list { display: flex; align-items: center; margin: var(--padding-18) 0 var(--gap-24); } 
+.book-list li { background: url(../../img/my_page/book_list_default.png)no-repeat center; background-size: contain !important; width: var(--book-width); height: var(--book-height); } 
+.book-list li.on { background: url(../../img/my_page/book_list_active.png)no-repeat center; } 
+.book-list li.deactivation { filter: grayscale(100%); } 
+.book-list li button { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; color: #9E5E26; font-family: "Noto Sans"; font-size: var(--font-18); font-weight: 500; line-height: 130%; } 
+.book-list li button b { color: #4C3727; font-family: 'Fredoka'; font-size: var(--font-36); font-weight: 600; line-height: 130%; } 
+.book-list li.deactivation button { opacity: 0.5; pointer-events: none; } 
+
+
+
+
+.screen-area { padding: var(--padding-32) var(--padding-40); border-radius: var(--padding-40); background: #FFF; box-shadow: 0 var(--shadow-width12) var(--shadow-width4) 0 rgba(0, 113, 205, 0.08); } 
+.screen-area > .flex-box { display: flex; justify-content: space-between; margin: 0 0 var(--padding-24); color: #1E2124; font-size: var(--font-18); font-weight: 500; line-height: 130%; } 

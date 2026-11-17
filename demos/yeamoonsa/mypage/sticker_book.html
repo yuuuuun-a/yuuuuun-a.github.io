@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스티커북</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/my_page/my_page_common.css">
+    <link rel="stylesheet" href="../css/my_page/sticker_book.css">
+    <script src="../js/common.js"></script>
+    <script src="../js/my_page/sticker_book.js"></script>
+    <script>
+        const bookList = [
+            {
+                "book_no": 1,
+                "step_no": 1,
+                "order_no": 1,
+                "month": 3,
+                "sticker": 32
+            },
+            {
+                "book_no": 2,
+                "step_no": 1,
+                "order_no": 2,
+                "month": 4,
+                "sticker": 20
+            },
+            {
+                "book_no": 3,
+                "step_no": 1,
+                "order_no": 3,
+                "month": 5,
+                "sticker": 8
+            },
+            {
+                "book_no": 4,
+                "step_no": 1,
+                "order_no": 4,
+                "month": 6,
+                "sticker": 0
+            },
+            {
+                "book_no": 5,
+                "step_no": 1,
+                "order_no": 5,
+                "month": 7,
+                "sticker": 0
+            },
+            {
+                "book_no": 6,
+                "step_no": 1,
+                "order_no": 6,
+                "month": 8,
+                "sticker": 0
+            },
+            {
+                "book_no": 7,
+                "step_no": 1,
+                "order_no": 7,
+                "month": 9,
+                "sticker": 0
+            },
+            {
+                "book_no": 8,
+                "step_no": 1,
+                "order_no": 8,
+                "month": 10,
+                "sticker": 0
+            },
+            {
+                "book_no": 9,
+                "step_no": 1,
+                "order_no": 9,
+                "month": 11,
+                "sticker": 0
+            },
+            {
+                "book_no": 10,
+                "step_no": 1,
+                "order_no": 10,
+                "month": 12,
+                "sticker": 0
+            }
+        ];
+        const applyMonthFilter = true;
+        const currentMonth = 10;
+    </script>
+</head>
+
+<body>
+    <main class="workbook-result">
+        <button type="button" class="exit-btn" aria-label="나가기" onclick="exitPage()">
+            <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"></path>
+                </svg>
+        </button>
+        <button type="button" class="help-btn" aria-label="도움">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <path d="M24.85 20.2C26.15 19.3 27.05 18.55 27.55 17.95C28.0833 17.35 28.35 16.6333 28.35 15.8C28.35 14.7333 27.9333 13.8667 27.1 13.2C26.2667 12.5333 25.1 12.2 23.6 12.2C21.5 12.2 19.6833 12.8667 18.15 14.2C17.6833 14.5667 17.15 14.75 16.55 14.75C15.85 14.75 15.25 14.5167 14.75 14.05C14.25 13.55 14 12.95 14 12.25C14 11.45 14.3 10.8 14.9 10.3C17.5 8.1 20.6 7 24.2 7C27.2667 7 29.7167 7.73333 31.55 9.2C33.4167 10.6667 34.35 12.55 34.35 14.85C34.25 16.75 33.8 18.2333 33 19.3C32.2 20.3333 30.8833 21.4833 29.05 22.75C27.65 23.75 26.6833 24.55 26.15 25.15C25.65 25.75 25.4 26.4667 25.4 27.3C25.4 27.3333 25.4 27.3833 25.4 27.45C25.4333 27.4833 25.45 27.55 25.45 27.65C25.4833 27.75 25.5 27.85 25.5 27.95L25.55 28.45C25.55 29.15 25.3167 29.75 24.85 30.25C24.3833 30.7167 23.8 30.95 23.1 30.95C22.1333 30.95 21.4333 30.5167 21 29.65C20.5333 28.65 20.3 27.7 20.3 26.8C20.3 25.4333 20.6333 24.3 21.3 23.4C22 22.4667 23.1833 21.4 24.85 20.2ZM23.9 34.4C24.8667 34.4 25.6833 34.75 26.35 35.45C27.05 36.1167 27.4 36.9333 27.4 37.9C27.4 38.8333 27.05 39.65 26.35 40.35C25.6833 41.05 24.8667 41.4 23.9 41.4C22.9667 41.4 22.15 41.05 21.45 40.35C20.75 39.65 20.4 38.8333 20.4 37.9C20.4 36.9333 20.75 36.1167 21.45 35.45C22.15 34.75 22.9667 34.4 23.9 34.4Z" fill="white"/>
+            </svg>
+        </button>
+        <section class="content">
+            <ul class="book-list">
+                <li class="on gold" data-book-no="1">
+                    <button type="button">
+                        <strong class="book">Book <i>1</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="silver" data-book-no="2">
+                    <button type="button">
+                        <strong class="book">Book <i>2</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="3">
+                    <button type="button">
+                        <strong class="book">Book <i>3</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="4">
+                    <button type="button">
+                        <strong class="book">Book <i>4</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="5">
+                    <button type="button">
+                        <strong class="book">Book <i>5</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="6">
+                    <button type="button">
+                        <strong class="book">Book <i>6</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="7">
+                    <button type="button">
+                        <strong class="book">Book <i>7</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="bronze" data-book-no="8">
+                    <button type="button">
+                        <strong class="book">Book <i>8</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="deactivation bronze" data-book-no="9">
+                    <button type="button">
+                        <strong class="book">Book <i>9</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+                <li class="deactivation bronze" data-book-no="10">
+                    <button type="button">
+                        <strong class="book">Book <i>10</i></strong>
+                        <i class="bg"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="screen-area">
+                <div class="sticker-book-area excellent">
+                    <div class="step-book">
+                        <div class="step">
+                            <span class="text front">Step <i>1</i></span>
+                        </div>
+                        <div class="book">
+                             <span class="text front">Book <i>1</i></span>
+                        </div>
+                    </div>
+                    <div class="book-wrap s1b1w1">
+                        <h3 class="title">
+                            <img src="../img/my_page/learning/ladybird.png" alt="무당벌레">
+                            
+                            <span class="text front">Row, Row, Row Your Boat</span>
+                        </h3>
+                        <div class="week-box s1b1w1">
+                            <ul>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="week-box s1b1w2">
+                            <ul>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="book-wrap s1b1w3">
+                        <h3 class="title">
+                            
+                            <img src="../img/my_page/learning/ladybird_2.png" alt="무당벌레">
+                            <span class="text front">Colors All Around</span>
+                        </h3>
+                        <div class="week-box s1b1w3">
+                            <ul>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="video">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="week-box s1b1w4">
+                            <ul>
+                                <li class="video">
+                                    <div class="sticker on"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="video">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                                <li class="game">
+                                    <div class="sticker"><i class="shadow"></i><i class="bg"></i></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-sticker-area">
+                    <div class="medal-wrap">
+                        <div class="img-box gold"></div>
+                        <div class="score-box">
+                            <em class="score"><b>32</b>/ 32</em>
+                            
+                            
+                            
+                            <p>모든 스티커를 모았어요! <br>대단해요!</p>
+                        </div>
+                    </div>
+                    <div class="my-sticker-wrap">
+                        <div class="my-sticker-title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                            <path d="M6 1C4.89543 1 4 1.89543 4 3V21.8441C4 22.6991 4.98458 23.2573 5.82694 22.88L12 20.1145L18.1731 22.88C19.0154 23.2573 20 22.6991 20 21.8441V3C20 1.89543 19.1046 1 18 1H12H6Z" fill="#ED703B"/>
+                            <path d="M11.0489 4.92705C11.3483 4.00574 12.6517 4.00574 12.9511 4.92705L13.5716 6.83688C13.7055 7.2489 14.0894 7.52786 14.5227 7.52786H16.5308C17.4995 7.52786 17.9023 8.76748 17.1186 9.33688L15.494 10.5172C15.1435 10.7719 14.9968 11.2232 15.1307 11.6353L15.7512 13.5451C16.0506 14.4664 14.9961 15.2325 14.2124 14.6631L12.5878 13.4828C12.2373 13.2281 11.7627 13.2281 11.4122 13.4828L9.78761 14.6631C9.0039 15.2325 7.94942 14.4664 8.24878 13.5451L8.86932 11.6353C9.00319 11.2232 8.85653 10.7719 8.50604 10.5172L6.88144 9.33688C6.09773 8.76748 6.50051 7.52786 7.46923 7.52786H9.47735C9.91057 7.52786 10.2945 7.2489 10.4284 6.83688L11.0489 4.92705Z" fill="#FFDB0F"/>
+                            </svg>
+                            <span class="text-wrap">
+                                <span class="text front">My Stickers</span>
+                                <span class="text back">My Stickers</span>
+                            </span>
+                        </div>
+                        <div class="scroll">
+                            <ul class="stickers-list">
+                                
+                                
+                                    
+                                        <li class="s1b1w1v1">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Song 완료</p>
+                                        </li>
+                                        <li class="s1b1w1v2">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Chant 완료</p>
+                                        </li>
+                                        <li class="s1b1w1g1">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] I Spy Sight Words 완료</p>
+                                        </li>
+                                        <li class="s1b1w1g2">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Phonics Time 완료</p>
+                                        </li>
+                                        
+                                    
+                                    
+                                        <li class="s1b1w2v3">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Story 완료</p>
+                                        </li>
+                                        <li class="s1b1w2v4">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Phonics 완료</p>
+                                        </li>
+                                        <li class="s1b1w2g4">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Story Quiz 완료</p>
+                                        </li>
+                                        <li class="s1b1w2g5">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Row, Row, Row Your Boat] Sentence Wizard 완료</p>
+                                        </li>
+                                        
+                                    
+                                
+                                
+                                    
+                                        <li class="s1b1w3v1">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Colors All Around] Song 완료</p>
+                                        </li>
+                                        
+                                        
+                                        
+                                        
+                                    
+                                    
+                                        <li class="s1b1w4v3">
+                                            <div class="img-box"><i></i></div>
+                                            <p>[Colors All Around] Story 완료</p>
+                                        </li>
+                                        
+                                        
+                                        
+                                        
+                                    
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="help-modal">
+            <div class="bg"></div>
+            <div class="help-group">
+                <div class="help-hd">
+                    <div class="help-title">
+                        <div class="title-bg">
+                            <h3>
+                                <span class="text front">스티커는 이렇게 받을 수 있어요!</span>
+                                <span class="text back">스티커는 이렇게 받을 수 있어요!</span>
+                            </h3>
+                        </div>
+                        <button type="button" class="btn-close" aria-label="닫기"></button>
+                    </div>
+                    <p>한 단원을 모두 학습하면 받을 수 있는 스티커는 <b>32</b>개예요. <br>각 학습을 완료하면 자동으로 스티커가 생겨요!</p>
+                </div>
+                <div class="help-content">
+                    <div class="help-box">
+                        <p>영상을 끝까지 다 보면, 각각 스티커를 <br>1개씩 받을 수 있어요. (단원 당 총 20개)</p>
+                        <div class="img-box"><img src="../img/my_page/help_01.png" alt="영상예시"></div>
+                    </div>
+                    <div class="help-box">
+                        <p>게임을 끝까지 플레이하면 각각 스티커를 <br>1개씩 받을 수 있어요. (단원 당 총 12개)</p>
+                        <div class="img-box"><img src="../img/my_page/help_02.png" alt="게임예시"></div>
+                    </div>
+                </div>
+                <div class="help-bottom">
+                    <div><p>스티커가 <b>16</b>개 모이면</p> <em>은메달<i></i></em> <p>을 받을 수 있어요!</p></div>
+                    <div><p>스티커가 <b>32</b>개 모이면</p> <em>금메달<i></i></em> <p>을 받을 수 있어요!</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</html>

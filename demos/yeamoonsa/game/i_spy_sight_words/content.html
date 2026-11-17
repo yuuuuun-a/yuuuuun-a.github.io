@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Spy Sight words</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/game/game_common.css">
+    <link rel="stylesheet" href="../../css/game/i_spy_sight_words.css">
+
+    <script src="../../js/game/game_common.js"></script>
+    <script src="../../js/game/lottie-web@5.13.0.js"></script>
+    <script src="../../js/game/i_spy_sight_words/i_spy_sight_words_common.js"></script>
+    <script src="../../js/game/i_spy_sight_words/i_spy_sight_words_data.js"></script>
+    <script>
+        window._gameNo = 1;
+        const _step = 2;
+    </script>
+    <script src="../../js/study-counter.js"></script>
+</head>
+
+<body>
+    <div id="game_wrap" class="wrap intro">
+        <!-- intro, in-game , ending  -->
+        <button type="button" class="exit-btn" aria-label="나가기" onclick="exitModal()">
+            <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+            </svg>
+        </button>
+        <button type="button" class="btn-next " onclick="">
+            <!-- on 컨트롤 -->
+            <div class="layered-shadow layered-shadow1"></div>
+            <div class="layered-shadow layered-shadow2"></div>
+            <span>Next</span>
+        </button>
+        <button type="button" class="btn-retry " onclick="retry()">
+            <div class="layered-shadow layered-shadow1"></div>
+            <div class="layered-shadow layered-shadow2"></div>
+            <span>Try Again</span>
+        </button>
+        <div class="word-area">
+            <button type="button" class="" onclick="playQuestion(this)">
+                <!-- stop 컨트롤 -->
+                <svg class="svg-play" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                    fill="none">
+                    <path d="M26.1673 4.40324C25.0198 3.99066 23.8889 4.90204 23.8889 6.12146C23.8889 6.97673 24.4628 7.71547 25.257 8.03275C30.1619 9.99216 33.6111 14.6144 33.6111 20C33.6111 25.3831 30.1651 29.9881 25.2637 31.9464C24.4656 32.2653 23.8889 33.0076 23.8889 33.867C23.8889 35.0924 25.0254 36.0082 26.1782 35.5929C32.7836 33.2131 37.5 27.1309 37.5 20C37.5 12.8652 32.7785 6.78028 26.1673 4.40324ZM28.75 20C28.75 17.9167 27.9654 16.0204 26.6455 14.5626C25.5695 13.3743 23.8889 14.3752 23.8889 15.9783V24.0252C23.8889 25.6134 25.5436 26.6155 26.6193 25.447C27.955 23.9961 28.75 22.0852 28.75 20ZM3.59375 14.4413C2.98969 14.4413 2.5 14.931 2.5 15.535V24.465C2.5 25.069 2.98969 25.5587 3.59375 25.5587H10.2778L18.1517 33.062C18.848 33.7255 20 33.2319 20 32.2702V7.72982C20 6.76805 18.848 6.27453 18.1517 6.93801L10.2778 14.4413H3.59375Z" fill="#A54808"/>
+                </svg>
+                <svg class="svg-stop" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.75 30.625C8.75 32.3509 10.1491 33.75 11.875 33.75C13.6009 33.75 15 32.3509 15 30.625V9.375C15 7.64911 13.6009 6.25 11.875 6.25C10.1491 6.25 8.75 7.64911 8.75 9.375V30.625Z" fill="#A54808"/>
+                    <path d="M31.25 9.375V30.625C31.25 32.3509 29.8509 33.75 28.125 33.75C26.3991 33.75 25 32.3509 25 30.625V9.375C25 7.64911 26.3991 6.25 28.125 6.25C29.8509 6.25 31.25 7.64911 31.25 9.375Z" fill="#A54808"/>
+                </svg>
+            </button>
+            <span id="question"></span>
+        </div>
+        <ul class="lottie-list">
+            <!--li에 on으로 컨트롤-->
+            <li id="play_bg" style="display: block;"></li>
+            <li id="character_intro" class="character-intro"></li>
+            <li id="bobber_d" class="bobber-d"></li>
+            <li id="character_drop" class="character-drop"></li>
+            <li id="character_wiggle" class="character-wiggle"></li>
+            <li id="bobber_left_drop" class="bobber-left-drop"></li>
+            <li id="bobber_center_drop" class="bobber-center-drop"></li>
+            <li id="bobber_right_drop" class="bobber-right-drop"></li>
+            <li id="bobber_left_wiggle" class="bobber-left-wiggle"></li>
+            <li id="bobber_center_wiggle" class="bobber-center-wiggle"></li>
+            <li id="bobber_right_wiggle" class="bobber-right-wiggle"></li>
+            <li id="fishingport" class="fishingport-a"></li>
+            <li id="correct_bg" class="a-correct-bg"></li>
+            <li id="correct_01" class="a-correct-01"></li>
+            <li id="correct_02" class="a-correct-02"></li>
+            <li id="correct_03" class="a-correct-03"></li>
+            <li id="correct_04" class="a-correct-04"></li>
+            <li id="incorrect_bg" class="incorrect-bg"></li>
+            <li id="incorrect_01" class="incorrect-01"></li>
+            <li id="incorrect_02" class="incorrect-02"></li>
+            <li id="incorrect_03" class="incorrect-03"></li>
+            <li id="incorrect_04" class="incorrect-04"></li>
+            <li id="drop_00_bg" class="a-drop-00-bg"></li>
+            <li id="drop_01_bg" class="a-drop-01-bg"></li>
+            <li id="drop_02_bg" class="a-drop-02-bg"></li>
+            <li id="drop_03_bg" class="a-drop-03-bg"></li>
+            <li id="drop_04_bg" class="a-drop-04-bg"></li>
+            <li id="drop_00" class="a-drop-00"></li>
+            <li id="drop_01" class="a-drop-01"></li>
+            <li id="drop_02" class="a-drop-02"></li>
+            <li id="drop_03" class="a-drop-03"></li>
+            <li id="drop_04" class="a-drop-04"></li>
+            <li id="click_a" class="click_a"></li>
+        </ul>
+        <div class="speech-bubble">
+            <img src="../../img/game/i_spy_sight_words/speech-bubble.png" alt="말풍선">
+        </div>
+        <div class="speech-bubble-tab">
+            <!-- on 컨드롤 -->
+            <img src="../../img/game/i_spy_sight_words/speech-bubble-tab.png" alt="말풍선">
+        </div>
+        <ul class="fish-list"></ul>
+        <div class="fishbowl-box a_0">
+            <!-- a_0, b_0 으로 구분 a타입 b타입 구분 -->
+            <ul class="fishbowl-fish-list">
+                <li></li>
+                <!-- on클래스 주면 색이 채워지고 del 클래스 주면 사라집니다. 사라지는건 밑에부터 해주세용 -->
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="progress-box">
+            <div class="layered-shadow layered-shadow1"></div>
+            <div class="layered-shadow layered-shadow2"></div>
+            <div class="progress">
+                <div class="layered-shadow layered-shadow1"></div>
+                <!-- <div class="layered-shadow layered-shadow2"></div> -->
+                <progress id="fishProgress" max="100" value="0"></progress>
+            </div>
+        </div>
+
+        <section id="exit_modal" class="modal">
+            <!-- class toggle: open -->
+            <div class="modal-box">
+                <div class="icon-character">
+                    <img src="../../img/test/icon/character_step2.svg" alt="">
+                </div>
+                <div class="title">Do you want to leave?</div>
+                <div class="btn-area">
+                    <button type="button" class="btn-cancel" onclick="cancelExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32" fill="none">
+                            <g opacity="0.4">
+                                <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span>No</span>
+                    </button>
+                    <button type="button" class="btn-submit" onclick="applyExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                                <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
+                        <span>Yes</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- class toggle: open -->
+        <div class="btn-disable-modal"></div>
+
+
+    </div>
+</body>
+
+</html>

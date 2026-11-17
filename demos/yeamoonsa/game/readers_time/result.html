@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader's Time</title>
+
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/game/game_common.css">
+    <link rel="stylesheet" href="../../css/game/readerstime.css">
+
+    <script src="../../js/game/game_common.js"></script>
+    <script src="../../js/game/lottie-web@5.13.0.js"></script>
+     <script>
+        const _step = 2;
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <main class="overall-result">
+            <button type="button" class="btn-exit" aria-label="나가기" onclick="leave()">
+                <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+                </svg>
+            </button>
+
+            <section class="excellent">
+                <div id="excellent"></div>
+
+            </section>
+
+            <section class="good-job">
+                <div id="good_job"></div>
+            </section>
+
+            <section class="cheer-up">
+                <div id="cheer_up"></div>
+
+            </section>
+            
+            <a class="btn-retry" href="../../game/readers_time/intro.html?book_no=1">
+                <div class="layered-shadow layered-shadow1"></div>
+                <div class="layered-shadow layered-shadow2"></div>
+                <div class="layered-shadow layered-shadow3"></div>
+                <span>Try again</span>
+            </a>
+        </main>
+    </div>
+</body>
+<script>
+    // 결과 판정 (correct_count: 4개 이상 excellent / 2개 이상 good-job / 그 외 cheer-up)
+    const _params = new URLSearchParams(location.search);
+    const _correct = Number(_params.get('correct_count') ?? 5);
+    const _result = _correct >= 4 ? 'excellent' : (_correct >= 2 ? 'good-job' : 'cheer-up');
+    document.querySelectorAll('.overall-result > section').forEach(function (sec) {
+        if (!sec.classList.contains(_result)) sec.remove();
+    });
+
+    function loadLottie(id, path, loop) {
+        return lottie.loadAnimation({
+            container: document.getElementById(id),
+            renderer: 'svg',
+            loop: loop,
+            autoplay: true,
+            path: path
+        });
+    }
+
+    const excellent = loadLottie('excellent', `../../js/game/readers_time/step${_step}/excellent.json`, false);
+    const good_job = loadLottie('good_job', `../../js/game/readers_time/step${_step}/good_job.json`, false);
+    const cheer_up = loadLottie('cheer_up', `../../js/game/readers_time/step${_step}/cheer_up.json`, false);
+
+
+    let result = _result;
+    let book_no = _params.get('book_no') || 1;
+
+    window.addEventListener("DOMContentLoaded", function() {
+        let g_audio = new Audio();
+        if(result == 'excellent'){
+            g_audio.src = `../../audio/game/readerstime/g_sound_11.mp3`;
+        }
+        else if(result == 'good-job'){
+            g_audio.src = `../../audio/game/readerstime/g_sound_13.mp3`;
+        }
+        else if(result == 'cheer-up'){
+            g_audio.src = `../../audio/game/readerstime/g_sound_15.mp3`;
+        }
+        g_audio.play();
+    });
+
+    function leave() {
+        if (isPC()) {
+            self.close();
+        } else {
+            window.location.href = `../../content.html?book_no=${book_no}`;
+        }
+    }
+</script>
+</html>

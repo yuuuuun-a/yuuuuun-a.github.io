@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="/demos/_shared/autoplay-gate.js"></script>
+    <link rel="stylesheet" href="/demos/_shared/demo-notice.css">
+    <script src="/demos/_shared/demo-notice.js" data-demo-title="Build Up Literacy" data-back-href="/work/build-up-literacy#screens" data-back-label="← 케이스 스터디로" defer></script>
+    <script>var SITE_ROOT = '../../';</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Quiz</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/game/game_common.css">
+    <link rel="stylesheet" href="../../css/game/storyquiz.css">
+
+    <script src="../../js/game/game_common.js"></script>
+    <script src="../../js/game/lottie-web@5.13.0.js"></script>
+    <script src="../../js/game/story_quiz/story_quiz_common.js"></script>
+    <script src="../../js/game/story_quiz/story_quiz_data.js"></script>
+    <script>
+        window._gameNo = 1;
+        const _step = 2;
+    </script>
+    <script src="../../js/study-counter.js"></script>
+</head>
+
+<body>
+    <div class="wrap story-quiz">
+        <button type="button" class="exit-btn" aria-label="나가기" onclick="exitModal()">
+            <svg class="icon-door" width="72" height="72" viewBox="0 0 72 72" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20C22.7505 18.3087 24.1216 16.9375 25.813 16.9375H43.313C45.0043 16.9375 46.3755 18.3087 46.3755 20V27C46.3755 27.7249 45.7879 28.3125 45.063 28.3125C44.3381 28.3125 43.7505 27.7249 43.7505 27V20C43.7505 19.7584 43.5546 19.5625 43.313 19.5625H25.813C25.5713 19.5625 25.3755 19.7584 25.3755 20V48C25.3755 48.7249 24.7879 49.3125 24.063 49.3125C23.3381 49.3125 22.7505 48.7249 22.7505 48V20ZM45.063 41.4375C45.7879 41.4375 46.3755 42.0251 46.3755 42.75V49.75C46.3755 51.4413 45.0043 52.8125 43.313 52.8125H37.188C36.4631 52.8125 35.8755 52.2249 35.8755 51.5C35.8755 50.7751 36.4631 50.1875 37.188 50.1875H43.313C43.5546 50.1875 43.7505 49.9916 43.7505 49.75V42.75C43.7505 42.0251 44.3381 41.4375 45.063 41.4375Z" fill="white" stroke="white" stroke-width="0.8"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22.7505 20.835C22.7505 18.6684 24.9387 17.1869 26.9503 17.9916L36.5753 21.8416C37.738 22.3067 38.5005 23.4329 38.5005 24.685V54.1655C38.5005 56.332 36.3123 57.8136 34.3006 57.0089L24.6756 53.1589C23.5129 52.6938 22.7505 51.5677 22.7505 50.3155V20.835ZM25.9755 20.4289C25.6881 20.3139 25.3755 20.5256 25.3755 20.835V50.3155C25.3755 50.4943 25.4844 50.6552 25.6504 50.7217L35.2754 54.5717C35.5629 54.6866 35.8755 54.4749 35.8755 54.1655V24.685C35.8755 24.5061 35.7666 24.3452 35.6005 24.2789L25.9755 20.4289Z" fill="white" stroke="white" stroke-width="0.8"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M45.4162 30.3784C44.8659 29.9068 44.0372 29.9705 43.5656 30.5208L40.5655 34.0208C40.1442 34.5124 40.1442 35.2377 40.5655 35.7291L43.5656 39.2291C44.0372 39.7796 44.8659 39.8433 45.4162 39.3715C45.9666 38.8998 46.0303 38.0712 45.5586 37.5208L44.4156 36.1875H52.062C52.7869 36.1875 53.3745 35.5999 53.3745 34.875C53.3745 34.15 52.7869 33.5625 52.062 33.5625H44.4156L45.5586 32.2291C46.0303 31.6788 45.9666 30.8502 45.4162 30.3784Z" fill="white" stroke="white" stroke-width="0.8"/>
+            </svg>
+        </button>
+
+        <div class="quiz-wrap">
+            <div class="quiz-score">
+                <ul class="quiz-ul">
+                    <li class="quiz-li">
+                        <img src="../../img/game/storyquiz/bear-empty.svg" alt="bear-empty">
+                        <img src="../../img/game/storyquiz/bear@3x.png" alt="bear">
+                    </li>
+                    <li class="quiz-li">
+                        <img src="../../img/game/storyquiz/monkey-empty.svg" alt="monkey-empty">
+                        <img src="../../img/game/storyquiz/monkey@3x.png" alt="monkey">
+                    </li>
+                    <li class="quiz-li">
+                        <img src="../../img/game/storyquiz/cat-empty.svg" alt="cat-empty">
+                        <img src="../../img/game/storyquiz/cat@3x.png" alt="cat">
+                    </li>
+                    <li class="quiz-li">
+                        <img src="../../img/game/storyquiz/dog-empty.svg" alt="dog-empty">
+                        <img src="../../img/game/storyquiz/dog@3x.png" alt="dog">
+                    </li>
+                </ul>
+            </div>
+            <div class="quiz-content">
+                <!-- 
+            type1 : (보기 삽화O, 선지 삽화X)  
+            type2 : (보기 삽화,텍스트X, 선지 삽화X) 
+            type3 : (보기 삽화O, 선지 삽화O) 
+            type4 : (보기 삽화X, 선지 삽화O) 
+            type5 : (보기 텍스트O, 선지 삽화X) 
+            type6 : (보기 텍스트O, 선지 삽화O) 
+            -->
+                <div class="quiz-content-top">
+                    <button type="button" class="listen-btn" onclick="playQuestion()"> <!-- on -->
+                        <svg class="off" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.4958 13.2082C26.7019 12.9187 25.9172 13.5496 25.9172 14.3947C25.9172 14.9854 26.3128 15.4958 26.8605 15.7171C30.2211 17.0748 32.5838 20.2735 32.5838 24C32.5838 27.7249 30.2233 30.9115 26.8651 32.2685C26.3148 32.4909 25.9172 33.0038 25.9172 33.5973C25.9172 34.4465 26.7057 35.0805 27.5033 34.7891C32.0242 33.1374 35.2505 28.9308 35.2505 24C35.2505 19.0665 32.0206 14.858 27.4958 13.2082ZM29.2505 24C29.2505 22.5583 28.7129 21.2459 27.8084 20.2368C27.0731 19.4165 25.9172 20.101 25.9172 21.2027V26.7998C25.9172 27.8912 27.0552 28.5766 27.7904 27.7699C28.7058 26.7656 29.2505 25.4431 29.2505 24ZM12.0005 20.1517C11.5863 20.1517 11.2505 20.4874 11.2505 20.9017V27.0983C11.2505 27.5126 11.5863 27.8483 12.0005 27.8483H16.5838L21.9805 33.0404C22.457 33.4989 23.2505 33.1612 23.2505 32.4999V15.5001C23.2505 14.8388 22.457 14.5011 21.9805 14.9596L16.5838 20.1517H12.0005Z" fill="#FFB400"/>
+                        </svg>
+                        <svg class="on" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.001 32.6786C15.001 34.1185 16.1682 35.2857 17.6081 35.2857C19.048 35.2857 20.2153 34.1185 20.2153 32.6786V15.6071C20.2153 14.1673 19.048 13 17.6081 13C16.1682 13 15.001 14.1673 15.001 15.6071V32.6786Z" fill="#FFF3D0"/>
+                            <path d="M32.3823 15.6071V32.6786C32.3823 34.1185 31.215 35.2857 29.7751 35.2857C28.3352 35.2857 27.168 34.1185 27.168 32.6786V15.6071C27.168 14.1673 28.3352 13 29.7751 13C31.215 13 32.3823 14.1673 32.3823 15.6071Z" fill="#FFF3D0"/>
+                        </svg>
+                    </button>
+                    <div class="quiz-question">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="quiz-content-bottom">
+                    <div class="quiz-view"></div>
+                    <div class="quiz-answer"></div>
+                </div>
+            </div>
+            <div class="hint-wrap">
+                <button type="button" class="hint-btn" onclick="playHint()">
+                    <img src="../../img/game/storyquiz/step2/hint.svg" alt="hint">
+                    <img src="../../img/game/storyquiz/step2/hint-click.svg" alt="hint-click">
+                    <span>Hint</span>
+                </button>
+                <!-- text img audio -->
+                <div class="hint-content text" style="display: none;">
+                    <button type="button" class="hint-audio-btn">
+                        <svg class="hint-audio" width="96" height="96" viewBox="0 0 96 96" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M43.4056 13.384C43.9684 12.8772 44.7741 12.7486 45.4672 13.0575C46.1577 13.3648 46.6046 14.0508 46.6048 14.8078V80.1708C46.6048 80.928 46.1588 81.6145 45.4681 81.9219C45.2178 82.0335 44.9521 82.0877 44.6879 82.0877C44.2228 82.0876 43.765 81.9186 43.4056 81.5955L19.7437 60.3H8.37486C7.31618 60.2999 6.45801 59.442 6.45801 58.3831V36.5955C6.45819 35.5369 7.31605 34.6795 8.37486 34.6795H19.7437L43.4056 13.384Z" fill="#9E7AE5"/>
+                            <path d="M58.8643 14.4752C59.4499 12.843 61.2505 11.9937 62.8828 12.5768H62.8838C77.6822 17.8802 87.6162 31.9006 87.6162 47.4479C87.6159 62.8734 77.8895 76.7351 63.3213 82.1588L62.624 82.4108C62.2801 82.5314 61.9293 82.5884 61.5859 82.5885C60.2849 82.5885 59.0713 81.7742 58.6191 80.483C58.0457 78.8447 58.9088 77.0512 60.5469 76.4772C72.9695 72.1273 81.3298 60.4685 81.3301 47.4479C81.3301 34.732 73.3164 23.2672 61.3408 18.7076L60.7637 18.4948L60.6123 18.4362C59.0774 17.7967 58.2971 16.0585 58.8643 14.4752ZM57.8398 28.4899C58.802 27.1331 60.6695 26.7533 62.0879 27.6549H62.0869C68.9446 32.0093 73.0311 39.4069 73.0312 47.4469C73.0312 55.273 69.1121 62.565 62.5361 66.9498C62 67.3074 61.3954 67.477 60.7969 67.4772C59.7785 67.4772 58.7824 66.9858 58.1768 66.0797L57.9482 65.7379L57.9697 65.7164C57.2853 64.3224 57.7217 62.6044 59.0479 61.7194V61.7184C63.8612 58.5087 66.7451 53.1754 66.7451 47.4469C66.745 41.5632 63.7363 36.149 58.7188 32.9625C57.2537 32.0322 56.8194 30.0905 57.749 28.6246L57.7568 28.6129L57.833 28.4996L57.8398 28.4899Z" fill="#9E7AE5" stroke="#9E7AE5"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="bear-quiz">
+                <div id="bear_home" class="motion"></div>
+                <div id="bear_quiz" class="motion"></div>
+            </div>
+            <div class="monkey-quiz">
+                <div id="monkey_home" class="motion"></div>
+                <div id="monkey_quiz" class="motion"></div>
+            </div>
+            <div class="cat-quiz">
+                <div id="cat_home" class="motion"></div>
+                <div id="cat_quiz" class="motion"></div>
+            </div>
+            <div class="dog-quiz">
+                <div id="dog_home" class="motion"></div>
+                <div id="dog_quiz" class="motion"></div>
+            </div>
+            <div class="school-quiz">
+                <div id="school" class="motion"></div>
+                <div id="school_quiz" class="motion"></div>
+            </div>
+            <div class="end">
+                <div id="end" class="motion"></div>
+                <button type="button" class="retry-btn" onclick="retry()" style="display: none;">
+                    <div class="layered-shadow layered-shadow1"></div>
+                    <div class="layered-shadow layered-shadow2"></div>
+                    <div class="layered-shadow layered-shadow3"></div>
+                    <span>Try Again</span>
+                </button>
+            </div>
+        </div>
+        <section id="exit_modal" class="modal">
+            <!-- class toggle: open -->
+            <div class="modal-box">
+                <div class="icon-character">
+                    <img src="../../img/test/icon/character_step2.svg" alt="">
+                </div>
+                <div class="title">Do you want to leave?</div>
+                <div class="btn-area">
+                    <button type="button" class="btn-cancel" onclick="cancelExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <svg class="icon-return-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32" fill="none">
+                            <g opacity="0.4">
+                                <path d="M12.665 3.65527L2.66504 11.1553L12.665 18.6553" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M2.87207 11.2764H20.7964C25.5105 11.2764 29.3317 15.0977 29.3317 19.8118C29.3317 24.5256 25.5105 28.3472 20.7964 28.3472" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <span>No</span>
+                    </button>
+                    <button type="button" class="btn-submit" onclick="applyExit()">
+                        <div class="layered-shadow layered-shadow1"></div>
+                        <div class="layered-shadow layered-shadow2"></div>
+                        <div class="layered-shadow layered-shadow3"></div>
+                        <svg class="icon-door" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.4" clip-path="url(#clip0_613_8868)">
+                                <path d="M18.75 15.5H29.75" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M25.75 11.5L29.75 15.5L25.75 19.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M19.25 8.92857V4.5C19.25 3.39543 18.3546 2.5 17.25 2.5H4.25C3.14543 2.5 2.25 3.39543 2.25 4.5V27.5C2.25 28.6046 3.14543 29.5 4.25 29.5H17.25C18.3546 29.5 19.25 28.6046 19.25 27.5V21.7857" stroke="white" stroke-width="4" stroke-linecap="round"></path>
+                            </g>
+                        </svg>
+                        <span>Yes</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- class toggle: open -->
+        <div class="btn-disable-modal"></div>
+
+        <div class="subtitle" style="display: none;">The school bus is ready! Let’s go pick up our friends!</div>
+    </div>
+</body>
+
+</html>

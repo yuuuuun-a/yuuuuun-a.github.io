@@ -1,0 +1,110 @@
+:root { --width-1728 :calc(var(--wrap-width) * (1728 / 1920)); --width-1440 :calc(var(--wrap-width) * (1440 / 1920)); --width-449 :calc(var(--wrap-width) * (449 / 1920)); --width-360 :calc(var(--wrap-width) * (360 / 1920)); --width-272 :calc(var(--wrap-width) * (272 / 1920)); --width-268 :calc(var(--wrap-width) * (268 / 1920)); --width-129 :calc(var(--wrap-width) * (129 / 1920)); --width-64 :calc(var(--wrap-width) * (64 / 1920)); --width-56 :calc(var(--wrap-width) * (56 / 1920)); --height-846 :calc(var(--wrap-width) * (846 / 1920)); --height-106 :calc(var(--wrap-width) * (106 / 1920)); --height-80 :calc(var(--wrap-width) * (80 / 1920)); --border-4 :calc(var(--wrap-width) * (4 / 1920)); --blur-8 :calc(var(--wrap-width) * (8 / 1920)); --padding-250 :calc(var(--wrap-width) * (250 / 1920)); --padding-140 :calc(var(--wrap-width) * (140 / 1920)); --padding-88 :calc(var(--wrap-width) * (88 / 1920)); --padding-12 :calc(var(--wrap-width) * (12 / 1920)); --padding-10 :calc(var(--wrap-width) * (10 / 1920)); --gap-48 :calc(var(--wrap-width) * (48 / 1920)); --gap-16 :calc(var(--wrap-width) * (16 / 1920)); --border-radius-22 :calc(var(--wrap-width) * (22 / 1920)); --margin-14 :calc(var(--wrap-width) * (14 / 1920)); --font-40 :calc(var(--wrap-width) * (40 / 1920)); --border-width8: 8px; --shadow-width-minus8: -8px; --border-width-minus8: -8px; --border-width6: 6px; --border-width-minus6: -6px; --border-width2: 2px; --border-width-minus2: -2px; --border-width4: 4px; --border-width-minus4: -4px; --border-width5: 5px; --border-width-minus5: -5px; --border-width7: 7px; --border-width-minus7: -7px; --border-width3: 3px; --border-width-minus3: -3px; --shadow-width5: calc( var(--wrap-width) * (5/1920) ); --shadow-width7: calc( var(--wrap-width) * (7/1920) ); --shadow-width9: calc( var(--wrap-width) * (9/1920) ); --shadow-width10: calc( var(--wrap-width) * (10/1920) ); } 
+
+
+.btn-retry { z-index: 21; bottom: 5%; right: 5%; display: none; background: #FF790A; box-shadow: 0  var(--shadow-width6) 0 var(--border-width8) rgba(0, 0, 0, 0.18); } 
+.btn-next { z-index: 21; bottom: 5%; right: 5%; display: none; } 
+.btn-retry.on,.btn-next.on { display: block; } 
+
+
+.ending .btn-retry { display: block; } 
+
+.start-btn { bottom: 28.5%; left: 44%; } 
+img { width: 100%; } 
+
+
+.lottie-list { position: relative;} 
+.lottie-list li { position: absolute; top: 0; left: 0; width: 100%;width: 100%;display: none; } 
+.lottie-list li.on{ display: block;}
+.intro .lottie-list li.intro { display: block; } 
+.clear .lottie-list li.clear { display: block; } 
+.ending .lottie-list li.ending { display: block; } 
+.round-01 .lottie-list li.g-start-01 { display: block; } 
+.round-02 .lottie-list li.g-start-02 { display: block; } 
+.round-03 .lottie-list li.g-start-03 { display: block; } 
+.round-04 .lottie-list li.g-start-04 { display: block; } 
+.round-05 .lottie-list li.g-start-05 { display: block; } 
+
+.speech-bubble,.speech-bubble-clear { position: absolute; top: 16%; left: 50%; transform: translateX(-50%); width: var(--width-1440); display: none; } 
+.intro .speech-bubble { display: block; } 
+.clear .speech-bubble-clear { display: block; } 
+
+
+.box-list { position: absolute; top: 4%; left: 50%; transform: translateX(-50%); display: flex; gap: var(--gap-16); padding: var(--padding-12) var(--gap-16); border-radius: var(--gap-16); border: var(--border-4) solid rgba(255, 255, 255, 0.20); background: rgba(255, 255, 255, 0.60); backdrop-filter: blur(var(--blur-8)); z-index: 4; } 
+.box-list li { width: var(--width-64); aspect-ratio: 1/1; background: url(../../img/game/sentence_wizard/top-box.png)no-repeat center; background-size: contain !important; } 
+.ending .box-list { display: none; } 
+.wrap:is(.round-02, .round-03, .round-04, .round-05, .clear) .box-list li:nth-child(1),.box-list li:nth-child(1).in { background-image: url(../../img/game/sentence_wizard/present-01.png); } 
+.wrap:is(.round-03, .round-04, .round-05, .clear) .box-list li:nth-child(2),.box-list li:nth-child(2).in { background-image: url(../../img/game/sentence_wizard/present-02.png); } 
+.wrap:is(.round-04, .round-05, .clear) .box-list li:nth-child(3),.box-list li:nth-child(3).in { background-image: url(../../img/game/sentence_wizard/present-03.png); } 
+.wrap:is(.round-05, .clear) .box-list li:nth-child(4),.box-list li:nth-child(4).in { background-image: url(../../img/game/sentence_wizard/present-04.png); } 
+.clear .box-list li:nth-child(5),.box-list li:nth-child(5).in { background-image: url(../../img/game/sentence_wizard/present-05.png); } 
+
+
+
+
+.question-area { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(51, 54, 61, 0.70); backdrop-filter: blur(var(--blur-8)); display: none; } 
+.in-game .question-area { display: block; } 
+.question-wrap { position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: var(--width-1728); height: var(--height-846); background: url(../../img/game/sentence_wizard/question-bg.png)no-repeat center; background-size: contain; display: flex; flex-direction: column; gap: var(--gap-48); padding: var(--padding-88) var(--padding-250) var(--padding-140); } 
+.question-box { display: inline-flex; gap: var(--gap-16); font-family: "Proxima Soft"; font-size: var(--width-56); font-weight: 800; color: #582A04; gap: var(--gap-16 ); justify-content: center;  } 
+.question-box button { display: flex; justify-content: center; align-items: center; background: #EA812D; width: var(--width-56); height: var(--width-56); aspect-ratio: 1/1; border-radius: 50%; padding: var(--padding-12); margin-top: var(--margin-14); -webkit-user-select: none; } 
+.question-box button svg { width: 100%; height: 100%; object-fit: contain; } 
+.question-box button .svg-stop { display: none; } 
+.question-box button.stop .svg-stop { display: block; } 
+.question-box button.stop .svg-play { display: none; } 
+.question-box button.stop{background: #CC6314;}
+.question-box em { color: #FBA300; font-weight: inherit; } 
+.question-box span { display: inline-flex; gap: var(--gap-16 ); flex-wrap: wrap; justify-content: center; } 
+.question-box span.highlight{color: #AC38DA;}
+.question-box span:not(.highlight) i { border-radius: 999px; border: var(--border-4) solid #E8CDA7; background: #F9F8F6; box-shadow: var(--blur-8) var(--blur-8) 0 0 rgba(0, 0, 0, 0.08) inset; width: var(--width-129); } 
+.question-box span:not(.highlight) i.correct{width: auto;padding: 0 var(--margin-14); color: #AC38DA}
+.question-box i { font-style: normal; } 
+
+/* visual feedback while dragging */
+.question-box i.drag-over { box-shadow: 0 6px 18px rgba(0,0,0,0.15) inset; transform: translateY(-6px); } 
+/* .question-box i.correct { background: #DFF8E0; border-color: #7EDB7A; } */
+
+
+.question-wrap .img-box { aspect-ratio: 449/336; flex: 1; max-width: var(--width-449); margin: 0 auto; overflow: hidden; border-radius: var(--border-radius-22);background: #fff; } 
+.question-wrap .img-box img { width: 100%; height: 100%; object-fit: cover; } 
+
+
+.answer-box { border-radius: 999px; background: #FED184; background-blend-mode: multiply; box-shadow: var(--border-4) var(--border-4) 0 0 rgba(212, 107, 36, 0.10) inset; padding: var(--padding-10) var(--gap-16) var(--gap-16); height: var(--height-106); display: flex; justify-content: center; padding: var(--padding-10) var(--gap-16) 0; max-width: fit-content; margin: 0 auto; gap: var(--gap-16); min-width: var(--width-360); } 
+.answer-box .btn-answer { position: relative; width: var(--width-360); height: var(--height-80); color: #56317E; text-align: center; font-family: Fredoka; font-size: var( --font-40); font-weight: 600; border: var(--border-4) solid #FFBDFF; border-radius: 999px; background: linear-gradient(180deg, #F3ADFF 0%, #DC9EFF 100%); } 
+.answer-box .btn-answer::after { content: ''; display: block; background: url(../../img/game/storyquiz/quiz/btn_after.svg) no-repeat center center/cover; height: 100%; aspect-ratio: 1/1; position: absolute; top: 0; left: 0; mix-blend-mode: soft-light; pointer-events: none; z-index: 1; } 
+.answer-box .btn-answer .layered-shadow { width: calc(100% + var(--border-width2) * 2); height: calc(100% + var(--border-width2) * 2); position: absolute; inset: var(--border-width-minus2); z-index: 2; border-radius: inherit; pointer-events: none; } 
+
+.answer-box .btn-answer .layered-shadow1 { box-shadow: 0 var(--shadow-width6) 0 0 #00000023, 0 var(--shadow-width-minus8) 0 0 rgba(183, 127, 243, 0.60) inset, 0 var(--shadow-width-minus13) var(--shadow-width6) 0 rgba(255, 39, 39, 0.06) inset; } 
+.answer-box .btn-answer .layered-shadow2 { mix-blend-mode: screen; box-shadow: 0 var(--shadow-width9) 0 0 rgba(255, 255, 255, 0.24) inset, 0 var(--shadow-width7) var(--shadow-width6) 0 rgba(0, 0, 0, 0.4) inset; } 
+.answer-box .btn-answer:not(.disabled):hover { background: linear-gradient(180deg, #FFBAFF 0%, #E1A3FF 100%); } 
+.answer-box .btn-answer:not(.disabled):active { background: linear-gradient(180deg, #E9A3F5 0%, #D294F5 100%); } 
+.answer-box .btn-answer:not(.disabled):active .layered-shadow1 { box-shadow: 0 var(--border-4) 0 0 #00000023, 0 var(--border-width-minus2) 0 0 rgba(183, 127, 243, 0.60) inset; } 
+.answer-box .btn-answer:not(.disabled):active .layered-shadow2 { display: none; } 
+.answer-box .btn-answer.disabled { filter: grayscale(100%); pointer-events: none; background: #cecece; } 
+
+
+
+
+.btn-answer { touch-action: none; } 
+
+.btn-answer.dragging { position: fixed; z-index: 9999; pointer-events: none; cursor: grabbing; } 
+.btn-answer.dragging:not(.return) { transition: none; } 
+.btn-answer.return { transition: left 0.3s ease, top 0.3s ease, transform 0.3s ease; } 
+
+/* global grabbing cursor while dragging */
+.is-grabbing, .is-grabbing * { cursor: grabbing !important; } 
+
+
+
+
+.game-start-btn-box button { position: absolute; background: #00000000; width: var(--width-272); height: var(--width-268); z-index: 5; display: none; } 
+.game-start-btn-box button.off{display: none;}
+.game-start-btn-box button:nth-child(1) { top: 32%; left: 1.5%; } 
+.game-start-btn-box button:nth-child(2) { top: 37%; left: 14.5%; } 
+.game-start-btn-box button:nth-child(3) { top: 32%; left: 27.5%; } 
+.game-start-btn-box button:nth-child(4) { top: 37%; left: 40.5%; } 
+.game-start-btn-box button:nth-child(5) { top: 32%; left: 53.5%; } 
+.round-01 .game-start-btn-box button:nth-child(1) { display: block; } 
+.round-02 .game-start-btn-box button:nth-child(2) { display: block; } 
+.round-03 .game-start-btn-box button:nth-child(3) { display: block; } 
+.round-04 .game-start-btn-box button:nth-child(4) { display: block; } 
+.round-05 .game-start-btn-box button:nth-child(5) { display: block; } 
+.in-game .game-start-btn-box button{display: none !important;}
